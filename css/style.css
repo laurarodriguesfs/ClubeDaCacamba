@@ -6,6 +6,32 @@
  * Made By MaterializeCSS.com
  */
 
+ @font-face {
+  font-family: "Bright Italic";
+  src: url("fonts/Bright Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alexandria Regular";
+  src: url("fonts/Alexandria-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Aplica Alexandria para todo o site como fonte padrão */
+body, p, span, li, input, textarea {
+  font-family: "Alexandria Regular", sans-serif;
+  color: #4d8404;
+}
+
+/* Bright Italic para títulos e links */
+h1, h2, h3, h4, h5, h6, a, .bright {
+  font-family: "Bright Italic", serif;
+  color: #4d8404;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -54,4 +80,60 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+/*Carrossel*/
+div .carousel{
+  height: 400px !important;
+}
+/* Ajustes para que as imagens fiquem bem visíveis */
+.carousel .carousel-item {
+  width: 100%;
+}
+.carousel .carousel-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center center; /* centraliza */  
+}
+   
+.carousel-prev, .carousel-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  cursor: pointer !important;
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 10 !important;
+}
+
+/* Setinha da esquerda */
+.carousel-prev {
+  left: 140px !important; /* Ajuste esse valor para "grudar" mais no carrossel */
+}
+
+ /* Setinha da direita */
+.carousel-next {
+  right: 140px !important; /* Ajuste esse valor também */
+}
+ 
+.carousel-caption {
+ position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 4px;
+  max-width: 80%;
+}
+  
+.carousel-caption h5 {
+  margin: 0 0 5px;
+  font-size: 1.4rem;
+}
+  
+.carousel-caption p {
+  margin: 0;
+  font-size: 1rem;
 }
