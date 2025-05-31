@@ -47,6 +47,11 @@ nav .brand-logo {
   margin-top: 0px;
 }
 
+.ver-mais{
+  font-size: 26px;
+  text-decoration: underline;
+}
+
 p {
   line-height: 2rem;
 }
@@ -165,6 +170,65 @@ div .carousel{
   margin: 30px auto;
 }
 
+.imagem-sobre{
+  width: 450px !important;
+}
+
+.container.row.sobre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Faz as colunas se alinharem verticalmente no centro */
+}
+
+.coluna-esquerda {
+  flex: 1 1 50%;
+}
+
+.coluna-direita {
+  flex: 1 1 50%;
+}
+
+
+/*Conteudos*/
+.conteudos{
+  background-color: #4183bc;
+
+  .ver-mais{
+    color: white;
+  }
+
+  .card{
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  h3.card-title{
+    color: white !important;
+    font-size: 26px;
+  }
+
+  .card .card-content p{
+    color: white;
+  }
+  .card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* Usando a propriedade moderna */
+    overflow: hidden;
+  }
+
+  .card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+}
 /*Parceiros*/
 .parceiros{
  padding: 5px;

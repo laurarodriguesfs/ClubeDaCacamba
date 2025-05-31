@@ -49,17 +49,17 @@ export default function home() {
     </div>
 
     <div class="container row  sobre">
-      <div class="col s6">
+      <div class="coluna-esquerda col s6">
         <h3>Conheça mais sobre nós...</h3>
         <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
-        <a href=""> Ver mais</a>
+        <a class="ver-mais"href="#sobre"> Ver mais</a>
       </div>
-      <div class="col s6">
-         <img src="/images/sobre.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
+      <div class="coluna-direita col s6">
+         <img src="/images/sobre.png" alt="Ícone de contato" class="imagem-sobre responsive-img">
       </div>
     </div>
 
-    <section class="section">
+    <section class="conteudos section">
       <div class="container">
         <h4 class="white-text center-align">Nossos conteúdos</h4>
         <div class="row">
@@ -70,7 +70,7 @@ export default function home() {
                 <img src="images/cont1.jpg" alt="Comitê de Sustentabilidade">
               </div>
               <div class="card-content">
-                <span class="card-title">Comitê de Sustentabilidade</span>
+                <h3 class="card-title">Comitê de Sustentabilidade</h3>
                 <p>Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!</p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function home() {
                 <img src="images/cont2.jpg" alt="Comitê de Sustentabilidade">
               </div>
               <div class="card-content">
-                <span class="card-title">Exposição de Pôster no VII CPAC VIII JAC UEL</span>
+                <h3 class="card-title">Exposição de Pôster no VII CPAC VIII JAC UEL</h3>
                 <p>Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL</p>
               </div>
             </div>
@@ -96,14 +96,14 @@ export default function home() {
                 <img src="images/cont3.jpg" alt="Comitê de Sustentabilidade">
               </div>
               <div class="card-content">
-                <span class="card-title">Iniciação Científica no VII CPAC E VIII JAC</span>
+                <h3 class="card-title">Iniciação Científica no VII CPAC E VIII JAC</h3>
                 <p>Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL</p>
               </div>
             </div>
           </div>
         </div>
         <div class="center-align">
-          <a href="link-para-mais-conteudos.html" class="white-text">ver mais conteúdos</a>
+          <a class="ver-mais" href="link-para-mais-conteudos.html" class="white-text">ver mais conteúdos</a>
         </div>
       </div>
     </section>
@@ -153,7 +153,7 @@ export default function home() {
             <div class="col s12 m6">
               <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
               <div class="center-align">
-                <a href="#!" class="text-darken-3">ver mais</a>
+                <a class="ver-mais" href="#!" class="text-darken-3">ver mais</a>
               </div>
             </div>
             <div class="col s12 m6 center-align">
