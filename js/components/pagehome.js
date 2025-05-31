@@ -48,14 +48,14 @@ export default function home() {
     <img src="images/next.svg" class="carousel-next" style="position: absolute; top: 50%; right: 10px; cursor: pointer; width: 40px; height: 40px; transform: translateY(-50%);">
     </div>
 
-    <div class="container row">
+    <div class="container row  sobre">
       <div class="col s6">
         <h3>Conheça mais sobre nós...</h3>
         <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
         <a href=""> Ver mais</a>
       </div>
       <div class="col s6">
-        <img src="images/sobre.png?text=Slide+2" alt="Slide 2">
+         <img src="/images/sobre.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
       </div>
     </div>
 
@@ -67,7 +67,7 @@ export default function home() {
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="caminho-da-imagem-1.jpg" alt="Comitê de Sustentabilidade">
+                <img src="images/cont1.jpg" alt="Comitê de Sustentabilidade">
               </div>
               <div class="card-content">
                 <span class="card-title">Comitê de Sustentabilidade</span>
@@ -80,11 +80,11 @@ export default function home() {
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="caminho-da-imagem-2.jpg" alt="Comitê de Sustentabilidade">
+                <img src="images/cont2.jpg" alt="Comitê de Sustentabilidade">
               </div>
               <div class="card-content">
-                <span class="card-title">Comitê de Sustentabilidade</span>
-                <p>Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!</p>
+                <span class="card-title">Exposição de Pôster no VII CPAC VIII JAC UEL</span>
+                <p>Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL</p>
               </div>
             </div>
           </div>
@@ -93,11 +93,11 @@ export default function home() {
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="caminho-da-imagem-3.jpg" alt="Comitê de Sustentabilidade">
+                <img src="images/cont3.jpg" alt="Comitê de Sustentabilidade">
               </div>
               <div class="card-content">
-                <span class="card-title">Comitê de Sustentabilidade</span>
-                <p>Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!</p>
+                <span class="card-title">Iniciação Científica no VII CPAC E VIII JAC</span>
+                <p>Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL</p>
               </div>
             </div>
           </div>

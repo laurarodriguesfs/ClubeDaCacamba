@@ -1,11 +1,10 @@
-export default function contato (){
- 
+export default function sobre (){
 const main = document.querySelector("#main")
-  
+
 main.innerHTML=`
- <div class="container">
+   <div id="main" class="container">
     <div class="section">
-      <p>CONTEUDO DO CONTATO</p>
+      <p>CONTEUDO DO SOBRE</p>
     </div>
   </div>
 `;
