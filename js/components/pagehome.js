@@ -4,7 +4,7 @@ export default function home() {
   const main = document.querySelector("#main");
 
   main.innerHTML = `
-    <div class="container">
+    <div class=" container">
       <h3>Nossos projetos</h3>
 
       <div class="carousel-container">

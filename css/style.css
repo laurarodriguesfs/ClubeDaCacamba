@@ -27,8 +27,8 @@ body, p, span, li, input, textarea {
 }
 
 /* Bright Italic para títulos e links */
-h1, h2, h3, h4, h5, h6, a, .bright {
-  font-family: "Bright Italic", serif;
+h1, h2, h3, h4, h5, h6, a, .bright, button {
+  font-family: "Bright Italic", serif !important;
   color: #4d8404;
 }
 
@@ -40,6 +40,20 @@ h1, h2, h3, h4, h5, h6, a, .bright {
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+button {
+  background-color:#4183bc;
+  color: #fff; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 16px; 
+}
+
+button:hover {
+  background-color: #4d8404; /* Cor um pouco mais clara ao passar o mouse */
 }
 
 .row .barra-redes{
@@ -294,4 +308,57 @@ div .carousel{
   .contato > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
     padding-left: 0px;
   }
+}
+
+/*Pagina de contato*/
+
+.page-contato{
+  .container-contato {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .conteudo-contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+
+  }
+
+  .info-contato {
+    flex: 1;
+  }
+
+  .form-contato {
+    flex: 1;
+  }
+  .form-group {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    width: 100px; /* ou o valor que quiser */
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #000;
+    height: 20px;
+  }
+  
+  #mensagem {
+    height: 100px;
+  }
+
+  #btn-enviar {
+    display: block;   /* transforma o botão em block */
+    margin: 20px auto; /* centraliza e adiciona um espaçamento vertical */
+  }  
+  
 }
