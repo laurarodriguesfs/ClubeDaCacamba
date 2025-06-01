@@ -61,7 +61,14 @@ export default function home() {
 
     <section class="conteudos section">
       <div class="container">
-        <h4 class="white-text center-align">Nossos conteúdos</h4>
+        <div class="container-header">
+          <div class="left">
+            <h4 class="white-text">Nossos conteúdos</h4>
+          </div>
+          <div class="right">
+            <a class="ver-mais white-text" href="#blog">ver mais conteúdos</a>
+          </div>
+        </div>
         <div class="row">
           <!-- Conteúdo 1 -->
           <div class="col s12 m4">
@@ -75,8 +82,7 @@ export default function home() {
               </div>
             </div>
           </div>
-
-          <!-- Conteúdo 2 -->
+        <!-- Conteúdo 2 -->
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
@@ -88,8 +94,7 @@ export default function home() {
               </div>
             </div>
           </div>
-
-          <!-- Conteúdo 3 -->
+        <!-- Conteúdo 3 -->
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
@@ -102,58 +107,60 @@ export default function home() {
             </div>
           </div>
         </div>
-        <div class="center-align">
-          <a class="ver-mais" href="link-para-mais-conteudos.html" class="white-text">ver mais conteúdos</a>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Seção: Saiba quem são os nossos parceiros -->
-      <section class="section white">
+      <section class="parceiros section white">
         <div class="container">
           <h4 class="center-align text-darken-3">Saiba quem são os nossos parceiros</h4>
-          <div class="row center-align">
+          <div class="container-parceiros row center-align">
             <div class="col s12 m2">
-              <div class="card-panel parceiros">
+              <div class="card-panel parceiro">
                 <img src="images/desplastifica.jpeg" alt="Imagem 2" class="responsive-img">
               </div>
             </div>
             <div class="col s12 m2">
-              <div class="card-panel parceiros">
+              <div class="card-panel parceiro">
                 <img src="images/leca.jpeg" alt="Imagem 3" class="responsive-img">
               </div>
             </div>
             <div class="col s12 m2">
-              <div class="card-panel parceiros">
+              <div class="card-panel parceiro">
                 <img src="images/lunarte.jpeg" alt="Imagem 4" class="responsive-img">
               </div>
             </div>
             <div class="col s12 m2">
-              <div class="card-panel parceiros">
+              <div class="card-panel parceiro">
                 <img src="images/ninter.jpeg" alt="Imagem 5" class="responsive-img">
               </div>
             </div>
             <div class="col s12 m2">
-              <div class="card-panel parceiros">
+              <div class="card-panel parceiro">
                 <img src="images/observatorio.jpeg" alt="Imagem 5" class="responsive-img">
               </div>
             </div>
           </div>
-          <p class="center-align">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
-          <div class="center-align">
-            <a href="#!" class="text-darken-3">ver mais</a>
+          <div class="container-linha">
+            <div class="texto">
+              <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
+            </div>
+            <div class="link">
+              <a href="#parceiros" class="ver-mais">ver mais</a>
+            </div>
           </div>
         </div>
       </section>
       <!-- Seção: Entre em contato com a gente -->
-      <section class="section white">
+      <section class="contato section white">
         <div class="container">
-          <h4 class="center-align text-darken-3">Entre em contato com a gente!</h4>
+          <h4 class="text-darken-3">Entre em contato com a gente!</h4>
           <div class="row">
             <div class="col s12 m6">
               <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
               <div class="center-align">
-                <a class="ver-mais" href="#!" class="text-darken-3">ver mais</a>
+                <a class="ver-mais" href="#contato" class="text-darken-3">ver mais</a>
               </div>
             </div>
             <div class="col s12 m6 center-align">

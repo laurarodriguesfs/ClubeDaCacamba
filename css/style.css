@@ -193,6 +193,17 @@ div .carousel{
 .conteudos{
   background-color: #4183bc;
 
+  .container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+
+    .white-text{
+      margin: 0px;
+    }
+  }
+
   .ver-mais{
     color: white;
   }
@@ -207,13 +218,17 @@ div .carousel{
     font-size: 26px;
   }
 
+  .card .card-content{
+    padding: 0px;
+  }
   .card .card-content p{
     color: white;
+    line-height: 1.5rem !important;
   }
   .card-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;  /* Usando a propriedade moderna */
+    aspect-ratio: 16 / 9;  
     overflow: hidden;
   }
 
@@ -230,6 +245,53 @@ div .carousel{
   }
 }
 /*Parceiros*/
+
 .parceiros{
- padding: 5px;
+  padding-top: 30px;
+
+  .parceiro{
+    padding: 5px;
+  }
+
+  .container-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .texto {
+    max-width: 60%;
+  }
+  
+  .texto p {
+    margin: 0;
+  }
+  
+  .ver-mais {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .container-parceiros{
+    display: flex;
+    justify-content: center; /* Alinha os itens no centro */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha, se necessário */
+    gap: 0px; /* Espaçamento opcional entre os itens */
+  
+  }
+
+  .row .col.m2{
+    margin-left: 0px !important;
+  }
+  
+}
+
+/*Contato*/
+
+.contato{
+  padding-top: 30px;
+
+  .contato > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    padding-left: 0px;
+  }
 }
