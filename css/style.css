@@ -96,7 +96,7 @@ button:hover {
 .social-icons {
   margin-left: 0;
   padding: 0;
-  display: flex;
+  display: -webkit-inline-box;
   justify-content: center;
 }
 
@@ -199,6 +199,14 @@ footer.page-footer {
 }
 
 /* Footer*/
+
+.texto-redes{
+  font-size: 22px;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 .page-footer {
   padding: 20px 0;
   border-top: 1px solid #e0e0e0;
@@ -223,8 +231,9 @@ footer.page-footer {
 }
 
 .footer-menu-columns {
+  margin-top: 20px;
   display: flex;
-  gap: 30px; /* Espaço entre as colunas */
+  gap: 60px; /* Espaço entre as colunas */
 }
 
 .footer-column {
@@ -239,16 +248,12 @@ footer.page-footer {
 
 .page-footer a {
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 22px;
   transition: color 0.3s;
 }
 
 .page-footer a:hover {
   text-decoration: underline;
-}
-
-.social-icons {
-  display: flex;
 }
 
 

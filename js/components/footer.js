@@ -33,8 +33,8 @@ export default function footer() {
         </div>
 
         <!-- Coluna: Redes Sociais -->
-        <div class="col s12 m4">
-          <h6 class="text-darken-3">Nos encontre nas redes sociais</h6>
+        <div class="right-align col s12 m4">
+          <span class="texto-redes texto-bright text-darken-3 redes">Nos encontre nas redes sociais</span>
           <div class="social-icons">
             <a href="#!" class="icon facebook" aria-label="Facebook"></a>
             <a href="#!" class="icon instagram" aria-label="Instagram"></a>
