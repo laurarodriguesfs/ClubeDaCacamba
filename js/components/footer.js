@@ -1,29 +1,48 @@
 export default function footer() {
-    const footer = document.querySelector("#footer");
-  
-    footer.innerHTML = ` 
-      <footer class="page-footer green lighten-4">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6">
-            <h5 class="green-text text-darken-3">Clube da Caçamba</h5>
-            <ul>
-              <li><a href="#!" class="green-text text-darken-3">Início</a></li>
-              <li><a href="#!" class="green-text text-darken-3">Sobre</a></li>
-              <li><a href="#!" class="green-text text-darken-3">Projetos</a></li>
-              <li><a href="#!" class="green-text text-darken-3">Blog</a></li>
-              <li><a href="#!" class="green-text text-darken-3">Parceiros</a></li>
-              <li><a href="#!" class="green-text text-darken-3">Contato</a></li>
+  const footer = document.querySelector("#footer");
+
+  footer.innerHTML = ` 
+    <footer class="page-footer green lighten-4">
+    <div class="container">
+      <div class="row">
+        <!-- Coluna: Endereço -->
+        <div class="col s12 m4">
+          <h5 class="text-darken-3">Clube da Caçamba</h5>
+          <address>
+            Rodovia Celso Garcia Cid<br>
+            PR-445, km 380<br>
+            Campus Universitário<br>
+            PR, 86057-970
+          </address>
+        </div>
+
+        <!-- Coluna: Menu -->
+        <div class="col s12 m4">
+          <div class="footer-menu-columns">
+            <ul class="footer-column">
+              <li><a href="#!" class="text-darken-3">Início</a></li>
+              <li><a href="#!" class="text-darken-3">Sobre</a></li>
+              <li><a href="#!" class="text-darken-3">Projetos</a></li>
+            </ul>
+            <ul class="footer-column">
+              <li><a href="#!" class="text-darken-3">Blog</a></li>
+              <li><a href="#!" class="text-darken-3">Parceiros</a></li>
+              <li><a href="#!" class="text-darken-3">Contato</a></li>
             </ul>
           </div>
-          <div class="col s12 m6 right-align">
-            <h6 class="green-text text-darken-3">Nos encontre nas redes sociais</h6>
-            <a href="#!" class="green-text text-darken-3"><i class="material-icons">facebook</i></a>
-            <a href="#!" class="green-text text-darken-3"><i class="material-icons">instagram</i></a>
+        </div>
+
+        <!-- Coluna: Redes Sociais -->
+        <div class="col s12 m4">
+          <h6 class="text-darken-3">Nos encontre nas redes sociais</h6>
+          <div class="social-icons">
+            <a href="#!" class="icon facebook" aria-label="Facebook"></a>
+            <a href="#!" class="icon instagram" aria-label="Instagram"></a>
           </div>
         </div>
       </div>
-    </footer>
-    `;
-  }
-  
+    </div>
+
+  </footer>
+  `;
+}
