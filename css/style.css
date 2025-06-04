@@ -316,6 +316,44 @@ div .carousel{
   z-index: 10 !important;
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+  .carousel-prev,
+  .carousel-next {
+    top: 75% !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .carousel-prev,
+  .carousel-next {
+    top: 80% !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* Telas grandes: >= 1440px */
+@media (min-width: 1440px) {
+  .carousel-prev,
+  .carousel-next {
+    top: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .carousel-prev {
+    left: 20px !important;
+  }
+
+  .carousel-next {
+    right: 20px !important;
+  }
+}
+
 /* Setinha da esquerda */
 .carousel-prev {
   left: 140px !important; /* Ajuste esse valor para "grudar" mais no carrossel */
