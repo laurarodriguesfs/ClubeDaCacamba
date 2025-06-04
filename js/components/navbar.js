@@ -20,8 +20,8 @@ navbar.innerHTML=`
               <span class=" texto-bright green-text text-darken-3">Nos encontre nas redes sociais</span>
             </div>
             <div class="col s2 center social-icons">
-              <a href="#!" class="icon facebook" aria-label="Facebook"></a>
-              <a href="#!" class="icon instagram" aria-label="Instagram"></a>
+              <a href="https://www.facebook.com/Clubedacacamba.uel/" class="icon facebook" aria-label="Facebook"></a>
+              <a href="https://www.instagram.com/clubedacacamba.uel/" class="icon instagram" aria-label="Instagram"></a>
             </div>
           </div>
         </div>
