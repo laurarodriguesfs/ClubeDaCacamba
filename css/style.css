@@ -209,7 +209,7 @@ div .carousel{
 }
 
 .collapsible-header{
-  justify-content: center;
+  align-items: center;
   border-bottom: none;
   font-size: 1.3rem;
   background-color: #fff !important;
