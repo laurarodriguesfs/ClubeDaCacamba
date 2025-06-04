@@ -21,13 +21,13 @@
 }
 
 /* Aplica Alexandria para todo o site como fonte padrão */
-body, p, span, li, input, textarea {
+body, p, span, li, input, textarea,address {
   font-family: "Alexandria Regular", sans-serif;
   color: #4d8404;
 }
 
 /* Bright Italic para títulos e links */
-h1, h2, h3, h4, h5, h6, a, .bright, button {
+h1, h2, h3, h4, h5, h6, a, .bright, button, .texto-bright {
   font-family: "Bright Italic", serif !important;
   color: #4d8404;
 }
@@ -35,11 +35,6 @@ h1, h2, h3, h4, h5, h6, a, .bright, button {
 .logo-clube{
   width: 150px;
   display: block;
-}
-
-nav ul a,
-nav .brand-logo {
-  color: #444;
 }
 
 button {
@@ -56,9 +51,76 @@ button:hover {
   background-color: #4d8404; /* Cor um pouco mais clara ao passar o mouse */
 }
 
-.row .barra-redes{
-  margin-bottom: -30px !important;
-  margin-top: 0px;
+/*Navbar*/
+
+#navbar{
+
+  nav ul a.menu-item{
+    font-size: 20px !important;
+  }
+
+  .row .barra-redes{
+    margin-bottom: -30px !important;
+    margin-top: 0px;
+  
+    span{
+      font-size: 22px;
+    }
+  }
+
+  .row .col.s9{
+    margin-top: 50px !important;
+  }
+
+  ul li a {
+    display: flex;
+    align-items: flex-end; /* Faz todo o conteúdo descer até a base da div */
+  }
+
+  nav .col.s11 {
+    align-items: flex-end; /* alinha tudo na base do nav */
+    height: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    align-items: flex-end; /* faz os <li> ficarem na base */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  
+}
+
+.social-icons {
+  margin-left: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  justify-content: center;
+}
+
+.social-icons .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* Facebook verde #4d8404 */
+.social-icons .facebook {
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
+  filter: invert(33%) sepia(86%) saturate(3441%) hue-rotate(77deg) brightness(87%) contrast(84%);
+}
+
+/* Instagram verde #4d8404 */
+.social-icons .instagram {
+  background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+  filter: invert(33%) sepia(86%) saturate(3441%) hue-rotate(77deg) brightness(87%) contrast(84%);
 }
 
 .ver-mais{
@@ -109,6 +171,123 @@ p {
 
 footer.page-footer {
   margin: 0;
+
+  h5.green-text.text-darken-3 {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    text-transform: none;
+  }
+  
+  h6.texto-bright.green-text.text-darken-3 {
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .col.s12.m6:first-child {
+    padding-bottom: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
+
+/* Footer*/
+
+.texto-redes{
+  font-size: 22px;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.page-footer {
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.page-footer .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.page-footer h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-menu-columns {
+  margin-top: 20px;
+  display: flex;
+  gap: 60px; /* Espaço entre as colunas */
+}
+
+.footer-column {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.page-footer a {
+  text-decoration: none;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .page-footer .row {
+    flex-direction: column;
+  }
+  
+  .footer-menu-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .social-icons {
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .page-footer .row {
+    flex-direction: column;
+  }
+  
+  .social-icons {
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .page-footer ul {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 /*Carrossel*/
@@ -129,7 +308,7 @@ div .carousel{
    
 .carousel-prev, .carousel-next {
   position: absolute !important;
-  top: 50% !important;
+  top: 70% !important;
   transform: translateY(-50%) !important;
   cursor: pointer !important;
   width: 40px !important;
@@ -355,12 +534,16 @@ div .carousel{
   .contato > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
     padding-left: 0px;
   }
+
+  .imagem-contato{
+    margin-top: -50px !important;
+  }
 }
 
 /*Pagina de contato*/
 
 .page-contato{
-  .container-contato {
+  .container-contato{
     margin: 0 auto;
     padding: 20px;
   }

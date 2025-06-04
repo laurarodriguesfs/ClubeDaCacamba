@@ -164,7 +164,7 @@ export default function home() {
               </div>
             </div>
             <div class="col s12 m6 center-align">
-              <img src="/images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
+              <img class=imagem-contato src="/images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
             </div>
           </div>
         </div>
