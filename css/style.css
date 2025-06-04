@@ -426,7 +426,7 @@ div .carousel{
 }
 
 .collapsible-header{
-  justify-content: center;
+  align-items: center;
   border-bottom: none;
   font-size: 1.3rem;
   background-color: #fff !important;
@@ -466,6 +466,20 @@ div .carousel{
   object-fit: cover;
   margin-top: 10px;
 }
+
+/*Post*/
+.imagem-post {
+  margin-right: 50px;
+  margin-bottom: 25px;
+  padding: 0 !important;
+  object-fit: cover;
+  height: 400px;
+}
+
+.imagem-post img{
+  object-fit: cover !important;
+}
+
 
 /*Conteudos*/
 .conteudos{
