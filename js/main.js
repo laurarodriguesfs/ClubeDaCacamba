@@ -19,34 +19,36 @@ function renderPage(pageFunction) {
   }
 }
 
-// Carrega a home ao iniciar
-renderPage(home);
+// Função para lidar com a rota atual
+function handleRoute() {
+  const hash = location.hash;
 
-window.addEventListener("hashchange", () => {
-    const main = document.querySelector("#main");
-    main.innerHTML = ""; // limpa o conteúdo atual
-  
-    switch (location.hash) {
-      case "#home":
-        home();
-        break;
-      case "#sobre":
-        sobre();
-        break;
-      case "#projetos":
-        projetos();
-        break;
-      case "#blog":
-        blog();
-        break;
-      case "#parceiros":
-        parceiros();
-        break;
-      case "#contato":
-        contato();
-        break;
-      default:
-        home(); // fallback para home
-    }
-  });
-  
+  switch (hash) {
+    case "#home":
+      renderPage(home);
+      break;
+    case "#sobre":
+      renderPage(sobre);
+      break;
+    case "#projetos":
+      renderPage(projetos);
+      break;
+    case "#blog":
+      renderPage(blog);
+      break;
+    case "#parceiros":
+      renderPage(parceiros);
+      break;
+    case "#contato":
+      renderPage(contato);
+      break;
+    default:
+      renderPage(home);
+  }
+}
+
+// Executa ao iniciar
+handleRoute();
+
+// Executa quando a hash muda
+window.addEventListener("hashchange", handleRoute);
