@@ -6,13 +6,15 @@ const listaProjetos = [
     id: 1,
     titulo: "Projeto A",
     descricao: "Resumo do Projeto A",
-    conteudo: "Conteúdo completo do Projeto A..."
+    conteudo: "Conteúdo completo do Projeto A...",
+    imagem: "images/cont1.jpg"
   },
   {
     id: 2,
     titulo: "Projeto B",
     descricao: "Resumo do Projeto B",
-    conteudo: "Conteúdo completo do Projeto B..."
+    conteudo: "Conteúdo completo do Projeto B...",
+    imagem: "images/cont1.jpg"
   }
 ];
 
@@ -30,6 +32,9 @@ function renderizarListaProjetos() {
   listaProjetos.forEach(projeto => {
     html += `
       <div class="card-projeto">
+        <div class="card-image">
+          <img src="${projeto.imagem}" alt="Comitê de Sustentabilidade">
+        </div>
         <h5>${projeto.titulo}</h5>
         <p>${projeto.descricao}</p>
         <button class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
@@ -67,6 +72,7 @@ function verProjeto(id) {
     <div class="container">
       <div class="section">
         <h4>${projeto.titulo}</h4>
+        <img class="imagem-post col s12 l6" src="${projeto.imagem}" alt="imagem de cachorro">
         <p>${projeto.conteudo}</p>
         <button class="btn-voltar">Voltar</button>
       </div>
