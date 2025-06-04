@@ -6,6 +6,8 @@ import blog from "./components/pageblog.js";
 import parceiros from "./components/pageparceiros.js";
 import contato from "./components/pagecontato.js";
 import footer from "./components/footer.js";
+import adicionarEventoNosSlides from './adicionarEventoNosSlides.js';
+
 
 navbar();
 footer();
@@ -25,7 +27,10 @@ function handleRoute() {
 
   switch (hash) {
     case "#home":
-      renderPage(home);
+      renderPage(() => {
+        home();
+        adicionarEventoNosSlides(); // Garante que o DOM já existe
+      });
       break;
     case "#sobre":
       renderPage(sobre);
@@ -43,7 +48,10 @@ function handleRoute() {
       renderPage(contato);
       break;
     default:
-      renderPage(home);
+      renderPage(() => {
+        home();
+        adicionarEventoNosSlides();
+      });
   }
 }
 

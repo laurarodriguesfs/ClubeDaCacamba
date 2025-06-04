@@ -33,7 +33,7 @@ navbar.innerHTML=`
             <ul class="col right hide-on-med-and-down" style="padding: 0">
               <li><a href="#home" class="menu-item green-text text-darken-3">Início</a></li>
               <li><a href="#sobre" class="menu-item green-text text-darken-3">Sobre</a></li>
-              <li><a href="#projetos" class="menu-item green-text text-darken-3">Projetos</a></li>
+              <li><a href="#projetos" class="menu-item green-text text-darken-3">Projetos e eventos</a></li>
               <li><a href="#blog" class="menu-item green-text text-darken-3">Blog</a></li>
               <li><a href="#parceiros" class="menu-item green-text text-darken-3">Parceiros</a></li>
               <li><a href="#contato" class="menu-item green-text text-darken-3">Contato</a></li>
@@ -44,7 +44,7 @@ navbar.innerHTML=`
             <ul id="mobile-menu" class="menu-item sidenav">
               <li><a href="#home" class="menu-item green-text text-darken-3">Início</a></li>
               <li><a href="#sobre" class="menu-item green-text text-darken-3">Sobre</a></li>
-              <li><a href="#projetos" class="menu-item green-text text-darken-3">Projetos</a></li>
+              <li><a href="#projetos" class="menu-item green-text text-darken-3">Projetos e eventos</a></li>
               <li><a href="#blog" class="menu-item green-text text-darken-3">Blog</a></li>
               <li><a href="#parceiros" class="menu-item green-text text-darken-3">Parceiros</a></li>
               <li><a href="#contato" class="menu-item green-text text-darken-3">Contato</a></li>

@@ -298,6 +298,7 @@ div .carousel{
 .carousel .carousel-item {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .carousel .carousel-item img {
   width: 100%;
@@ -581,7 +582,9 @@ div .carousel{
 /*Sessão contato na home*/
 
 .contato{
-  padding-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+
 
   .contato > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
     padding-left: 0px;
@@ -651,5 +654,20 @@ div .carousel{
 
   @media only screen and (max-width: 990px) {
     margin-top: 10px;
+  }
+}
+
+#btn-carregar-mais{
+  margin-top: 10px;
+}
+.page-projetos{
+  img{
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-projeto{
+    margin-top: 30px;
   }
 }

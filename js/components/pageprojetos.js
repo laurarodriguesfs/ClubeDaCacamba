@@ -1,35 +1,87 @@
-// pageprojetos.js
-
-// Exemplo de dados (pode vir de um JSON, API etc.)
 const listaProjetos = [
   {
     id: 1,
-    titulo: "Projeto A",
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
-    conteudo: "Conteúdo completo do Projeto A...",
-    imagem: "images/cont1.jpg"
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 2,
-    titulo: "Projeto B",
-    descricao: "Resumo do Projeto B",
-    conteudo: "Conteúdo completo do Projeto B...",
-    imagem: "images/cont1.jpg"
-  }
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
+  {
+    id: 1,
+    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
+    descricao: "Resumo do Projeto A",
+    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
+    imagem: "images/Projetos/evento 8.jpg"
+  },
 ];
 
-// Função para renderizar a lista de projetos
+// Variável para controlar quantos projetos mostrar inicialmente e a cada clique
+let projetosExibidos = 3;
+
+// Função para renderizar os projetos até o limite atual
 function renderizarListaProjetos() {
   const main = document.querySelector("#main");
   
   let html = `
-    <div class="container">
+    <div class="page-projetos container">
       <div class="section">
-        <h4>Projetos</h4>
+        <h4>Projetos e eventos</h4>
+        <h6>Nossa participação em eventos científicos envolvem tanto a apresentação de cartazes e pôsteres, a publicação de resumos e artigos científicos em Anais de Congressos e Revistas Científicas e a realização de atividades interativas com o público geral.</h6>
+
         <div class="projetos-lista">
   `;
   
-  listaProjetos.forEach(projeto => {
+  // Mostra só até projetosExibidos
+  listaProjetos.slice(0, projetosExibidos).forEach(projeto => {
     html += `
       <div class="card-projeto">
         <div class="card-image">
@@ -44,13 +96,23 @@ function renderizarListaProjetos() {
   
   html += `
         </div>
+  `;
+
+  // Se ainda tem mais projetos para mostrar, exibe o botão "Carregar mais"
+  if (projetosExibidos < listaProjetos.length) {
+    html += `
+      <button id="btn-carregar-mais">Carregar mais</button>
+    `;
+  }
+  
+  html += `
       </div>
     </div>
   `;
   
   main.innerHTML = html;
-  
-  // Adiciona evento aos botões de "Ver mais"
+
+  // Eventos dos botões "Ver mais"
   const botoes = document.querySelectorAll(".btn-ver-projeto");
   botoes.forEach(botao => {
     botao.addEventListener("click", (e) => {
@@ -58,16 +120,24 @@ function renderizarListaProjetos() {
       verProjeto(id);
     });
   });
+
+  // Evento do botão "Carregar mais"
+  const btnCarregarMais = document.querySelector("#btn-carregar-mais");
+  if (btnCarregarMais) {
+    btnCarregarMais.addEventListener("click", () => {
+      projetosExibidos += 3; // aumenta o limite em 3
+      if (projetosExibidos > listaProjetos.length) {
+        projetosExibidos = listaProjetos.length;
+      }
+      renderizarListaProjetos(); // re-renderiza a lista atualizada
+    });
+  }
 }
 
-// Função para renderizar um projeto específico
-function verProjeto(id) {
+export function verProjeto(id) {
   const projeto = listaProjetos.find(p => p.id == id);
-  
   if (!projeto) return;
-  
   const main = document.querySelector("#main");
-  
   main.innerHTML = `
     <div class="container">
       <div class="section">
@@ -78,8 +148,7 @@ function verProjeto(id) {
       </div>
     </div>
   `;
-  
-  // Evento para voltar para a lista
+
   document.querySelector(".btn-voltar").addEventListener("click", () => {
     renderizarListaProjetos();
   });
@@ -87,5 +156,6 @@ function verProjeto(id) {
 
 // Exporta a função principal
 export default function projetos() {
+  projetosExibidos = 3; // reseta para 3 toda vez que a página carrega
   renderizarListaProjetos();
 }
