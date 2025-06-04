@@ -101,7 +101,9 @@ function renderizarListaProjetos() {
   // Se ainda tem mais projetos para mostrar, exibe o botão "Carregar mais"
   if (projetosExibidos < listaProjetos.length) {
     html += `
-      <button id="btn-carregar-mais">Carregar mais</button>
+      <div class="section-carregar-mais align-center">
+        <button id="btn-carregar-mais">Carregar mais</button>
+      </div>
     `;
   }
   

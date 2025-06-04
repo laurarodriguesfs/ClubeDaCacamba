@@ -657,9 +657,19 @@ div .carousel{
   }
 }
 
-#btn-carregar-mais{
-  margin-top: 10px;
+.section-carregar-mais{
+  margin: auto 10px;
+  width: 100%;
 }
+
+#btn-carregar-mais{
+  display: block;
+  margin: 20px auto; /* 20px de margem vertical e auto nas laterais para centralizar */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .page-projetos{
   img{
     max-height: 300px;
