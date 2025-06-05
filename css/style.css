@@ -489,10 +489,10 @@ div .carousel{
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    padding-bottom: 0;
   }
 
   .blog .card {
-    height: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -511,8 +511,10 @@ div .carousel{
   }
 
   .card .card-content{
-    padding: 0px;
-
+    padding-top: 5px;
+    padding-bottom: 10px !important;
+    margin: 0 !important;
+    /* padding: 5px 15px 10px 15px; */
   }
   .card .card-content p{
     line-height: 1.5rem !important;
@@ -522,7 +524,9 @@ div .carousel{
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;  
-    overflow: hidden;
+    /* overflow: hidden; */
+    border-radius: 4px;
+    margin: 0 !important;
   }
 
   .card-image img {
@@ -538,8 +542,8 @@ div .carousel{
   }
 
   div.blog-lista div.row div {
-    height: 380px;
-    padding-bottom: 1.5em;
+    height: 420px;
+    margin-bottom: 1.5em;
   }
 }
 

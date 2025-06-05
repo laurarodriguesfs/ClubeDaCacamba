@@ -5,7 +5,7 @@ const listaBlog = [
     titulo: "Comitê de Sustentabilidade",
     descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
     conteudo: "Conteúdo completo do blog A...",
-    imagem: "images/cont1.jpg"
+    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
   },
   {
     id: 2,
@@ -86,7 +86,7 @@ function renderizarListaBlog() {
         <div class=" col s12 m6 l4">
           <div class="card">
             <div class="card-image">
-              <img src="${blog.imagem}" alt="Comitê de Sustentabilidade">
+              <img src="${blog.imagem.src}" alt="${blog.imagem.alt}">
             </div>
             <div class="card-content">
               <h3 class="card-title">${blog.titulo}</h3>
@@ -157,10 +157,12 @@ function verBlog(id) {
   main.innerHTML = `
     <div class="container page-blog">
       <div class="section">
-        <h4>${blog.titulo}</h4>
-          <img class="imagem-blog" src="${blog.imagem}" alt="imagem de cachorro">
-          <p>${blog.conteudo}</p>
-
+        <h3>${blog.titulo}</h3>
+        <div class="row">
+          <img class="imagem-blog col s12 m6" src="${blog.imagem.src}" alt="${blog.imagem.alt}">
+          <h4>Descrição</h4>
+          <p>${blog.descricao}</p>
+        </div>
         <button class="btn-voltar">Voltar</button>
       </div>
     </div>
