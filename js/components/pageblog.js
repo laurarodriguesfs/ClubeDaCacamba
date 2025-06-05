@@ -2,65 +2,45 @@
 const listaBlog = [
   {
     id: 1,
-    titulo: "Comitê de Sustentabilidade",
+    titulo: "Você conhece a Agrofloresta ASAs?",
     descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
     conteudo: "Conteúdo completo do blog A...",
     imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
   },
   {
     id: 2,
-    titulo: "Exposição de Pôster no VII CPAC VIII JAC UEL",
+    titulo: "Você conhece a técnica de desmatamento “correntão?”",
     descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
     conteudo: "Conteúdo completo do blog B...",
-    imagem: "images/cont2.jpg"
+    imagem: {src: "images/Blog/Você conhece a técnica de desmatamento correntão.jpg", alt: "Você conhece a técnica de desmatamento correntão"}
   },
   {
     id: 3,
-    titulo: "Iniciação Científica no VII CPAC E VIII JAC",
+    titulo: "Por que é importante higienizar os recicláveis?",
     descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
     conteudo: "Conteúdo completo do blog C...",
-    imagem: "images/cont3.jpg"
+    imagem: {src: "images/Blog/Por que é importante higienizar os recicláveis.jpg", alt: "Por que é importante higienizar os recicláveis"}
   },
   {
     id: 4,
     titulo: "Comitê de Sustentabilidade",
     descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
     conteudo: "Conteúdo completo do blog A...",
-    imagem: "images/cont1.jpg"
+    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
   },
   {
     id: 5,
     titulo: "Exposição de Pôster no VII CPAC VIII JAC UEL",
     descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
     conteudo: "Conteúdo completo do blog B...",
-    imagem: "images/cont2.jpg"
+    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
   },
   {
     id: 6,
     titulo: "Iniciação Científica no VII CPAC E VIII JAC",
     descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
     conteudo: "Conteúdo completo do blog C...",
-    imagem: "images/cont3.jpg"
-  },{
-    id: 7,
-    titulo: "Comitê de Sustentabilidade",
-    descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
-    conteudo: "Conteúdo completo do blog A...",
-    imagem: "images/cont1.jpg"
-  },
-  {
-    id: 8,
-    titulo: "Exposição de Pôster no VII CPAC VIII JAC UEL",
-    descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
-    conteudo: "Conteúdo completo do blog B...",
-    imagem: "images/cont2.jpg"
-  },
-  {
-    id: 9,
-    titulo: "Iniciação Científica no VII CPAC E VIII JAC",
-    descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
-    conteudo: "Conteúdo completo do blog C...",
-    imagem: "images/cont3.jpg"
+    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
   }
 ];
 
@@ -75,7 +55,7 @@ function renderizarListaBlog() {
     <div class="blog">
       <div class="container">
         <div class="section">
-          <h4>Blog</h4>
+          <h2 class="center">Blog</h2>
           <div class="blog-lista">
             <div class="row">
   `;

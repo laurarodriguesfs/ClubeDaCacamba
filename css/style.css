@@ -75,6 +75,8 @@ button:hover {
   ul li a {
     display: flex;
     align-items: flex-end; /* Faz todo o conteúdo descer até a base da div */
+
+
   }
 
   nav .col.s11 {
@@ -88,6 +90,10 @@ button:hover {
     margin: 0;
     padding: 0;
     height: 100%;
+
+    @media only screen and (max-width : 992px) {
+      display: block;
+    }    
   }
   
   
@@ -502,7 +508,7 @@ div .carousel{
 
 
   h3.card-title{
-    font-size: 26px;
+    font-size: 23px;
     margin-top: 0;
     width: 100%;
     overflow: hidden;
@@ -514,7 +520,7 @@ div .carousel{
     padding-top: 5px;
     padding-bottom: 10px !important;
     margin: 0 !important;
-    /* padding: 5px 15px 10px 15px; */
+    padding: 5px 15px 10px 15px;
   }
   .card .card-content p{
     line-height: 1.5rem !important;
@@ -525,8 +531,12 @@ div .carousel{
     width: 100%;
     aspect-ratio: 16 / 9;  
     /* overflow: hidden; */
-    border-radius: 4px;
+  
     margin: 0 !important;
+
+    img {
+      border-radius: 8px;
+    }
   }
 
   .card-image img {
