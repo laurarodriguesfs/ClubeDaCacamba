@@ -5,39 +5,31 @@ export default function home() {
 
   main.innerHTML = `
     <div class=" container">
-      <h3>Nossos projetos</h3>
+      <h3>Nossos projetos e eventos</h3>
 
       <div class="carousel-container">
         <div class="carousel">
-          <div class="carousel-item">
-            <img src="images/slide1.jpg?text=Slide+1" alt="Slide 1">
+          <div class="carousel-item" data-id="1">
+            <img src="images/Projetos/evento 1.jpg?text=Slide+1" alt="Slide 1">
             <div class="carousel-caption">
-              <h5>Título do Slide 1</h5>
-              <p>Descrição do Slide 1 que vai aparecer aqui.</p>
+              <h5>Apresentação do projeto de extensão</h5>
+              <p>O Clube da Caçamba -UEL como uma metacontingência:</p>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="images/slide2.jpg?text=Slide+2" alt="Slide 2">
+            <img src="images/Projetos/evento 6.jpg?text=Slide+2" alt="Slide 2">
             <div class="carousel-caption">
-              <h5>Título do Slide 2</h5>
-              <p>Descrição do Slide 2 que vai aparecer aqui.</p>
+              <h5>Apresentação de Pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia (2024)</h5>
+              <p>Realizada pela estudante Lívia Celli.</p>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="images/slide3.jpg?text=Slide+3" alt="Slide 3">
+            <img src="images/Projetos/evento 3.jpg?text=Slide+3" alt="Slide 3">
             <div class="carousel-caption">
-              <h5>Título do Slide 3</h5>
-              <p>Descrição do Slide 3 que vai aparecer aqui.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="images/slide4.jpg?text=Slide+4" alt="Slide 4">
-            <div class="carousel-caption">
-              <h5>Título do Slide 4</h5>
-              <p>Descrição do Slide 4 que vai aparecer aqui.</p>
+             <h5>Apresentação de Comunicação Oral</h5>
+              <p>No Congresso de Psicologia e Análise do Comportamento da UEL (2024)</p>
             </div>
           </div>
         </div>
