@@ -2,61 +2,61 @@ const listaProjetos = [
   {
     id: 1,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
-    descricao: "Resumo do Projeto A",
+    descricao: "Pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
+    id: 2,
+    titulo: "Apresentação de Pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia (2024)",
+    descricao: "Realizada pela Profª Draª Verônica Bender Haydu. ",
+    conteudo: "Apresentação de Pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia (2024), realizada pela Profª Draª Verônica Bender Haydu. ",
+    imagem: "images/Projetos/evento 5.jpg"
+  },
+  {
+    id: 3,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
+    id: 4,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
+    id: 5,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
+    id: 6,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
+    id: 7,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
+    id: 8,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     imagem: "images/Projetos/evento 8.jpg"
   },
   {
-    id: 1,
-    titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
-    descricao: "Resumo do Projeto A",
-    conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
-  },
-  {
-    id: 1,
+    id: 9,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
@@ -83,13 +83,17 @@ function renderizarListaProjetos() {
   // Mostra só até projetosExibidos
   listaProjetos.slice(0, projetosExibidos).forEach(projeto => {
     html += `
-      <div class="card-projeto">
-        <div class="card-image">
-          <img src="${projeto.imagem}" alt="Comitê de Sustentabilidade">
+      <div class="card-projeto row">
+        <div class="coluna-esquerda col s6">
+          <div class="card-image">
+            <img src="${projeto.imagem}" alt="Comitê de Sustentabilidade">
+          </div>
         </div>
-        <h5>${projeto.titulo}</h5>
-        <p>${projeto.descricao}</p>
-        <button class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
+        <div class="coluna-esquerda col s6">
+          <h5>${projeto.titulo}</h5>
+          <p>${projeto.descricao}</p>
+          <button class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
+          </div>
       </div>
     `;
   });
