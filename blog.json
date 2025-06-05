@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "titulo": "Você conhece a Agrofloresta ASAs?",
+    "descricao": "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
+    "conteudo": "Conteúdo completo do blog A...",
+    "imagem": {"src": "images/Blog/Agrofloresta ASAs.jpg", "alt": "Agrofloresta ASAs"}
+  },
+  {
+    "id": 2,
+    "titulo": "Você conhece a técnica de desmatamento “correntão?”",
+    "descricao": "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
+    "conteudo": "Conteúdo completo do blog B...",
+    "imagem": {"src": "images/Blog/Você conhece a técnica de desmatamento correntão.jpg", "alt": "Você conhece a técnica de desmatamento correntão"}
+  },
+  {
+    "id": 3,
+    "titulo": "Por que é importante higienizar os recicláveis?",
+    "descricao": "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
+    "conteudo": "Conteúdo completo do blog C...",
+    "imagem": {"src": "images/Blog/Por que é importante higienizar os recicláveis.jpg", "alt": "Por que é importante higienizar os recicláveis"}
+  },
+  {
+    "id": 4,
+    "titulo": "Comitê de Sustentabil idade",
+    "descricao": "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
+    "conteudo": "Conteúdo completo do blog A...",
+    "imagem": {"src": "images/Blog/Agrofloresta ASAs.jpg", "alt": "Agrofloresta ASAs"}
+  },
+  {
+    "id": 5,
+    "titulo": "Exposição de Pôster no VII CPAC VIII JAC UEL",
+    "descricao": "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
+    "conteudo": "Conteúdo completo do blog B...",
+    "imagem": {"src": "images/Blog/Agrofloresta ASAs.jpg", "alt": "Agrofloresta ASAs"}
+  },
+  {
+    "id": 6,
+    "titulo": "Iniciação Científica no VII CPAC E VIII JAC",
+    "descricao": "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
+    "conteudo": "Conteúdo completo do blog C...",
+    "imagem": {"src": "images/Blog/Agrofloresta ASAs.jpg", "alt": "Agrofloresta ASAs"}
+  }
+]
