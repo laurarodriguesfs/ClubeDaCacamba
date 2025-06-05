@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // Exemplo de dados (pode vir de um JSON, API etc.)
 const listaBlog = [
   {
@@ -47,6 +48,8 @@ const listaBlog = [
 // Variável para controlar quantos posts mostrar inicialmente e a cada clique
 let postsExibidos = 3;
 
+=======
+>>>>>>> Stashed changes
 // Função para renderizar a lista de Blogs
 function renderizarListaBlog() {
   const main = document.querySelector("#main");
