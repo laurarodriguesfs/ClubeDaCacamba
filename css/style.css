@@ -75,6 +75,8 @@ button:hover {
   ul li a {
     display: flex;
     align-items: flex-end; /* Faz todo o conteúdo descer até a base da div */
+
+
   }
 
   nav .col.s11 {
@@ -88,6 +90,10 @@ button:hover {
     margin: 0;
     padding: 0;
     height: 100%;
+
+    @media only screen and (max-width : 992px) {
+      display: block;
+    }    
   }
   
   
@@ -469,18 +475,87 @@ div .carousel{
 }
 
 /*Post*/
-.imagem-post {
-  margin-right: 50px;
-  margin-bottom: 25px;
-  padding: 0 !important;
-  object-fit: cover;
-  height: 400px;
-}
+.blog {
+  .imagem-blog {
+    margin-right: 50px;
+    margin-bottom: 25px;
+    padding: 0 !important;
+    object-fit: cover;
+    height: 400px;
+  }
 
-.imagem-post img{
-  object-fit: cover !important;
-}
+  .imagem-blog img{
+    object-fit: cover !important;
+  }
 
+  .card{
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 0;
+  }
+
+  .blog .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+
+
+  h3.card-title{
+    font-size: 23px;
+    margin-top: 0;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px !important;
+  }
+
+  .card .card-content{
+    padding-top: 5px;
+    padding-bottom: 10px !important;
+    margin: 0 !important;
+    padding: 5px 15px 10px 15px;
+  }
+  .card .card-content p{
+    line-height: 1.5rem !important;
+    width: 100%;
+  }
+  .card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;  
+    /* overflow: hidden; */
+  
+    margin: 0 !important;
+
+    img {
+      border-radius: 8px;
+    }
+  }
+
+  .card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  div.blog-lista div.row div {
+    height: 420px;
+    margin-bottom: 1.5em;
+  }
+}
 
 /*Conteudos*/
 .conteudos{

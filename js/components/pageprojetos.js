@@ -4,7 +4,7 @@ const listaProjetos = [
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 1.jpg"
   },
   {
     id: 2,
@@ -18,35 +18,35 @@ const listaProjetos = [
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 3.jpg"
   },
   {
     id: 4,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 4.jpg"
   },
   {
     id: 5,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 5.jpg"
   },
   {
     id: 6,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 6.jpg"
   },
   {
     id: 7,
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 7.jpg"
   },
   {
     id: 8,
@@ -60,7 +60,7 @@ const listaProjetos = [
     titulo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento",
     descricao: "Resumo do Projeto A",
     conteudo: "Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento pelo estudante de mestrado em Análise do Comportamento, Júlio Abner (2024).",
-    imagem: "images/Projetos/evento 8.jpg"
+    imagem: "images/Projetos/evento 9.jpg"
   },
 ];
 
@@ -148,7 +148,7 @@ export function verProjeto(id) {
     <div class="container">
       <div class="section">
         <h4>${projeto.titulo}</h4>
-        <img class="imagem-post col s12 l6" src="${projeto.imagem}" alt="imagem de cachorro">
+        <img class="imagem-blog col s12 l6" src="${projeto.imagem}" alt="imagem de cachorro">
         <p>${projeto.conteudo}</p>
         <button class="btn-voltar">Voltar</button>
       </div>
