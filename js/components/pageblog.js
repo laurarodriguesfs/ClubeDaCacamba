@@ -23,18 +23,56 @@ const listaBlog = [
   },
   {
     id: 4,
-    titulo: "blog D",
-    descricao: "Resumo do blog D",
-    conteudo: "Conteúdo completo do blog D..."
+    titulo: "Comitê de Sustentabilidade",
+    descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
+    conteudo: "Conteúdo completo do blog A...",
+    imagem: "images/cont1.jpg"
+  },
+  {
+    id: 5,
+    titulo: "Exposição de Pôster no VII CPAC VIII JAC UEL",
+    descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
+    conteudo: "Conteúdo completo do blog B...",
+    imagem: "images/cont2.jpg"
+  },
+  {
+    id: 6,
+    titulo: "Iniciação Científica no VII CPAC E VIII JAC",
+    descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
+    conteudo: "Conteúdo completo do blog C...",
+    imagem: "images/cont3.jpg"
+  },{
+    id: 7,
+    titulo: "Comitê de Sustentabilidade",
+    descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
+    conteudo: "Conteúdo completo do blog A...",
+    imagem: "images/cont1.jpg"
+  },
+  {
+    id: 8,
+    titulo: "Exposição de Pôster no VII CPAC VIII JAC UEL",
+    descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
+    conteudo: "Conteúdo completo do blog B...",
+    imagem: "images/cont2.jpg"
+  },
+  {
+    id: 9,
+    titulo: "Iniciação Científica no VII CPAC E VIII JAC",
+    descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
+    conteudo: "Conteúdo completo do blog C...",
+    imagem: "images/cont3.jpg"
   }
 ];
+
+// Variável para controlar quantos posts mostrar inicialmente e a cada clique
+let postsExibidos = 3;
 
 // Função para renderizar a lista de Blogs
 function renderizarListaBlog() {
   const main = document.querySelector("#main");
   
   let html = `
-    <div class="conteudos">
+    <div class="blog">
       <div class="container">
         <div class="section">
           <h4>Blog</h4>
@@ -42,10 +80,10 @@ function renderizarListaBlog() {
             <div class="row">
   `;
   
-  listaBlog.forEach(blog => {
+  listaBlog.slice(0, postsExibidos).forEach(blog => {
     html += `
       
-        <div class="col s12 m4">
+        <div class=" col s12 m6 l4">
           <div class="card">
             <div class="card-image">
               <img src="${blog.imagem}" alt="Comitê de Sustentabilidade">
@@ -58,10 +96,22 @@ function renderizarListaBlog() {
           </div>
         </div>
     `;
-  });
-  
+  })
+
   html += `
-            </div>
+        </div>
+  `;
+  
+  // Se ainda tem mais posts para mostrar, exibe o botão "Carregar mais"
+  if (postsExibidos < listaBlog.length) {
+    html += `
+      <div class="section-carregar-mais align-center">
+        <button id="btn-carregar-mais">Carregar mais</button>
+      </div>
+    `;
+  }
+
+  html += `
           </div>
         </div>
       </div>
@@ -78,7 +128,23 @@ function renderizarListaBlog() {
       verBlog(id);
     });
   });
+
+  // Evento do botão "Carregar mais"
+  const btnCarregarMais = document.querySelector("#btn-carregar-mais");
+  if (btnCarregarMais) {
+    btnCarregarMais.addEventListener("click", () => {
+      postsExibidos += 3; // aumenta o limite em 3
+      if (postsExibidos > listaBlog.length) {
+        postsExibidos = listaBlog.length;
+      }
+      renderizarListaBlog(); // re-renderiza a lista atualizada
+    });
+  }
 }
+
+
+
+
 
 // Função para renderizar um blog específico
 function verBlog(id) {
@@ -89,13 +155,12 @@ function verBlog(id) {
   let main = document.querySelector("#main");
   
   main.innerHTML = `
-    <div class="container">
+    <div class="container page-blog">
       <div class="section">
         <h4>${blog.titulo}</h4>
-        <div class="row">
-          <img class="imagem-post col s12 l6" src="${blog.imagem}" alt="imagem de cachorro">
+          <img class="imagem-blog" src="${blog.imagem}" alt="imagem de cachorro">
           <p>${blog.conteudo}</p>
-        </div>
+
         <button class="btn-voltar">Voltar</button>
       </div>
     </div>
@@ -109,5 +174,6 @@ function verBlog(id) {
 
 // Exporta a função principal
 export default function blog() {
+  postsExibidos = 3; // reseta para 3 toda vez que a página carrega
   renderizarListaBlog();
 }
