@@ -1,7 +1,20 @@
 let listaBlog = [];
+let listaBlog = [];
 
 // Variável para controlar quantos posts mostrar inicialmente e a cada clique
 let postsExibidos = 3;
+
+
+async function carregarBlogs(){
+  try {
+    const res = await fetch("blog.json");
+    listaBlog = await res.json();
+    renderizarListaBlog(); // só chama depois de carregar
+  } catch (err) {
+    console.error("Erro ao carregar JSON:", err);
+  }
+}
+
 
 
 async function carregarBlogs(){
@@ -123,6 +136,8 @@ function verBlog(id) {
 
 // Exporta a função principal
 export default function blog() {
+  postsExibidos = 3; 
+  carregarBlogs(); // agora carrega e depois renderiza
   postsExibidos = 3; 
   carregarBlogs(); // agora carrega e depois renderiza
 }

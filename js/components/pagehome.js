@@ -1,4 +1,5 @@
 import { reinicializarMaterialize } from "./materialize-init.js";
+import adicionarEventoNosSlides from "../adicionarEventoNosSlides.js";
 
 export default function home() {
   const main = document.querySelector("#main");
@@ -9,7 +10,7 @@ export default function home() {
 
       <div class="carousel-container">
         <div class="carousel">
-          <div class="carousel-item" data-id="1">
+          <div class="carousel-item" data-id="2">
             <img src="images/Projetos/evento 1.jpg?text=Slide+1" alt="Slide 1">
             <div class="carousel-caption">
               <h5>Apresentação do projeto de extensão</h5>
@@ -17,7 +18,7 @@ export default function home() {
             </div>
           </div>
 
-          <div class="carousel-item">
+          <div class="carousel-item" data-id="6">
             <img src="images/Projetos/evento 6.jpg?text=Slide+2" alt="Slide 2">
             <div class="carousel-caption">
               <h5>Apresentação de Pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia (2024)</h5>
@@ -25,7 +26,7 @@ export default function home() {
             </div>
           </div>
 
-          <div class="carousel-item">
+          <div class="carousel-item" data-id="3">
             <img src="images/Projetos/evento 3.jpg?text=Slide+3" alt="Slide 3">
             <div class="carousel-caption">
              <h5>Apresentação de Comunicação Oral</h5>
@@ -47,7 +48,7 @@ export default function home() {
         <a class="ver-mais"href="#sobre"> Ver mais</a>
       </div>
       <div class="coluna-direita col s6">
-         <img src="/images/sobre.png" alt="Ícone de contato" class="imagem-sobre responsive-img">
+         <img src="images/sobre.png" alt="Ícone de contato" class="imagem-sobre responsive-img">
       </div>
     </div>
 
@@ -156,7 +157,7 @@ export default function home() {
               </div>
             </div>
             <div class="col s12 m6 center-align">
-              <img class=imagem-contato src="/images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
+              <img class=imagem-contato src="images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
             </div>
           </div>
         </div>
@@ -164,4 +165,5 @@ export default function home() {
   `;
 
   reinicializarMaterialize();
+  adicionarEventoNosSlides();
 }

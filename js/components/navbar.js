@@ -7,7 +7,7 @@ navbar.innerHTML=`
       <!-- Logo -->
       <div class="col s3 m3 offset-m1">
         <a href="#home">
-          <img class="logo-clube" src="/images/logo-clube.png" alt="Logo do Clube">
+          <img class="logo-clube" src="images/logo-clube.png" alt="Logo do Clube">
         </a>
       </div>
 

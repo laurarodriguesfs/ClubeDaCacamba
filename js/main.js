@@ -21,15 +21,22 @@ function renderPage(pageFunction) {
   }
 }
 
-// Função para lidar com a rota atual
 function handleRoute() {
   const hash = location.hash;
+
+  if (hash.startsWith("#/projeto/")) {
+    const id = hash.split("/")[2];
+    import('./components/pageprojetos.js').then(module => {
+      module.carregarEVerProjeto(id);
+    });
+    return;
+  }
 
   switch (hash) {
     case "#home":
       renderPage(() => {
         home();
-        adicionarEventoNosSlides(); // Garante que o DOM já existe
+        adicionarEventoNosSlides();
       });
       break;
     case "#sobre":
