@@ -34,7 +34,7 @@ function renderizarListaProjetos() {
         <div class="coluna-esquerda col s6">
           <h5>${projeto.titulo}</h5>
           <p>${projeto.descricao}</p>
-          <button class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
+          <a href="#/projeto/${projeto.id}" class="btn-ver-projeto">Ver mais</a>
         </div>
       </div>
     `;
@@ -93,11 +93,22 @@ export function verProjeto(id) {
   `;
 
   document.querySelector(".btn-voltar").addEventListener("click", () => {
+    location.hash = "#projetos";
+  });
+
+  document.querySelector(".btn-voltar").addEventListener("click", () => {
     renderizarListaProjetos();
   });
 }
 
 export default function projetos() {
   projetosExibidos = 3;
-  carregarProjetos(); // agora carrega e depois renderiza
+  carregarProjetos();
+}
+
+export async function carregarEVerProjeto(id) {
+  if (!listaProjetos.length) {
+    await carregarProjetos();
+  }
+  verProjeto(id);
 }
