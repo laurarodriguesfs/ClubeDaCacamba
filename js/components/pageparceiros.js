@@ -8,11 +8,11 @@ main.innerHTML=`
       <h1>Uma rede de parceiros</h1>
       
         <div class="logos">
-          <img src="observatorio.JPG" alt="Observatório de Resíduos">
-          <img src="ninter.JPG" alt="Ninter UEL">
-          <img src="lonarte.JPG" alt="Lonarte">
-          <img src="leca.JPG" alt="LECA">
-          <img src="desplastifica.JPG" alt="Desplastifica UEL">
+          <img src="images/observatorio.jpeg" alt="Observatório de Resíduos">
+          <img src="images/ninter.jpeg" alt="Ninter UEL">
+          <img src="images/lunarte.jpeg" alt="Lonarte">
+          <img src="images/leca.jpeg" alt="LECA">
+          <img src="images/desplastifica.jpeg" alt="Desplastifica UEL">
         </div>
       
         <div class="subtitulo">
