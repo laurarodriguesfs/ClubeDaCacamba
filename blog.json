@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "titulo": "Você conhece a Agrofloresta ASAs?",
+    "descricao": "Um modelo de agricultura que une produção e preservação ambiental. Criado em SC por Nei Albring, o projeto promove um cultivo sustentável e regenerativo.",
+    "conteudo": "Conteúdo completo do blog A...",
+    "imagem": {"src": "images/Blog/Agrofloresta ASAs.jpg", "alt": "Agrofloresta ASAs"}
+  },
+  {
+    "id": 2,
+    "titulo": "Você conhece a técnica de desmatamento “correntão?”",
+    "descricao": "Essa técnica destrói toda a vegetação de uma área com o uso de correntes e tratores — e já causou graves danos ambientais. Hoje, está proibida por lei devido aos impactos severos na fauna, flora e no solo.",
+    "conteudo": "Conteúdo completo do blog B...",
+    "imagem": {"src": "images/Blog/Você conhece a técnica de desmatamento correntão.jpg", "alt": "Você conhece a técnica de desmatamento correntão"}
+  },
+  {
+    "id": 3,
+    "titulo": "Por que é importante higienizar os recicláveis?",
+    "descricao": "Higienizar os recicláveis protege trabalhadores, evita contaminação e melhora a reciclagem. Um gesto simples que faz toda a diferença.",
+    "conteudo": "Conteúdo completo do blog C...",
+    "imagem": {"src": "images/Blog/Por que é importante higienizar os recicláveis.jpg", "alt": "Por que é importante higienizar os recicláveis"}
+  },
+  {
+    "id": 4,
+    "titulo": "5 vídeos para crianças sobre educação ambiental",
+    "descricao": "Que tal usar vídeos para ensinar as crianças sobre educação ambiental? Selecionamos 5 opções divertidas e educativas que abordam reciclagem, redução de plástico e cuidado com a natureza. São conteúdos que ajudam no aprendizado de forma leve e envolvente, ideais para despertar o interesse dos pequenos pelo meio ambiente.",
+    "conteudo": "Conteúdo completo do blog A...",
+    "imagem": {"src": "images/Blog/5 vídeos para crianças sobre educação ambiental.jpg", "alt": "5 vídeos para crianças sobre educação ambiental"}
+  },
+  {
+    "id": 5,
+    "titulo": "A poluição dos shows musicais",
+    "descricao": "Shows e festivais de música são grandes eventos de entretenimento, mas também geram impactos ambientais significativos, como consumo excessivo de água e energia e produção de resíduos. Felizmente, algumas produções, como o Lollapalooza 2024, têm adotado ações para reduzir esses impactos, incluindo projetos de neutralização de carbono. Conhecer esses desafios e soluções é fundamental para apoiar eventos mais sustentáveis.",
+    "conteudo": "Conteúdo completo do blog B...",
+    "imagem": {"src": "images/Blog/A poluição dos shows musicais.jpg", "alt": "A poluição dos shows musicais"}
+  },
+  {
+    "id": 6,
+    "titulo": "Você sabe o que são as PANCs?",
+    "descricao": "Plantas Alimentícias Não Convencionais são opções nutritivas, fáceis de cultivar e que podem complementar a alimentação de forma saudável e sustentável. Além de ricas em vitaminas e minerais, muitas PANCs crescem sem agrotóxicos, ajudando na segurança alimentar e na preservação ambiental.",
+    "conteudo": "Conteúdo completo do blog C...",
+    "imagem": {"src": "images/Blog/Você sabe o que são as PANCs.jpg", "alt": "Você sabe o que são as PANCs"}
+  }
+]

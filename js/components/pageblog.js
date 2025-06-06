@@ -1,51 +1,19 @@
-// Exemplo de dados (pode vir de um JSON, API etc.)
-const listaBlog = [
-  {
-    id: 1,
-    titulo: "Você conhece a Agrofloresta ASAs?",
-    descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
-    conteudo: "Conteúdo completo do blog A...",
-    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
-  },
-  {
-    id: 2,
-    titulo: "Você conhece a técnica de desmatamento “correntão?”",
-    descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
-    conteudo: "Conteúdo completo do blog B...",
-    imagem: {src: "images/Blog/Você conhece a técnica de desmatamento correntão.jpg", alt: "Você conhece a técnica de desmatamento correntão"}
-  },
-  {
-    id: 3,
-    titulo: "Por que é importante higienizar os recicláveis?",
-    descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
-    conteudo: "Conteúdo completo do blog C...",
-    imagem: {src: "images/Blog/Por que é importante higienizar os recicláveis.jpg", alt: "Por que é importante higienizar os recicláveis"}
-  },
-  {
-    id: 4,
-    titulo: "Comitê de Sustentabilidade",
-    descricao: "Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!",
-    conteudo: "Conteúdo completo do blog A...",
-    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
-  },
-  {
-    id: 5,
-    titulo: "Exposição de Pôster no VII CPAC VIII JAC UEL",
-    descricao: "Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL",
-    conteudo: "Conteúdo completo do blog B...",
-    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
-  },
-  {
-    id: 6,
-    titulo: "Iniciação Científica no VII CPAC E VIII JAC",
-    descricao: "Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL",
-    conteudo: "Conteúdo completo do blog C...",
-    imagem: {src: "images/Blog/Agrofloresta ASAs.jpg", alt: "Agrofloresta ASAs"}
-  }
-];
+let listaBlog = [];
 
 // Variável para controlar quantos posts mostrar inicialmente e a cada clique
 let postsExibidos = 3;
+
+
+async function carregarBlogs(){
+  try {
+    const res = await fetch("blog.json");
+    listaBlog = await res.json();
+    renderizarListaBlog(); // só chama depois de carregar
+  } catch (err) {
+    console.error("Erro ao carregar JSON:", err);
+  }
+}
+
 
 // Função para renderizar a lista de Blogs
 function renderizarListaBlog() {
@@ -137,11 +105,10 @@ function verBlog(id) {
   main.innerHTML = `
     <div class="container page-blog">
       <div class="section">
-        <h3>${blog.titulo}</h3>
+        <h3 class="center">${blog.titulo}</h3>
+        <p class="center">${blog.descricao}</p>
         <div class="row">
           <img class="imagem-blog col s12 m6" src="${blog.imagem.src}" alt="${blog.imagem.alt}">
-          <h4>Descrição</h4>
-          <p>${blog.descricao}</p>
         </div>
         <button class="btn-voltar">Voltar</button>
       </div>
@@ -156,6 +123,6 @@ function verBlog(id) {
 
 // Exporta a função principal
 export default function blog() {
-  postsExibidos = 3; // reseta para 3 toda vez que a página carrega
-  renderizarListaBlog();
+  postsExibidos = 3; 
+  carregarBlogs(); // agora carrega e depois renderiza
 }
