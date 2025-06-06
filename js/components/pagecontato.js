@@ -8,12 +8,12 @@ export default function contato() {
         <div class="conteudo-contato">
           <div class="info-contato">
             <h3>Nossas<br>informações:</h3>
-            <p>
-              Avenida dos Pioneiros, 3131 –<br>
-              Jardim Morumbi, Londrina – PR,<br>
-              86036-370<br>
-              Bloco L, Sala 013
-            </p>
+            <address>
+              Rodovia Celso Garcia Cid<br>
+              PR-445, km 380<br>
+              Campus Universitário<br>
+              PR, 86057-970
+            </address>
           </div>
           <div class="form-contato">
             <h3>Ou nos deixe uma mensagem:</h3>
