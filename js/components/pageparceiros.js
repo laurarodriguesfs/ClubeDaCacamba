@@ -3,7 +3,7 @@ export default function parceiros (){
 const main = document.querySelector("#main")
   
 main.innerHTML=`
- <div class="container">
+ <div class="page-parceiros container">
     <div class="section">
       <h1>Uma rede de parceiros</h1>
       
