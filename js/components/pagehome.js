@@ -48,7 +48,7 @@ export default function home() {
         <a class="ver-mais"href="#sobre"> Ver mais</a>
       </div>
       <div class="coluna-direita col s6">
-         <img src="/images/sobre.png" alt="Ícone de contato" class="imagem-sobre responsive-img">
+         <img src="images/sobre.png" alt="Ícone de contato" class="imagem-sobre responsive-img">
       </div>
     </div>
 
@@ -157,7 +157,7 @@ export default function home() {
               </div>
             </div>
             <div class="col s12 m6 center-align">
-              <img class=imagem-contato src="/images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
+              <img class=imagem-contato src="images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
             </div>
           </div>
         </div>
