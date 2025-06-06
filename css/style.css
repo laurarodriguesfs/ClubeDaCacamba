@@ -756,3 +756,67 @@ div .carousel{
     margin-top: 30px;
   }
 }
+.page-parceiros{
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+
+    .logos img {
+      max-height: 100px;
+      max-width: 200px;
+      object-fit: contain;
+    }
+
+    .subtitulo {
+      font-family: 'BrightItalic', cursive;
+      font-size: 28px;
+      font-weight: normal;
+      color: #2e7d32;
+      margin: 30px 0 15px;
+      line-height: 1.4;
+    }
+
+    .paragrafo {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #4e793a;
+      padding: 0 15px;
+    }
+
+    .vermais {
+      display: inline-block;
+      font-family: 'BrightItalic', cursive;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #2e7d32;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s;
+    }
+
+    .vermais:hover {
+      border-bottom: 2px solid #2e7d32;
+    }
+
+    @media (max-width: 600px) {
+      .logos {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtitulo {
+        font-size: 22px;
+      }
+}
