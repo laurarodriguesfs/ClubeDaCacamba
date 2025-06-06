@@ -774,10 +774,8 @@ div .carousel{
     }
 
     .subtitulo {
-      font-family: 'BrightItalic', cursive;
       font-size: 28px;
       font-weight: normal;
-      color: #2e7d32;
       margin: 30px 0 15px;
       line-height: 1.4;
     }
