@@ -1,6 +1,4 @@
 let listaBlog = [];
-
-// Variável para controlar quantos posts mostrar inicialmente e a cada clique
 let postsExibidos = 3;
 
 
@@ -8,14 +6,12 @@ async function carregarBlogs(){
   try {
     const res = await fetch("blog.json");
     listaBlog = await res.json();
-    renderizarListaBlog(); // só chama depois de carregar
+    renderizarListaBlog();
   } catch (err) {
     console.error("Erro ao carregar JSON:", err);
   }
 }
 
-
-// Função para renderizar a lista de Blogs
 function renderizarListaBlog() {
   const main = document.querySelector("#main");
   
@@ -40,8 +36,7 @@ function renderizarListaBlog() {
               <h3 class="card-title">${blog.titulo}</h3>
               <p>${blog.descricao}</p>
             </div>
-            <button class="btn-ver-blog" data-id="${blog.id}">Ver mais</button>
-          </div>
+<button href="#/blog/${blog.id}" class="btn-ver-blog" data-id="${blog.id}">Ver mais</button>          </div>
         </div>
     `;
   })
@@ -50,7 +45,6 @@ function renderizarListaBlog() {
         </div>
   `;
   
-  // Se ainda tem mais posts para mostrar, exibe o botão "Carregar mais"
   if (postsExibidos < listaBlog.length) {
     html += `
       <div class="section-carregar-mais align-center">
@@ -68,37 +62,36 @@ function renderizarListaBlog() {
   
   main.innerHTML = html;
   
-  // Adiciona evento aos botões de "Ver mais"
   const botoes = document.querySelectorAll(".btn-ver-blog");
   botoes.forEach(botao => {
     botao.addEventListener("click", (e) => {
+      e.preventDefault(); 
       const id = e.target.dataset.id;
+      window.location.hash = `#/blog/${id}`;
       verBlog(id);
     });
   });
 
-  // Evento do botão "Carregar mais"
   const btnCarregarMais = document.querySelector("#btn-carregar-mais");
   if (btnCarregarMais) {
     btnCarregarMais.addEventListener("click", () => {
-      postsExibidos += 3; // aumenta o limite em 3
+      postsExibidos += 3;
       if (postsExibidos > listaBlog.length) {
         postsExibidos = listaBlog.length;
       }
-      renderizarListaBlog(); // re-renderiza a lista atualizada
+      renderizarListaBlog();
     });
   }
 }
 
-
-
-
-
-// Função para renderizar um blog específico
 function verBlog(id) {
   const blog = listaBlog.find(p => p.id == id);
   
-  if (!blog) return;
+  if (!blog) {
+    console.error(`Blog com ID ${id} não encontrado.`);
+    window.location.hash = "#blog";
+    return;
+  }
   
   let main = document.querySelector("#main");
   
@@ -116,14 +109,19 @@ function verBlog(id) {
     </div>
   `;
   
-  // Evento para voltar para a lista
   document.querySelector(".btn-voltar").addEventListener("click", () => {
-    renderizarListaBlog();
+    window.location.hash = "#blog";
   });
 }
 
-// Exporta a função principal
 export default function blog() {
   postsExibidos = 3; 
-  carregarBlogs(); // agora carrega e depois renderiza
+  carregarBlogs();
+}
+
+export async function carregarEVerBlog(id) {
+  if (!listaBlog.length) { 
+    await carregarBlogs();
+  }
+  verBlog(id);
 }
