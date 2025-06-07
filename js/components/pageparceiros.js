@@ -15,24 +15,17 @@ main.innerHTML=`
           <img src="images/desplastifica.jpeg" alt="Desplastifica UEL">
         </div>
       
-        <div class="subtitulo">
+        <h4>
           Venha começar<br />
           uma parceria com a gente!
-        </div>
+        </h4>
       
-        <p class="paragrafo">
-          Somos membros de um projeto vinculado<br />
-          à Universidade Estadual de Londrina (UEL)<br />
-          promovemos conhecimento científico<br />
-          sobre desenvolvimento sustentável.
-        </p>
-      
-        <a href="#parceiros" class="vermais">Ver mais</a>
-      
-        <!-- Âncora do link -->
-        <div id="parceiros" style="margin-top: 100px;">
-        </div>
-       </div>
-      </div>
-`;
-}
+        <div class="parceiros-texto-link">
+  <p class="paragrafo">
+    Somos membros de um projeto vinculado </br>
+     à Universidade Estadual de Londrina (UEL),</br>
+    promovemos conhecimento científico </br>
+     sobre desenvolvimento sustentável.
+  </p>
+  <a href="#contato" class="vermais">Ver mais</a>
+</div>
