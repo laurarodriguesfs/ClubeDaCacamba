@@ -29,3 +29,5 @@ main.innerHTML=`
   </p>
   <a href="#contato" class="vermais">Ver mais</a>
 </div>
+´;
+}
