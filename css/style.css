@@ -481,7 +481,6 @@ div .carousel{
     margin-bottom: 25px;
     padding: 0 !important;
     object-fit: cover;
-    height: 400px;
   }
 
   .imagem-blog img{
@@ -504,16 +503,19 @@ div .carousel{
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  
-
 
   h3.card-title{
-    font-size: 23px;
+    font-size: 26px;
+    line-height: 23px !important;
     margin-top: 0;
     width: 100%;
+    margin-bottom: 5px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;       /* Número de linhas antes do truncamento */
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 5px !important;
+    max-height: 2em;
   }
 
   .card .card-content{
@@ -522,18 +524,23 @@ div .carousel{
     margin: 0 !important;
     padding: 5px 15px 10px 15px;
   }
+
   .card .card-content p{
     line-height: 1.5rem !important;
     width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;       /* Número de linhas antes do truncamento */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 6em;             /* Ajuste baseado no tamanho da fonte/linha */
   }
+
   .card-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;  
-    /* overflow: hidden; */
-  
+    aspect-ratio: 16 / 9;
     margin: 0 !important;
-
     img {
       border-radius: 8px;
     }
@@ -754,5 +761,9 @@ div .carousel{
 
   .card-projeto{
     margin-top: 30px;
+  }
+
+  a{
+    color: #fff !important;
   }
 }

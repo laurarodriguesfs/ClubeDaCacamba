@@ -1,7 +1,6 @@
 let listaBlog = [];
 let postsExibidos = 3;
 
-
 async function carregarBlogs(){
   try {
     const res = await fetch("blog.json");
@@ -98,11 +97,10 @@ function verBlog(id) {
   main.innerHTML = `
     <div class="container page-blog">
       <div class="section">
-        <h3>${blog.titulo}</h3>
+        <h3 class="center">${blog.titulo}</h3>
+        <p class="center">${blog.descricao}</p>
         <div class="row">
           <img class="imagem-blog col s12 m6" src="${blog.imagem.src}" alt="${blog.imagem.alt}">
-          <h4>Descrição</h4>
-          <p>${blog.descricao}</p>
         </div>
         <button class="btn-voltar">Voltar</button>
       </div>
