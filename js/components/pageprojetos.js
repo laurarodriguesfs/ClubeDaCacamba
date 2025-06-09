@@ -34,7 +34,7 @@ function renderizarListaProjetos() {
         <div class="coluna-esquerda col s6">
           <h5>${projeto.titulo}</h5>
           <p>${projeto.descricao}</p>
-          <a href="#/projeto/${projeto.id}" class="btn-ver-projeto">Ver mais</a>
+          <button href="#/projeto/${projeto.id}" class="btn-ver-projeto">Ver mais</button>
         </div>
       </div>
     `;
