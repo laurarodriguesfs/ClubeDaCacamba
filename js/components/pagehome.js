@@ -1,4 +1,6 @@
-import { reinicializarMaterialize } from "./materialize-init.js";
+import {
+  reinicializarMaterialize
+} from "./materialize-init.js";
 import adicionarEventoNosSlides from "../adicionarEventoNosSlides.js";
 
 export default function home() {
@@ -67,11 +69,11 @@ export default function home() {
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="images/cont1.jpg" alt="Comitê de Sustentabilidade">
+                <img src="images/Blog/Agrofloresta ASAs.jpg" alt="Agrofloresta ASAs">
               </div>
               <div class="card-content">
-                <h3 class="card-title">Comitê de Sustentabilidade</h3>
-                <p>Parceria entre CPAC, Clube da Caçamba, Desplastifica UEL e Ionarte para promover um evento sustentável!</p>
+                <h3 class="card-title">Você conhece a Agrofloresta ASAs</h3>
+                <p>Um modelo de agricultura que une produção e preservação ambiental. Criado em SC por Nei Albring, o projeto promove um cultivo sustentável e regenerativo.</p>
               </div>
             </div>
           </div>
@@ -79,11 +81,11 @@ export default function home() {
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="images/cont2.jpg" alt="Comitê de Sustentabilidade">
+                <img src="images/Blog/Você conhece a técnica de desmatamento correntão.jpg" alt="Você conhece a técnica de desmatamento correntão">
               </div>
               <div class="card-content">
-                <h3 class="card-title">Exposição de Pôster no VII CPAC VIII JAC UEL</h3>
-                <p>Apresentação de Pôster realizada pelos caçambers Isadora Moura e Júnior Costa no VII CPAC e VIII JAC UEL</p>
+                <h3 class="card-title">Você conhece a técnica de desmatamento “correntão?”</h3>
+                <p>Essa técnica destrói toda a vegetação de uma área com o uso de correntes e tratores — e já causou graves danos ambientais. Hoje, está proibida por lei devido aos impactos severos na fauna, flora e no solo.</p>
               </div>
             </div>
           </div>
@@ -91,11 +93,11 @@ export default function home() {
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="images/cont3.jpg" alt="Comitê de Sustentabilidade">
+                <img src="images/Blog/Por que é importante higienizar os recicláveis.jpg" alt="Por que é importante higienizar os recicláveis">
               </div>
               <div class="card-content">
-                <h3 class="card-title">Iniciação Científica no VII CPAC E VIII JAC</h3>
-                <p>Apresentação de Iniciação Científica realizada pela caçamber Lívia Celli no VII CPAC e VIII JAC UEL</p>
+                <h3 class="card-title">Por que é importante higienizar os recicláveis?</h3>
+                <p>Higienizar os recicláveis protege trabalhadores, evita contaminação e melhora a reciclagem. Um gesto simples que faz toda a diferença.</p>
               </div>
             </div>
           </div>
