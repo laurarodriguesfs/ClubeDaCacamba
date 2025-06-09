@@ -36,7 +36,7 @@ function renderizarListaBlog() {
               <h3 class="card-title">${blog.titulo}</h3>
               <p>${blog.descricao}</p>
             </div>
-<button href="#/blog/${blog.id}" class="btn-ver-blog" data-id="${blog.id}">Ver mais</button>          </div>
+          <button href="#/blog/${blog.id}" class="btn-ver-blog" data-id="${blog.id}">Ver mais</button>          </div>
         </div>
     `;
   })
