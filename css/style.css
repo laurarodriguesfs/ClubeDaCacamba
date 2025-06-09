@@ -583,6 +583,7 @@ div .carousel{
     justify-content: space-between;
     background-color: transparent;
     box-shadow: none;
+    cursor: pointer;
   }
   h3.card-title{
     color: white;

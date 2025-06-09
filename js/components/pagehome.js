@@ -2,6 +2,7 @@ import {
   reinicializarMaterialize
 } from "./materialize-init.js";
 import adicionarEventoNosSlides from "../adicionarEventoNosSlides.js";
+import eventoBlog from "../eventoNosBlogs.js";
 
 export default function home() {
   const main = document.querySelector("#main");
@@ -67,7 +68,7 @@ export default function home() {
         <div class="row">
           <!-- Conteúdo 1 -->
           <div class="col s12 m4">
-            <div class="card">
+            <div class="card" data-id="1">
               <div class="card-image">
                 <img src="images/Blog/Agrofloresta ASAs.jpg" alt="Agrofloresta ASAs">
               </div>
@@ -79,7 +80,7 @@ export default function home() {
           </div>
         <!-- Conteúdo 2 -->
           <div class="col s12 m4">
-            <div class="card">
+            <div class="card" data-id="2">
               <div class="card-image">
                 <img src="images/Blog/Você conhece a técnica de desmatamento correntão.jpg" alt="Você conhece a técnica de desmatamento correntão">
               </div>
@@ -91,7 +92,7 @@ export default function home() {
           </div>
         <!-- Conteúdo 3 -->
           <div class="col s12 m4">
-            <div class="card">
+            <div class="card" data-id="3">
               <div class="card-image">
                 <img src="images/Blog/Por que é importante higienizar os recicláveis.jpg" alt="Por que é importante higienizar os recicláveis">
               </div>
@@ -168,4 +169,5 @@ export default function home() {
 
   reinicializarMaterialize();
   adicionarEventoNosSlides();
+  eventoBlog();
 }
