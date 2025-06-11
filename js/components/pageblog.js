@@ -98,9 +98,11 @@ function verBlog(id) {
     <div class="container page-blog">
       <div class="section">
         <h3 class="center">${blog.titulo}</h3>
-        <p class="center">${blog.descricao}</p>
         <div class="row">
-          <img class="imagem-blog col s12 m6" src="${blog.imagem.src}" alt="${blog.imagem.alt}">
+        <img class="imagem-blog col s12 m6" src="${blog.imagem.src}" alt="${blog.imagem.alt}">
+        <h4>Descrição</h4>
+        <p class="center">${blog.descricao}</p>
+        <p class="center">${blog.conteudo}</p>
         </div>
         <button class="btn-voltar">Voltar</button>
       </div>
