@@ -55,6 +55,10 @@ button:hover {
 
 #navbar{
 
+  nav{
+    background-color: transparent;
+  }
+
   nav ul a.menu-item{
     font-size: 20px !important;
   }

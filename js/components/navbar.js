@@ -27,7 +27,7 @@ navbar.innerHTML=`
         </div>
 
         <!-- Menu de navegação -->
-        <nav class="row green lighten-4" style="box-shadow: none;">
+        <nav class="row lighten-4" style="box-shadow: none;">
           <div class="col s11">
             <a href="#" data-target="mobile-menu" class="sidenav-trigger green-text text-darken-3 right"><i class="material-icons">menu</i></a>
             <ul class="col right hide-on-med-and-down" style="padding: 0">
