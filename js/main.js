@@ -32,6 +32,15 @@ function handleRoute() {
     return;
   }
 
+  if (hash.startsWith("#/blog/")) {
+    const id = hash.split("/")[2];
+    import('./components/pageblog.js').then(module => {
+      module.carregarEVerBlog(id);
+    });
+    return;
+  }
+
+
   switch (hash) {
     case "#home":
       renderPage(() => {
