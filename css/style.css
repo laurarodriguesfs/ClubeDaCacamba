@@ -768,6 +768,12 @@ div .carousel{
   cursor: pointer;
 }
 
+.single-projeto{
+  max-height: 300px;
+  object-fit: cover;
+}
+
+
 .page-projetos{
   img{
     max-height: 300px;
