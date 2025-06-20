@@ -85,8 +85,10 @@ export function verProjeto(id) {
     <div class="container">
       <div class="section">
         <h4>${projeto.titulo}</h4>
-        <img class="imagem-post col s12 l6" src="${projeto.imagem}" alt="${projeto.titulo}">
-        <p>${projeto.conteudo}</p>
+        <div class="row">
+          <img class="single-projeto card-image col s12 l6" src="${projeto.imagem}" alt="${projeto.titulo}">
+          <p>${projeto.conteudo}</p>
+        </div>
         <button class="btn-voltar">Voltar</button>
       </div>
     </div>
