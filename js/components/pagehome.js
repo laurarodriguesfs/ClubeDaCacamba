@@ -9,7 +9,7 @@ export default function home() {
 
   main.innerHTML = `
     <div class=" container">
-      <h3>Nossos projetos e eventos</h3>
+      <h3 class="center">Nossos projetos e eventos</h3>
 
       <div class="carousel-container">
         <div class="carousel">
@@ -19,6 +19,7 @@ export default function home() {
               <h5>Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento</h5>
               <p>Realizada pelo mestrando em Análise de Comportamento, Júlio Abner.</p>
             </div>
+            <div class="area-indicadores"></div>
           </div>
 
           <div class="carousel-item" data-id="2">
@@ -27,6 +28,7 @@ export default function home() {
               <h5>Apresentação de pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia, em 2024</h5>
               <p>Realizada pela Profª Draª Verônica Bender Haydu.</p>
             </div>
+            <div class="area-indicadores"></div>
           </div>
 
           <div class="carousel-item" data-id="3">
@@ -35,22 +37,23 @@ export default function home() {
               <h5>Apresentação de pôster na ABPMC</h5>
               <p>Apresentação de pôster na ABPMC, pela Prof.ª Dra. Verônica Bender Haydu, em 2024, com o título “A Análise de Comportamento na Divulgação de Conhecimento Científico: O Projeto de Extensão Clube da Caçamba – UEL</p>
             </div>
+            <div class="area-indicadores"></div>
           </div>
         </div>
       </div>
 
     <!-- Setas -->
-    <img src="images/prev.svg" class="carousel-prev" style="position: absolute; top: 50%; left: 10px; cursor: pointer; width: 40px; height: 40px; transform: translateY(-50%);">
-    <img src="images/next.svg" class="carousel-next" style="position: absolute; top: 50%; right: 10px; cursor: pointer; width: 40px; height: 40px; transform: translateY(-50%);">
+    <img src="images/prev.svg" class="carousel-prev hide-on-med-and-down" style="position: absolute; top: 50%; left: 10px; cursor: pointer; width: 40px; height: 40px; transform: translateY(-50%);">
+    <img src="images/next.svg" class="carousel-next hide-on-med-and-down" style="position: absolute; top: 50%; right: 10px; cursor: pointer; width: 40px; height: 40px; transform: translateY(-50%);">
     </div>
 
     <div class="container row  sobre">
-      <div class="coluna-esquerda col s6">
-        <h3>Conheça mais sobre nós...</h3>
+      <div class="col s12 m6 center-align">
+        <h3 class="">Conheça mais sobre nós...</h3>
         <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
-        <a class="ver-mais"href="#sobre"> Ver mais</a>
+        <a class="ver-mais col s12 center" href="#sobre">Ver mais</a>
       </div>
-      <div class="coluna-direita col s6">
+      <div class="col s12 m6 right-align">
          <img src="images/sobre.png" alt="Ícone de contato" class="imagem-sobre responsive-img">
       </div>
     </div>
@@ -62,7 +65,7 @@ export default function home() {
             <h4 class="white-text">Nossos conteúdos</h4>
           </div>
           <div class="right">
-            <a class="ver-mais white-text" href="#blog">ver mais conteúdos</a>
+            <a class="ver-mais white-text" href="#blog">ver mais</a>
           </div>
         </div>
         <div class="row">
@@ -138,11 +141,9 @@ export default function home() {
               </div>
             </div>
           </div>
-          <div class="container-linha">
-            <div class="texto">
-              <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
-            </div>
-            <div class="link">
+          <div class="row container-texto">
+            <p class="center-align col s12 m6">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
+            <div class="link col s12 m6 center">
               <a href="#parceiros" class="ver-mais">ver mais</a>
             </div>
           </div>
@@ -151,16 +152,18 @@ export default function home() {
       <!-- Seção: Entre em contato com a gente -->
       <section class="contato section white">
         <div class="container">
-          <h4 class="text-darken-3">Entre em contato com a gente!</h4>
           <div class="row">
+            <div class="col s12">
+              <h4 class="text-darken-3 col s12 m6 center">Entre em contato com a gente!</h4>
+            </div>
             <div class="col s12 m6">
-              <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
-              <div class="center-align">
+              <p class="center">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
+              <div class="center-align col s12">
                 <a class="ver-mais" href="#contato" class="text-darken-3">ver mais</a>
               </div>
             </div>
-            <div class="col s12 m6 center-align">
-              <img class=imagem-contato src="images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
+            <div class="col s12 m6 center-align imagem-contato">
+              <img src="images/contato.png" alt="Ícone de contato" class="responsive-img" style="max-width: 150px;">
             </div>
           </div>
         </div>

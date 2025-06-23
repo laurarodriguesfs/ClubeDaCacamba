@@ -309,11 +309,11 @@ footer.page-footer {
     padding: 0;
   }
 
-  .row .col.s12 {
+  /* .row .col.s12 {
 
     width: 50%;
     margin-left: 0;
-  }
+  } */
 
 
   .redes-col{
@@ -387,6 +387,9 @@ div .carousel{
     width: 30px !important;
     height: 30px !important;
   }
+  .carousel .indicators .indicator-item{
+    border: solid 1.5px !important;
+  }
 }
 
 /* Telas grandes: >= 1440px */
@@ -419,7 +422,7 @@ div .carousel{
  
 .carousel-caption {
   position: absolute;
-  bottom: 0;
+  bottom: 20px; 
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.699);
@@ -444,8 +447,30 @@ div .carousel{
   font-size: 18px;
 }
 
-.indicators{
-  display: none;
+.carousel .indicators{
+  bottom: -1.5em;
+}
+.carousel .indicators .indicator-item{
+  border-color: #4d8404;
+  border: solid 1px;
+}
+
+.carousel .indicators .indicator-item.active {
+  background-color: #4d8404 !important;
+}
+
+.area-indicadores {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 21px;
 }
 
 /*Sobre*/
@@ -461,7 +486,7 @@ div .carousel{
 .container.row.sobre {
   display: flex;
   flex-wrap: wrap;
-  align-items: center; /* Faz as colunas se alinharem verticalmente no centro */
+  align-items: center; /*Faz as colunas se alinharem verticalmente no centro*/
 }
 
 .coluna-esquerda {
@@ -690,11 +715,7 @@ div .carousel{
     padding: 5px;
   }
 
-  .container-linha {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
 
   .texto {
     max-width: 60%;
@@ -721,6 +742,13 @@ div .carousel{
     margin-left: 0px !important;
   }
   
+  @media (min-width: 600px) {
+    .container-texto {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 /*Sessão contato na home*/
@@ -734,9 +762,12 @@ div .carousel{
     padding-left: 0px;
   }
 
-  .imagem-contato{
-    margin-top: -50px !important;
+  @media (min-width: 600px) {
+    .imagem-contato{
+      margin-top: -3em !important;
+    }    
   }
+
 }
 
 /*Pagina de contato*/
