@@ -36,8 +36,8 @@ export default function footer() {
         <div class=" redes-col right-align col s12 m4 ">
           <span class="texto-redes texto-bright text-darken-3 redes">Nos encontre nas redes sociais</span>
           <div class="social-icons">
-            <a href="https://www.facebook.com/Clubedacacamba.uel/" class="icon facebook" aria-label="Facebook"></a>
-            <a href="https://www.instagram.com/clubedacacamba.uel/" class="icon instagram" aria-label="Instagram"></a>
+            <a href="https://www.facebook.com/Clubedacacamba.uel/" target="_blank" rel="noopener noreferrer"class="icon facebook" aria-label="Facebook"></a>
+            <a href="https://www.instagram.com/clubedacacamba.uel/" target="_blank" rel="noopener noreferrer"class="icon instagram" aria-label="Instagram"></a>
           </div>
         </div>
       </div>
