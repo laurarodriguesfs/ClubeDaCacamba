@@ -9,7 +9,7 @@ export default function home() {
 
   main.innerHTML = `
     <div class=" container">
-      <h3 class="center">Nossos projetos e eventos</h3>
+      <h3>Nossos projetos e eventos</h3>
 
       <div class="carousel-container">
         <div class="carousel">
@@ -48,7 +48,7 @@ export default function home() {
     </div>
 
     <div class="container row  sobre">
-      <div class="col s12 m6 center-align">
+      <div class="col s12 m6">
         <h3 class="">Conheça mais sobre nós...</h3>
         <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
         <a class="ver-mais col s12 center" href="#sobre">Ver mais</a>
@@ -113,7 +113,7 @@ export default function home() {
     <!-- Seção: Saiba quem são os nossos parceiros -->
       <section class="parceiros section white">
         <div class="container">
-          <h4 class="center-align text-darken-3">Saiba quem são os nossos parceiros</h4>
+          <h4 class="text-darken-3">Saiba quem são os nossos parceiros</h4>
           <div class="container-parceiros row center-align">
             <div class="col s12 m2">
               <div class="card-panel parceiro">
@@ -154,7 +154,7 @@ export default function home() {
         <div class="container">
           <div class="row">
             <div class="col s12">
-              <h4 class="text-darken-3 col s12 m6 center">Entre em contato com a gente!</h4>
+              <h4 class="text-darken-3 col s12 m6">Entre em contato com a gente!</h4>
             </div>
             <div class="col s12 m6">
               <p class="center">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>

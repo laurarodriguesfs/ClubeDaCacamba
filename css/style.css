@@ -897,12 +897,9 @@ div .carousel{
   }
   .paragrafo {
     text-align: left;
-    max-width: 600px;
     margin: 0 auto;
-    font-size: 28px;
     line-height: 1.4;
     color: #4e793a;
-    padding: 0 15px;
   }
   .vermais {
     display: block;
