@@ -33,7 +33,7 @@ export default function footer() {
         </div>
 
         <!-- Coluna: Redes Sociais -->
-        <div class="right-align col s12 m4">
+        <div class=" redes-col right-align col s12 m4 ">
           <span class="texto-redes texto-bright text-darken-3 redes">Nos encontre nas redes sociais</span>
           <div class="social-icons">
             <a href="https://www.facebook.com/Clubedacacamba.uel/" class="icon facebook" aria-label="Facebook"></a>

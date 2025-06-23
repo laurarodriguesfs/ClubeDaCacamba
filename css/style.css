@@ -279,28 +279,67 @@ footer.page-footer {
   .footer-menu-columns {
     flex-direction: column;
     gap: 0;
+    text-align: right;
   }
   
   .social-icons {
     align-items: flex-start;
-    margin-top: 20px;
   }
-}
-/* Responsive adjustments */
-@media (max-width: 600px) {
+
+  .footer .row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer .col.s12.m4 {
+    flex: 1 1 33.33%;
+    max-width: 33.33%;
+  }
+
+  .footer-menu-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .footer-menu-columns .footer-column {
+    margin: 0;
+    padding: 0;
+  }
+
+  .row .col.s12 {
+
+    width: 50%;
+    margin-left: 0;
+  }
+
+
+  .redes-col{
+    margin-top: 20px;
+    width: 100% !important;
+  }
+
+
+
+  .page-footer .row {
+    flex-direction: inherit !important;
+  }
+
   .page-footer .row {
     flex-direction: column;
   }
   
   .social-icons {
     align-items: flex-start;
-    margin-top: 20px;
   }
   
   .page-footer ul {
     flex-direction: column;
     gap: 5px;
   }
+
 }
 
 /*Carrossel*/
