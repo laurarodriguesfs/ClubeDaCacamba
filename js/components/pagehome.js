@@ -13,27 +13,27 @@ export default function home() {
 
       <div class="carousel-container">
         <div class="carousel">
-          <div class="carousel-item" data-id="2">
-            <img src="images/Projetos/evento 1.jpg?text=Slide+1" alt="Slide 1">
+          <div class="carousel-item" data-id="1">
+            <img src="images/Projetos/boas práticas julio.jpg?text=Slide+1" alt="Slide 1">
             <div class="carousel-caption">
-              <h5>Apresentação do projeto de extensão</h5>
-              <p>O Clube da Caçamba -UEL como uma metacontingência:</p>
+              <h5>Apresentação de pôster no III Congresso Nacional da Associação Brasileira de Análise de Comportamento</h5>
+              <p>Realizada pelo mestrando em Análise de Comportamento, Júlio Abner.</p>
             </div>
           </div>
 
-          <div class="carousel-item" data-id="6">
-            <img src="images/Projetos/evento 6.jpg?text=Slide+2" alt="Slide 2">
+          <div class="carousel-item" data-id="2">
+            <img src="images/Projetos/insercao social.jpg?text=Slide+2" alt="Slide 2">
             <div class="carousel-caption">
-              <h5>Apresentação de Pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia (2024)</h5>
-              <p>Realizada pela estudante Lívia Celli.</p>
+              <h5>Apresentação de pôster na 54ª Reunião Anual da Sociedade Brasileira de Psicologia, em 2024</h5>
+              <p>Realizada pela Profª Draª Verônica Bender Haydu.</p>
             </div>
           </div>
 
           <div class="carousel-item" data-id="3">
-            <img src="images/Projetos/evento 3.jpg?text=Slide+3" alt="Slide 3">
+            <img src="images/Projetos/extensao abpmc.jpg?text=Slide+3" alt="Slide 3">
             <div class="carousel-caption">
-             <h5>Apresentação de Comunicação Oral</h5>
-              <p>No Congresso de Psicologia e Análise do Comportamento da UEL (2024)</p>
+              <h5>Apresentação de pôster na ABPMC</h5>
+              <p>Apresentação de pôster na ABPMC, pela Prof.ª Dra. Verônica Bender Haydu, em 2024, com o título “A Análise de Comportamento na Divulgação de Conhecimento Científico: O Projeto de Extensão Clube da Caçamba – UEL</p>
             </div>
           </div>
         </div>

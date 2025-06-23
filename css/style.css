@@ -62,7 +62,10 @@ button:hover {
   nav ul a.menu-item{
     font-size: 20px !important;
   }
-
+  nav ul a:hover {
+    border-bottom: solid 1px rgb(6, 43, 17);
+    background-color: transparent;
+  }
   .row .barra-redes{
     margin-bottom: -30px !important;
     margin-top: 0px;
@@ -302,7 +305,7 @@ footer.page-footer {
 
 /*Carrossel*/
 div .carousel{
-  height: 400px !important;
+  height: 500px !important;
 }
 /* Ajustes para que as imagens fiquem bem visíveis */
 .carousel .carousel-item {
@@ -312,7 +315,7 @@ div .carousel{
 }
 .carousel .carousel-item img {
   width: 100%;
-  height: 400px;
+  height: 800px;
   object-fit: cover;
   object-position: center center; /* centraliza */  
 }
@@ -792,80 +795,73 @@ div .carousel{
   a{
     color: #fff !important;
   }
+
+  @media (max-width: 600px) {
+    .row .col.s6 {
+      width: 100%;
+    }
+  }
 }
 
 .page-parceiros{
-
-    .logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 40px;
-      padding: 0 15px;
-    }
-
-    .logos img {
-      max-height: 100px;
-      max-width: 200px;
-      object-fit: contain;
-    }
-
-    .h4 {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 28px;
-      line-height: 1.4;
-      padding: 0 15px;
-    
-
-    .paragrafo {
-      text-align: left;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 28px;
-      line-height: 1.4;
-      color: #4e793a;
-      padding: 0 15px;
-    }}
-
-   .vermais {
-  display: block;
-  font-family: 'BrightItalic', cursive;
-  font-size: 32px;
-  color: #2e7d32;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
-  margin-top: 24px;
-  padding: 4px 8px;
-  text-align: right;
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+  .logos img {
+    max-height: 100px;
+    max-width: 200px;
+    object-fit: contain;
+  }
+  .h4 {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 28px;
+    line-height: 1.4;
+    padding: 0 15px;
+  }
+  .paragrafo {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 28px;
+    line-height: 1.4;
+    color: #4e793a;
+    padding: 0 15px;
+  }
+  .vermais {
+    display: block;
+    font-family: 'BrightItalic', cursive;
+    font-size: 32px;
+    color: #2e7d32;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+    margin-top: 24px;
+    padding: 4px 8px;
+    text-align: right;
     margin-right: 24px;
-
+  }
 }
-
-}
-
-
 
 .vermais:hover {
   border-bottom: 2px solid #2e7d32;
-}
+}   
 
-    
-
-    @media (max-width: 600px) {
-      .logos {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .subtitulo {
-        font-size: 22px;
-      }
+@media (max-width: 600px) {
+  .logos {
+    flex-direction: column;
+    align-items: center;
+  }
+ h1 {
+    font-size: 28px;
+  }
+ .subtitulo {
+    font-size: 22px;
+  }
 }
