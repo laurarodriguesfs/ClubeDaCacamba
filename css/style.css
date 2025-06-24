@@ -54,6 +54,19 @@ button:hover {
 /*Navbar*/
 
 #navbar{
+  @media only screen and (max-width : 1000px) {
+    nav {
+      margin-bottom: 0;   
+    }
+
+    .row .col.s9{
+      margin-top: 0px !important;
+    }
+
+    .social-icons {
+      display: flex !important;
+    }
+  }  
 
   nav{
     background-color: transparent;
@@ -76,7 +89,7 @@ button:hover {
   }
 
   .row .col.s9{
-    margin-top: 50px !important;
+    margin-top: 50px;
   }
 
   ul li a {
@@ -97,6 +110,10 @@ button:hover {
     margin: 0;
     padding: 0;
     height: 100%;
+
+    .btn-fechar-sidenav {
+      height: auto;
+    }
 
     @media only screen and (max-width : 992px) {
       display: block;
