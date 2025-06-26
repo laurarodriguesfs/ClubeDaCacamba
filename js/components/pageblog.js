@@ -108,6 +108,8 @@ function verBlog(id) {
       </div>
     </div>
   `;
+
+  window.scrollTo(0, 0);
   
   document.querySelector(".btn-voltar").addEventListener("click", () => {
     window.location.hash = "#blog";

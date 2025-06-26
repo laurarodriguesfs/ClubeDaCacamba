@@ -18,6 +18,7 @@ function renderPage(pageFunction) {
   if (main) {
     main.innerHTML = ""; // limpa o conteúdo atual
     pageFunction();      // carrega a nova página
+    window.scrollTo(0, 0);
   }
 }
 

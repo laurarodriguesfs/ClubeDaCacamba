@@ -34,7 +34,7 @@ function renderizarListaProjetos() {
         <div class="coluna-esquerda col s6">
           <h5>${projeto.titulo}</h5>
           <p>${projeto.descricao}</p>
-          <button class="btn-ver-projeto"><a href="#/projeto/${projeto.id}" >Ver mais</a></button>
+          <button href="#/projeto/${projeto.id}" class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>          </div>
         </div>
       </div>
     `;
@@ -93,6 +93,8 @@ export function verProjeto(id) {
       </div>
     </div>
   `;
+
+  window.scrollTo(0, 0);
 
   document.querySelector(".btn-voltar").addEventListener("click", () => {
     location.hash = "#projetos";

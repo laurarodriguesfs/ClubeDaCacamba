@@ -142,7 +142,7 @@ export default function home() {
             </div>
           </div>
           <div class="row container-texto">
-            <p class="center-align col s12 m6">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
+            <p class="col s12 m6">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
             <div class="link col s12 m6 center">
               <a href="#parceiros" class="ver-mais">ver mais</a>
             </div>
@@ -157,7 +157,7 @@ export default function home() {
               <h4 class="text-darken-3 col s12 m6">Entre em contato com a gente!</h4>
             </div>
             <div class="col s12 m6">
-              <p class="center">Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
+              <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
               <div class="center-align col s12">
                 <a class="ver-mais" href="#contato" class="text-darken-3">ver mais</a>
               </div>
