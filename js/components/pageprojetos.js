@@ -5,26 +5,45 @@ async function carregarProjetos() {
   try {
     const res = await fetch('projetos.json');
     listaProjetos = await res.json();
-    renderizarListaProjetos(); // só chama depois de carregar
+    renderizarEstrutura(); // estrutura estática
+    renderizarProjetos();  // itens dinâmicos
   } catch (err) {
     console.error('Erro ao carregar JSON:', err);
   }
 }
 
-function renderizarListaProjetos() {
+function renderizarEstrutura() {
   const main = document.querySelector("#main");
 
-  let html = `
+  main.innerHTML = `
     <div class="page-projetos container">
       <div class="section">
         <h4>Projetos e eventos</h4>
-        <h6>Nossa participação em eventos científicos envolvem tanto a apresentação de cartazes e pôsteres, a publicação de resumos e artigos científicos em Anais de Congressos e Revistas Científicas e a realização de atividades interativas com o público geral.</h6>
-
-        <div class="projetos-lista">
+        <h6>Nossa participação em eventos científicos envolve tanto a apresentação de cartazes e pôsteres, a publicação de resumos e artigos científicos em Anais de Congressos e Revistas Científicas e a realização de atividades interativas com o público geral.</h6>
+        <div class="projetos-lista"></div>
+        <div class="section-carregar-mais align-center">
+          <button id="btn-carregar-mais">Carregar mais</button>
+        </div>
+      </div>
+    </div>
   `;
 
+  document.querySelector("#btn-carregar-mais").addEventListener("click", () => {
+    projetosExibidos += 3;
+    if (projetosExibidos > listaProjetos.length) {
+      projetosExibidos = listaProjetos.length;
+      document.querySelector("#btn-carregar-mais").style.display = "none";
+    }
+    renderizarProjetos();
+  });
+}
+
+function renderizarProjetos() {
+  const listaEl = document.querySelector(".projetos-lista");
+  listaEl.innerHTML = ""; // limpa antes de adicionar novamente
+
   listaProjetos.slice(0, projetosExibidos).forEach(projeto => {
-    html += `
+    const projetoHTML = `
       <div class="card-projeto row">
         <div class="coluna-esquerda col s6">
           <div class="card-image">
@@ -34,28 +53,12 @@ function renderizarListaProjetos() {
         <div class="coluna-esquerda col s6">
           <h5>${projeto.titulo}</h5>
           <p>${projeto.descricao}</p>
-          <button href="#/projeto/${projeto.id}" class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>          </div>
+          <button class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
         </div>
       </div>
     `;
+    listaEl.insertAdjacentHTML("beforeend", projetoHTML);
   });
-
-  html += `</div>`;
-
-  if (projetosExibidos < listaProjetos.length) {
-    html += `
-      <div class="section-carregar-mais align-center">
-        <button id="btn-carregar-mais">Carregar mais</button>
-      </div>
-    `;
-  }
-
-  html += `
-      </div>
-    </div>
-  `;
-
-  main.innerHTML = html;
 
   document.querySelectorAll(".btn-ver-projeto").forEach(botao => {
     botao.addEventListener("click", (e) => {
@@ -63,17 +66,6 @@ function renderizarListaProjetos() {
       verProjeto(id);
     });
   });
-
-  const btnCarregarMais = document.querySelector("#btn-carregar-mais");
-  if (btnCarregarMais) {
-    btnCarregarMais.addEventListener("click", () => {
-      projetosExibidos += 3;
-      if (projetosExibidos > listaProjetos.length) {
-        projetosExibidos = listaProjetos.length;
-      }
-      renderizarListaProjetos();
-    });
-  }
 }
 
 export function verProjeto(id) {
@@ -97,11 +89,8 @@ export function verProjeto(id) {
   window.scrollTo(0, 0);
 
   document.querySelector(".btn-voltar").addEventListener("click", () => {
-    location.hash = "#projetos";
-  });
-
-  document.querySelector(".btn-voltar").addEventListener("click", () => {
-    renderizarListaProjetos();
+    renderizarEstrutura();
+    renderizarProjetos();
   });
 }
 
