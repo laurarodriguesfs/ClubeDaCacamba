@@ -82,7 +82,7 @@ export function verProjeto(id) {
           <img class="single-projeto card-image col s12 l6" src="${projeto.imagem}" alt="${projeto.titulo}">
           <p>${projeto.conteudo}</p>
         </div>
-        <button class="btn-voltar">Voltar</button>
+        <button class="btn-voltar">Voltar para projetos</button>
       </div>
     </div>
   `;

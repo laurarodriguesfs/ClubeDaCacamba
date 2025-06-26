@@ -104,7 +104,7 @@ function verBlog(id) {
         <p class="center">${blog.descricao}</p>
         <p class="center">${blog.conteudo}</p>
         </div>
-        <button class="btn-voltar">Voltar</button>
+        <button class="btn-voltar">Voltar para Blog</button>
       </div>
     </div>
   `;
