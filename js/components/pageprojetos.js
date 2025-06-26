@@ -53,7 +53,7 @@ function renderizarProjetos() {
         <div class="coluna-esquerda col s6">
           <h5>${projeto.titulo}</h5>
           <p>${projeto.descricao}</p>
-          <button class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
+          <button  href="#/projeto/${projeto.id}" class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
         </div>
       </div>
     `;
@@ -63,6 +63,7 @@ function renderizarProjetos() {
   document.querySelectorAll(".btn-ver-projeto").forEach(botao => {
     botao.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
+      window.location.hash = `#/projeto/${id}`;
       verProjeto(id);
     });
   });
@@ -89,6 +90,7 @@ export function verProjeto(id) {
   window.scrollTo(0, 0);
 
   document.querySelector(".btn-voltar").addEventListener("click", () => {
+    window.location.hash = "#projetos";
     renderizarEstrutura();
     renderizarProjetos();
   });
