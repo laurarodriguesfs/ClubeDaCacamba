@@ -6,7 +6,7 @@ export default function footer() {
     <div class="container">
       <div class="row">
         <!-- Coluna: Endereço -->
-        <div class="col s12 m4">
+        <div class="col s6 m4">
           <h5 class="text-darken-3">Clube da Caçamba</h5>
           <address>
             Rodovia Celso Garcia Cid<br>
@@ -17,7 +17,7 @@ export default function footer() {
         </div>
 
         <!-- Coluna: Menu -->
-        <div class="col s12 m4">
+        <div class="col s6 m4">
           <div class="footer-menu-columns">
             <ul class="footer-column">
               <li><a href="#home" class="text-darken-3">Início</a></li>
@@ -33,7 +33,7 @@ export default function footer() {
         </div>
 
         <!-- Coluna: Redes Sociais -->
-        <div class=" redes-col right-align col s12 m4 ">
+        <div class=" redes-col center col s12 m4 ">
           <span class="texto-redes texto-bright text-darken-3 redes">Nos encontre nas redes sociais</span>
           <div class="social-icons">
             <a href="https://www.facebook.com/Clubedacacamba.uel/" target="_blank" rel="noopener noreferrer"class="icon facebook" aria-label="Facebook"></a>
