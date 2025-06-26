@@ -645,8 +645,14 @@ div .carousel{
   }
 
   div.blog-lista div.row div {
-    height: 420px;
+    height: 380px;
     margin-bottom: 1.5em;
+  }
+
+  @media (max-width: 600px){
+    div.blog-lista div.row div {
+      height: auto;
+    }
   }
 }
 

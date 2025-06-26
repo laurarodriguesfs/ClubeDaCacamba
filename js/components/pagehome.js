@@ -77,7 +77,7 @@ export default function home() {
               </div>
               <div class="card-content">
                 <h3 class="card-title">Você conhece a Agrofloresta ASAs</h3>
-                <p>Um modelo de agricultura que une produção e preservação ambiental. Criado em SC por Nei Albring, o projeto promove um cultivo sustentável e regenerativo.</p>
+                <p>Venha entender mais sobre a ASAs!</p>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function home() {
               </div>
               <div class="card-content">
                 <h3 class="card-title">Você conhece a técnica de desmatamento “correntão?”</h3>
-                <p>Essa técnica destrói toda a vegetação de uma área com o uso de correntes e tratores — e já causou graves danos ambientais. Hoje, está proibida por lei devido aos impactos severos na fauna, flora e no solo.</p>
+                <p>Venha entender mais sobre o Correntão!</p>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function home() {
               </div>
               <div class="card-content">
                 <h3 class="card-title">Por que é importante higienizar os recicláveis?</h3>
-                <p>Higienizar os recicláveis protege trabalhadores, evita contaminação e melhora a reciclagem. Um gesto simples que faz toda a diferença.</p>
+                <p>Venha entender mais sobre a Higienização de Recicláveis!</p>
               </div>
             </div>
           </div>
