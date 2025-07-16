@@ -53,6 +53,14 @@ button:hover {
 
 /*Navbar*/
 
+.navbar-fixed-top {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 999; 
+}
+
 #navbar{
   @media only screen and (max-width : 1000px) {
     nav {
@@ -121,6 +129,10 @@ button:hover {
   }
   
   
+}
+
+#main{
+  padding-top: 90px; 
 }
 
 .social-icons {
