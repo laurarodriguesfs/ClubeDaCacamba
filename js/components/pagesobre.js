@@ -25,94 +25,139 @@ main.innerHTML=`
       <h1 class="center-align">Membros</h1>
       <div class="row">
         <div class="col s6 l2 offset-l2 membro-div">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Aline.jpg" alt="foto de perfil"></div>
+          <p>Aline</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-DziZIYOGAHc-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Ana Clara Barreto.jpg" alt="foto de perfil"></div>
+          <p>Ana Clara Barreto</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-lJJlaUWYrPE-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Ana Clara.jpg" alt="foto de perfil"></div>
+          <p>Ana Clara</p>
+          <p></p>
         </div>
         <div class="col s6 l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/karsten-winegeart-nCk-Pb0Lll8-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Ana Paula.jpg" alt="foto de perfil"></div>
+          <p>Ana Paula</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/karsten-winegeart-W9c6YicHKyE-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Ananda Flora.jpg" alt="foto de perfil"></div>
+          <p>Ananda Flora</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/muneeb-syed-ruaRIIP9VH8-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Daniela Santos.jpg" alt="foto de perfil"></div>
+          <p>Daniela Santos</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-pOUA8Xay514-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Débora.jpg" alt="foto de perfil"></div>
+          <p>Débora</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/matthew-henry-2Ts5HnA67k8-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Dikiely.jpg" alt="foto de perfil"></div>
+          <p>Dikiely</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/matthew-henry-U5rMrSI7Pn4-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Eduardo.jpg" alt="foto de perfil"></div>
+          <p>Eduardo</p>
+          <p></p>
         </div>
         <div class="col s6 l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Gabriela Moreto.jpg" alt="foto de perfil"></div>
+          <p>Gabriela Moreto</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Giovana Ogido.jpg" alt="foto de perfil"></div>
+          <p>Giovana Ogido</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/karsten-winegeart-WaMMo0it6Vg-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Isabely Gomes.jpg" alt="foto de perfil"></div>
+          <p>Isabely Gomes</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/matthew-henry-6x-hVXXiBxs-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Isadora Alves.jpg" alt="foto de perfil"></div>
+          <p>Isadora Alves</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/flouffy-7hEXd9kYPCY-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Julia Cavarsan.jpg" alt="foto de perfil"></div>
+          <p>Julia Cavarsan</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-AQRp2NH-O8k-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Julia.jpg" alt="foto de perfil"></div>
+          <p>Julia</p>
+          <p></p>
         </div>
         <div class="col s6 l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/toshi-K5pLGYJMHKk-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Julio Abner.jpg" alt="foto de perfil"></div>
+          <p>Julio Abner</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/charlesdeluvio-bYXP-ITv4_s-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Karla Medeiros.jpg" alt="foto de perfil"></div>
+          <p>Karla Medeiros</p>
+          <p></p>
         </div>
         <div class="col s6 l2 offset-l2 membro-div margem-membro">
-          <div><img class="foto-membros" src="images/imagens de cachorro/karsten-winegeart-BVqQNu5J7qI-unsplash.jpg" alt="foto de perfil"></div>
-          <p>Nome e sobrenome</p>
-          <p>Cargo</p>
+          <div><img class="foto-membros" src="images/Membros/Karoline Agnes.jpg" alt="foto de perfil"></div>
+          <p>Karoline Agnes</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Laura Akemi.jpg" alt="foto de perfil"></div>
+          <p>Laura Akemi</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Laura Bredariol.jpg" alt="foto de perfil"></div>
+          <p>Laura Bredariol</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Livia Celli.jpg" alt="foto de perfil"></div>
+          <p>Livia Celli</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Milena.jpg" alt="foto de perfil"></div>
+          <p>Milena</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Tielen.jpg" alt="foto de perfil"></div>
+          <p>Tielen</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Prof. Hernando Neves Filho.jpg" alt="foto de perfil"></div>
+          <p>Prof. Hernando Neves Filho</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Profa. Camila Muchon.jpg" alt="foto de perfil"></div>
+          <p>Profa. Camila Muchon</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Profa. Maria Clara.jpg" alt="foto de perfil"></div>
+          <p>Profa. Maria Clara</p>
+          <p></p>
+        </div>
+        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+          <div><img class="foto-membros" src="images/Membros/Profa. Verônica Haydu.jpg" alt="foto de perfil"></div>
+          <p>Profa. Verônica Haydu</p>
+          <p></p>
         </div>
       </div>
   </div>
