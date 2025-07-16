@@ -1039,3 +1039,20 @@ div .carousel{
   transform: translateY(150px); /* Move o botão para baixo e para fora da tela */
   pointer-events: none; /* Impede que seja clicável enquanto estiver invisível */
 }
+
+@media only screen and (max-width: 992px) {
+
+  .botao-mascote-fixo {
+    display: none !important; /* Esconde completamente o botão */
+  }
+
+  .carousel-caption h5{
+    font-size: 22px !important;
+  }
+
+  .carousel-caption p {
+    display: none !important; /* Esconde o parágrafo */
+  }
+
+
+}
