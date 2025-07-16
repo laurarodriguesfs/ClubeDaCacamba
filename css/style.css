@@ -23,35 +23,44 @@
 /* Aplica Alexandria para todo o site como fonte padrão */
 body, p, span, li, input, textarea,address {
   font-family: "Alexandria Regular", sans-serif;
-  color: #4d8404;
+  color: #134703;
 }
 
 /* Bright Italic para títulos e links */
 h1, h2, h3, h4, h5, h6, a, .bright, button, .texto-bright {
   font-family: "Bright Italic", serif !important;
-  color: #4d8404;
+  color: #134703;
 }
 
 .logo-clube{
   width: 150px;
   display: block;
+  padding: 10px;
 }
 
 button {
-  background-color:#4183bc;
+  background-color:#134703;
   color: #fff; 
   border: none; 
-  padding: 10px 20px; 
+  padding: 5px 10px; 
   border-radius: 4px; 
   cursor: pointer; 
-  font-size: 16px; 
+  font-size: 18px; 
 }
 
 button:hover {
-  background-color: #4d8404; /* Cor um pouco mais clara ao passar o mouse */
+  background-color: #35db07; 
 }
 
 /*Navbar*/
+
+.navbar-fixed-top {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 999; 
+}
 
 #navbar{
   @media only screen and (max-width : 1000px) {
@@ -123,6 +132,13 @@ button:hover {
   
 }
 
+.green-text.text-darken-3{
+  color: #134703!important;
+}
+#main{
+  padding-top: 200px; 
+}
+
 .social-icons {
   margin-left: 0;
   padding: 0;
@@ -141,16 +157,16 @@ button:hover {
   cursor: pointer;
 }
 
-/* Facebook verde #4d8404 */
+/* Facebook verde #134703 */
 .social-icons .facebook {
   background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
-  filter: invert(33%) sepia(86%) saturate(3441%) hue-rotate(77deg) brightness(87%) contrast(84%);
+  filter: invert(18%) sepia(50%) saturate(2258%) hue-rotate(93deg) brightness(91%) contrast(92%);
 }
 
-/* Instagram verde #4d8404 */
+/* Instagram verde #134703 */
 .social-icons .instagram {
   background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-  filter: invert(33%) sepia(86%) saturate(3441%) hue-rotate(77deg) brightness(87%) contrast(84%);
+  filter: invert(18%) sepia(50%) saturate(2258%) hue-rotate(93deg) brightness(91%) contrast(92%);
 }
 
 .ver-mais{
@@ -377,6 +393,7 @@ div .carousel{
 }
    
 .carousel-prev, .carousel-next {
+
   position: absolute !important;
   top: 70% !important;
   transform: translateY(-50%) !important;
@@ -385,6 +402,8 @@ div .carousel{
   height: 40px !important;
   z-index: 10 !important;
 }
+
+
 
 /* Tablets */
 @media (max-width: 1024px) {
@@ -468,12 +487,12 @@ div .carousel{
   bottom: -1.5em;
 }
 .carousel .indicators .indicator-item{
-  border-color: #4d8404;
+  border-color: #35db07;
   border: solid 1px;
 }
 
 .carousel .indicators .indicator-item.active {
-  background-color: #4d8404 !important;
+  background-color: #134703 !important;
 }
 
 .area-indicadores {
@@ -554,7 +573,7 @@ div .carousel{
 }
 
 .foto-membros { /*frame da foto*/
-  border: 5px #4d8404 solid;
+  border: 5px #134703 solid;
   border-radius: 50%;
   width: 10em;
   height: 10em;
@@ -658,7 +677,7 @@ div .carousel{
 
 /*Conteudos*/
 .conteudos{
-  background-color: #4183bc;
+  background-color: #134703;
   .container-header {
     display: flex;
     justify-content: space-between;
@@ -863,8 +882,10 @@ div .carousel{
 #btn-carregar-mais{
   display: block;
   margin: 20px auto; /* 20px de margem vertical e auto nas laterais para centralizar */
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 5px 10px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 18px; 
   cursor: pointer;
 }
 
@@ -954,4 +975,90 @@ div .carousel{
  .subtitulo {
     font-size: 22px;
   }
+}
+
+.botao-mascote-fixo {
+  /* Posicionamento Fixo */
+  position: fixed;
+  bottom: 25px; /* Distância de baixo */
+  right: 25px;  /* Distância da direita */
+
+  /* Tamanho (ajuste se necessário) */
+  width: 250px;
+  height: 250px;
+
+  /* Efeitos Visuais */
+  z-index: 1000; /* Garante que fique sempre na frente */
+  background-color: transparent; /* Fundo branco para garantir que o mascote apareça bem */
+  
+  /* Animação suave */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para a imagem dentro do botão */
+.botao-mascote-fixo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Garante que a imagem também fique redonda */
+}
+
+/* Efeito ao passar o mouse */
+.botao-mascote-fixo:hover {
+  transform: scale(1.1); /* Aumenta um pouco o tamanho */
+}
+
+/* A etiqueta de texto (invisível por padrão) */
+.botao-mascote-fixo::after {
+  content: "Siga no Instagram!"; /* <-- PODE ALTERAR O TEXTO AQUI */
+  
+  /* Posicionamento do balão de texto */
+  position: absolute;
+  right: 100%;           /* Coloca o texto à esquerda do botão */
+  top: 50%;              /* Alinha ao meio na vertical */
+  margin-right: -10px;    /* Cria um espaço entre o botão e o texto */
+  
+  /* Estilos do balão */
+  background-color: #134703; /* Fundo escuro */
+  color: #fff;            /* Texto branco */
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;     /* Impede que o texto quebre a linha */
+  
+  /* Animação e estado inicial (escondido) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) translateX(10px); /* Posição inicial para animação */
+  transition: all 0.3s ease;
+}
+
+/* Mostra a etiqueta de texto quando o mouse está sobre o botão */
+.botao-mascote-fixo:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0); /* Posição final da animação */
+}
+
+.botao-mascote-fixo.esconder-no-footer {
+  opacity: 0; /* Deixa o botão transparente */
+  transform: translateY(150px); /* Move o botão para baixo e para fora da tela */
+  pointer-events: none; /* Impede que seja clicável enquanto estiver invisível */
+}
+
+@media only screen and (max-width: 992px) {
+
+  .botao-mascote-fixo {
+    display: none !important; /* Esconde completamente o botão */
+  }
+
+  .carousel-caption h5{
+    font-size: 22px !important;
+  }
+
+  .carousel-caption p {
+    display: none !important; /* Esconde o parágrafo */
+  }
+
+
 }
