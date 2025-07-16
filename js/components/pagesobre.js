@@ -2,7 +2,7 @@ export default function sobre (){
 const main = document.querySelector("#main")
 
 main.innerHTML=`
-   <div id="main" class="page-sobre container">
+   <div class="page-sobre container">
       <h1 class="center-align">História</h1>
       <p>O Clube da Caçamba foi criado e idealizado pela Professora Doutora Verônica Bender Haydu e desenvolvido pelos estagiários do curso de Psicologia da Universidade Estadual de Londrina (UEL), estudantes de iniciação científica e alunos do doutorado em Análise do Comportamento. O objetivo do projeto é divulgar conhecimentos científicos sobre temáticas socioambientais e nosso referencial teórico é a Análise do Comportamento. O nome “Clube da Caçamba” deriva de nosso interesse em sensibilizar nosso público sobre o adequado tratamento e destinação de resíduos sólidos. Atualmente, além de produzirmos postagens em nossas páginas do Instagram e do Facebook, também realizamos publicações científicas em revistas e eventos e trabalhamos com atividades interativas para sensibilização ambiental do público universitário.</p>
 

@@ -104,10 +104,12 @@ function verBlog(id) {
         <p class="center">${blog.descricao}</p>
         <p class="center">${blog.conteudo}</p>
         </div>
-        <button class="btn-voltar">Voltar</button>
+        <button class="btn-voltar">Voltar para Blog</button>
       </div>
     </div>
   `;
+
+  window.scrollTo(0, 0);
   
   document.querySelector(".btn-voltar").addEventListener("click", () => {
     window.location.hash = "#blog";

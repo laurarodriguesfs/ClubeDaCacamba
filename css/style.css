@@ -23,42 +23,71 @@
 /* Aplica Alexandria para todo o site como fonte padrão */
 body, p, span, li, input, textarea,address {
   font-family: "Alexandria Regular", sans-serif;
-  color: #4d8404;
+  color: #134703;
 }
 
 /* Bright Italic para títulos e links */
 h1, h2, h3, h4, h5, h6, a, .bright, button, .texto-bright {
   font-family: "Bright Italic", serif !important;
-  color: #4d8404;
+  color: #134703;
 }
 
 .logo-clube{
   width: 150px;
   display: block;
+  padding: 10px;
 }
 
 button {
-  background-color:#4183bc;
+  background-color:#134703;
   color: #fff; 
   border: none; 
-  padding: 10px 20px; 
+  padding: 5px 10px; 
   border-radius: 4px; 
   cursor: pointer; 
-  font-size: 16px; 
+  font-size: 18px; 
 }
 
 button:hover {
-  background-color: #4d8404; /* Cor um pouco mais clara ao passar o mouse */
+  background-color: #35db07; 
 }
 
 /*Navbar*/
 
+.navbar-fixed-top {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 999; 
+}
+
 #navbar{
+  @media only screen and (max-width : 1000px) {
+    nav {
+      margin-bottom: 0;   
+    }
+
+    .row .col.s9{
+      margin-top: 0px !important;
+    }
+
+    .social-icons {
+      display: flex !important;
+    }
+  }  
+
+  nav{
+    background-color: transparent;
+  }
 
   nav ul a.menu-item{
     font-size: 20px !important;
   }
-
+  nav ul a:hover {
+    border-bottom: solid 1px rgb(6, 43, 17);
+    background-color: transparent;
+  }
   .row .barra-redes{
     margin-bottom: -30px !important;
     margin-top: 0px;
@@ -69,7 +98,7 @@ button:hover {
   }
 
   .row .col.s9{
-    margin-top: 50px !important;
+    margin-top: 50px;
   }
 
   ul li a {
@@ -91,12 +120,23 @@ button:hover {
     padding: 0;
     height: 100%;
 
+    .btn-fechar-sidenav {
+      height: auto;
+    }
+
     @media only screen and (max-width : 992px) {
       display: block;
     }    
   }
   
   
+}
+
+.green-text.text-darken-3{
+  color: #134703!important;
+}
+#main{
+  padding-top: 200px; 
 }
 
 .social-icons {
@@ -117,16 +157,16 @@ button:hover {
   cursor: pointer;
 }
 
-/* Facebook verde #4d8404 */
+/* Facebook verde #134703 */
 .social-icons .facebook {
   background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
-  filter: invert(33%) sepia(86%) saturate(3441%) hue-rotate(77deg) brightness(87%) contrast(84%);
+  filter: invert(18%) sepia(50%) saturate(2258%) hue-rotate(93deg) brightness(91%) contrast(92%);
 }
 
-/* Instagram verde #4d8404 */
+/* Instagram verde #134703 */
 .social-icons .instagram {
   background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-  filter: invert(33%) sepia(86%) saturate(3441%) hue-rotate(77deg) brightness(87%) contrast(84%);
+  filter: invert(18%) sepia(50%) saturate(2258%) hue-rotate(93deg) brightness(91%) contrast(92%);
 }
 
 .ver-mais{
@@ -272,33 +312,72 @@ footer.page-footer {
   .footer-menu-columns {
     flex-direction: column;
     gap: 0;
+    text-align: right;
   }
   
   .social-icons {
     align-items: flex-start;
-    margin-top: 20px;
   }
-}
-/* Responsive adjustments */
-@media (max-width: 600px) {
+
+  .footer .row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer .col.s12.m4 {
+    flex: 1 1 33.33%;
+    max-width: 33.33%;
+  }
+
+  .footer-menu-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .footer-menu-columns .footer-column {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* .row .col.s12 {
+
+    width: 50%;
+    margin-left: 0;
+  } */
+
+
+  .redes-col{
+    margin-top: 20px;
+    width: 100% !important;
+  }
+
+
+
+  .page-footer .row {
+    flex-direction: inherit !important;
+  }
+
   .page-footer .row {
     flex-direction: column;
   }
   
   .social-icons {
     align-items: flex-start;
-    margin-top: 20px;
   }
   
   .page-footer ul {
     flex-direction: column;
     gap: 5px;
   }
+
 }
 
 /*Carrossel*/
 div .carousel{
-  height: 400px !important;
+  height: 500px !important;
 }
 /* Ajustes para que as imagens fiquem bem visíveis */
 .carousel .carousel-item {
@@ -308,12 +387,13 @@ div .carousel{
 }
 .carousel .carousel-item img {
   width: 100%;
-  height: 400px;
+  height: 800px;
   object-fit: cover;
   object-position: center center; /* centraliza */  
 }
    
 .carousel-prev, .carousel-next {
+
   position: absolute !important;
   top: 70% !important;
   transform: translateY(-50%) !important;
@@ -322,6 +402,8 @@ div .carousel{
   height: 40px !important;
   z-index: 10 !important;
 }
+
+
 
 /* Tablets */
 @media (max-width: 1024px) {
@@ -340,6 +422,9 @@ div .carousel{
     top: 80% !important;
     width: 30px !important;
     height: 30px !important;
+  }
+  .carousel .indicators .indicator-item{
+    border: solid 1.5px !important;
   }
 }
 
@@ -373,7 +458,7 @@ div .carousel{
  
 .carousel-caption {
   position: absolute;
-  bottom: 0;
+  bottom: 20px; 
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.699);
@@ -398,8 +483,30 @@ div .carousel{
   font-size: 18px;
 }
 
-.indicators{
-  display: none;
+.carousel .indicators{
+  bottom: -1.5em;
+}
+.carousel .indicators .indicator-item{
+  border-color: #35db07;
+  border: solid 1px;
+}
+
+.carousel .indicators .indicator-item.active {
+  background-color: #134703 !important;
+}
+
+.area-indicadores {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 21px;
 }
 
 /*Sobre*/
@@ -415,7 +522,7 @@ div .carousel{
 .container.row.sobre {
   display: flex;
   flex-wrap: wrap;
-  align-items: center; /* Faz as colunas se alinharem verticalmente no centro */
+  align-items: center; /*Faz as colunas se alinharem verticalmente no centro*/
 }
 
 .coluna-esquerda {
@@ -466,7 +573,7 @@ div .carousel{
 }
 
 .foto-membros { /*frame da foto*/
-  border: 5px #4d8404 solid;
+  border: 5px #134703 solid;
   border-radius: 50%;
   width: 10em;
   height: 10em;
@@ -557,14 +664,20 @@ div .carousel{
   }
 
   div.blog-lista div.row div {
-    height: 420px;
+    height: 380px;
     margin-bottom: 1.5em;
+  }
+
+  @media (max-width: 600px){
+    div.blog-lista div.row div {
+      height: auto;
+    }
   }
 }
 
 /*Conteudos*/
 .conteudos{
-  background-color: #4183bc;
+  background-color: #134703;
   .container-header {
     display: flex;
     justify-content: space-between;
@@ -644,11 +757,7 @@ div .carousel{
     padding: 5px;
   }
 
-  .container-linha {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
 
   .texto {
     max-width: 60%;
@@ -675,6 +784,13 @@ div .carousel{
     margin-left: 0px !important;
   }
   
+  @media (min-width: 600px) {
+    .container-texto {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 /*Sessão contato na home*/
@@ -688,9 +804,12 @@ div .carousel{
     padding-left: 0px;
   }
 
-  .imagem-contato{
-    margin-top: -50px !important;
+  @media (min-width: 600px) {
+    .imagem-contato{
+      margin-top: -3em !important;
+    }    
   }
+
 }
 
 /*Pagina de contato*/
@@ -763,8 +882,10 @@ div .carousel{
 #btn-carregar-mais{
   display: block;
   margin: 20px auto; /* 20px de margem vertical e auto nas laterais para centralizar */
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 5px 10px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 18px; 
   cursor: pointer;
 }
 
@@ -788,80 +909,156 @@ div .carousel{
   a{
     color: #fff !important;
   }
+
+  @media (max-width: 600px) {
+    .row .col.s6 {
+      width: 100%;
+    }
+  }
 }
 
 .page-parceiros{
-
-    .logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 40px;
-      padding: 0 15px;
-    }
-
-    .logos img {
-      max-height: 100px;
-      max-width: 200px;
-      object-fit: contain;
-    }
-
-    .h4 {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 28px;
-      line-height: 1.4;
-      padding: 0 15px;
-    
-
-    .paragrafo {
-      text-align: left;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 28px;
-      line-height: 1.4;
-      color: #4e793a;
-      padding: 0 15px;
-    }}
-
-   .vermais {
-  display: block;
-  font-family: 'BrightItalic', cursive;
-  font-size: 32px;
-  color: #2e7d32;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
-  margin-top: 24px;
-  padding: 4px 8px;
-  text-align: right;
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+  .logos img {
+    max-height: 100px;
+    max-width: 200px;
+    object-fit: contain;
+  }
+  .h4 {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 28px;
+    line-height: 1.4;
+    padding: 0 15px;
+  }
+  .paragrafo {
+    text-align: left;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: #4e793a;
+  }
+  .vermais {
+    display: block;
+    font-family: 'BrightItalic', cursive;
+    font-size: 32px;
+    color: #2e7d32;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+    margin-top: 24px;
+    padding: 4px 8px;
+    text-align: right;
     margin-right: 24px;
-
+  }
 }
-
-}
-
-
 
 .vermais:hover {
   border-bottom: 2px solid #2e7d32;
+}   
+
+@media (max-width: 600px) {
+  .logos {
+    flex-direction: column;
+    align-items: center;
+  }
+ h1 {
+    font-size: 28px;
+  }
+ .subtitulo {
+    font-size: 22px;
+  }
 }
 
-    
+.botao-mascote-fixo {
+  /* Posicionamento Fixo */
+  position: fixed;
+  bottom: 25px; /* Distância de baixo */
+  right: 25px;  /* Distância da direita */
 
-    @media (max-width: 600px) {
-      .logos {
-        flex-direction: column;
-        align-items: center;
-      }
+  /* Tamanho (ajuste se necessário) */
+  width: 250px;
+  height: 250px;
 
-      h1 {
-        font-size: 28px;
-      }
+  /* Efeitos Visuais */
+  z-index: 1000; /* Garante que fique sempre na frente */
+  background-color: transparent; /* Fundo branco para garantir que o mascote apareça bem */
+  
+  /* Animação suave */
+  transition: all 0.3s ease-in-out;
+}
 
-      .subtitulo {
-        font-size: 22px;
-      }
+/* Estilo para a imagem dentro do botão */
+.botao-mascote-fixo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Garante que a imagem também fique redonda */
+}
+
+/* Efeito ao passar o mouse */
+.botao-mascote-fixo:hover {
+  transform: scale(1.1); /* Aumenta um pouco o tamanho */
+}
+
+/* A etiqueta de texto (invisível por padrão) */
+.botao-mascote-fixo::after {
+  content: "Siga no Instagram!"; /* <-- PODE ALTERAR O TEXTO AQUI */
+  
+  /* Posicionamento do balão de texto */
+  position: absolute;
+  right: 100%;           /* Coloca o texto à esquerda do botão */
+  top: 50%;              /* Alinha ao meio na vertical */
+  margin-right: -10px;    /* Cria um espaço entre o botão e o texto */
+  
+  /* Estilos do balão */
+  background-color: #134703; /* Fundo escuro */
+  color: #fff;            /* Texto branco */
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;     /* Impede que o texto quebre a linha */
+  
+  /* Animação e estado inicial (escondido) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) translateX(10px); /* Posição inicial para animação */
+  transition: all 0.3s ease;
+}
+
+/* Mostra a etiqueta de texto quando o mouse está sobre o botão */
+.botao-mascote-fixo:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0); /* Posição final da animação */
+}
+
+.botao-mascote-fixo.esconder-no-footer {
+  opacity: 0; /* Deixa o botão transparente */
+  transform: translateY(150px); /* Move o botão para baixo e para fora da tela */
+  pointer-events: none; /* Impede que seja clicável enquanto estiver invisível */
+}
+
+@media only screen and (max-width: 992px) {
+
+  .botao-mascote-fixo {
+    display: none !important; /* Esconde completamente o botão */
+  }
+
+  .carousel-caption h5{
+    font-size: 22px !important;
+  }
+
+  .carousel-caption p {
+    display: none !important; /* Esconde o parágrafo */
+  }
+
+
 }
