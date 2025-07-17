@@ -129,7 +129,7 @@ main.innerHTML=`
           <p>Livia Celli</p>
           <p></p>
         </div>
-        <div class="col s6 l2 offset-l2 membro-div margem-membro">
+        <div class="col s6 l2 membro-div margem-membro">
           <div><img class="foto-membros" src="images/Membros/Milena.jpg" alt="foto de perfil"></div>
           <p>Milena</p>
           <p></p>
