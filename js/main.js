@@ -1,3 +1,10 @@
+// js/main.js
+
+// --- 1. IMPORTAÇÕES ---
+// Importa a função de inicialização do painel admin.
+import { initAdminPanel } from './admin.js';
+
+// Importa os componentes do seu site público.
 import navbar from "./components/navbar.js";
 import home from "./components/pagehome.js";
 import sobre from "./components/pagesobre.js";
@@ -8,23 +15,23 @@ import contato from "./components/pagecontato.js";
 import footer from "./components/footer.js";
 import adicionarEventoNosSlides from './adicionarEventoNosSlides.js';
 
-
-navbar();
-footer();
-
-// Função para limpar e renderizar a página
-function renderPage(pageFunction) {
+// --- 2. LÓGICA DO SITE PÚBLICO ---
+// Esta é a função de roteamento original para as páginas públicas.
+function handlePublicRoute() {
+  const hash = location.hash;
   const main = document.querySelector("#main");
-  if (main) {
+
+  // Se o #main não existir, não faz nada.
+  if (!main) return;
+
+  // Função para limpar e renderizar a página
+  const renderPage = (pageFunction) => {
     main.innerHTML = ""; // limpa o conteúdo atual
     pageFunction();      // carrega a nova página
     window.scrollTo(0, 0);
-  }
-}
+  };
 
-function handleRoute() {
-  const hash = location.hash;
-
+  // Lógica para rotas específicas de projeto e blog
   if (hash.startsWith("#/projeto/")) {
     const id = hash.split("/")[2];
     import('./components/pageprojetos.js').then(module => {
@@ -41,14 +48,8 @@ function handleRoute() {
     return;
   }
 
-
+  // Roteamento principal para páginas públicas
   switch (hash) {
-    case "#home":
-      renderPage(() => {
-        home();
-        adicionarEventoNosSlides();
-      });
-      break;
     case "#sobre":
       renderPage(sobre);
       break;
@@ -64,6 +65,7 @@ function handleRoute() {
     case "#contato":
       renderPage(contato);
       break;
+    case "#home":
     default:
       renderPage(() => {
         home();
@@ -72,47 +74,57 @@ function handleRoute() {
   }
 }
 
-// Executa ao iniciar
-handleRoute();
+// Esta função anexa os eventos que são persistentes no site público.
+function initPublicSiteEventListeners() {
+    const botaoMascote = document.getElementById('botao-mascote');
+    const footerElement = document.getElementById('footer');
 
-// Executa quando a hash muda
-window.addEventListener("hashchange", handleRoute);
+    if (!botaoMascote || !footerElement) return;
 
-// Aguarda o carregamento completo da página para rodar o código
-window.addEventListener('load', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0
+    };
 
-  // Seleciona os elementos que vamos observar e manipular
-  const botaoMascote = document.getElementById('botao-mascote');
-  const footer = document.getElementById('footer');
+    const intersectionCallback = (entries) => {
+      entries.forEach(entry => {
+        botaoMascote.classList.toggle('esconder-no-footer', entry.isIntersecting);
+      });
+    };
 
-  // Se o botão ou o footer não existirem na página, o código para aqui.
-  if (!botaoMascote || !footer) {
-    return;
+    const observer = new IntersectionObserver(intersectionCallback, observerOptions);
+    observer.observe(footerElement);
+}
+
+
+// --- 3. ROTEADOR PRINCIPAL UNIFICADO ---
+$(document).ready(function() {
+  // Carrega os componentes fixos do layout uma única vez.
+  navbar();
+  footer();
+
+  // Função "cérebro" que decide o que fazer baseado na hash.
+  function mainRouter() {
+    const hash = window.location.hash;
+
+    // Se a hash começar com #admin, entregamos o controle para o painel admin.
+    // Usamos startsWith para permitir rotas como #admin/users no futuro.
+    if (hash.startsWith('#admin')) {
+      initAdminPanel();
+    } else {
+      // Caso contrário, é uma rota do site público.
+      handlePublicRoute();
+    }
   }
 
-  // Configurações do observador
-  const observerOptions = {
-    root: null, // Observa em relação à janela principal (viewport)
-    rootMargin: '0px 0px -50px 0px', // Ativa um pouco antes do footer tocar o fundo da tela
-    threshold: 0 // Ativa assim que qualquer pixel do footer se torna visível
-  };
+  // Anexa o roteador principal ao evento hashchange.
+  // Este é o ÚNICO event listener de hashchange.
+  $(window).on('hashchange', mainRouter);
 
-  // A função que será executada quando o footer entrar ou sair da tela
-  const intersectionCallback = (entries) => {
-    entries.forEach(entry => {
-      // Se o footer está visível na área de observação...
-      if (entry.isIntersecting) {
-        // Adiciona uma classe para esconder o botão
-        botaoMascote.classList.add('esconder-no-footer');
-      } else {
-        // Remove a classe para mostrar o botão novamente
-        botaoMascote.classList.remove('esconder-no-footer');
-      }
-    });
-  };
-
-  // Cria o observador e manda ele "assistir" ao footer
-  const observer = new IntersectionObserver(intersectionCallback, observerOptions);
-  observer.observe(footer);
-
+  // Executa o roteador uma vez no carregamento inicial da página.
+  mainRouter();
+  
+  // Anexa os outros eventos do site público.
+  initPublicSiteEventListeners();
 });
