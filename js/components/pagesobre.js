@@ -4,17 +4,19 @@ const main = document.querySelector("#main")
 main.innerHTML=`
    <div class="page-sobre container">
       <h1 class="center-align">História</h1>
-      <p>O Clube da Caçamba foi criado e idealizado pela Professora Doutora Verônica Bender Haydu e desenvolvido pelos estagiários do curso de Psicologia da Universidade Estadual de Londrina (UEL), estudantes de iniciação científica e alunos do doutorado em Análise do Comportamento. O objetivo do projeto é divulgar conhecimentos científicos sobre temáticas socioambientais e nosso referencial teórico é a Análise do Comportamento. O nome “Clube da Caçamba” deriva de nosso interesse em sensibilizar nosso público sobre o adequado tratamento e destinação de resíduos sólidos. Atualmente, além de produzirmos postagens em nossas páginas do Instagram e do Facebook, também realizamos publicações científicas em revistas e eventos e trabalhamos com atividades interativas para sensibilização ambiental do público universitário.</p>
+      <p>O Clube da Caçamba – UEL foi criado e idealizado por estagiários do curso de Psicologia da Universidade Estadual de Londrina (UEL) e pela Professora Dr.ª Verônica Bender Haydu, durante a pandemia da COVID-19 (setembro de 2020). Inicialmente, foi feita a divulgação científica de temas sobre a destinação adequada de resíduos urbanos e da construção civil. Em meados de 2021, três dos quatro estudantes se desligaram e foram substituídos por seis estudantes de graduação vinculados à Atividade Acadêmica Complementar e um estudante de doutorado. A estudante Natália Novais Maia, que permaneceu no projeto, passou a atuar no gerenciamento das atividades junto com a Prof.ª Verônica.</p>
+
+      <p>Em meados de 2022, foi oficializado o projeto de extensão junto à PROEX. Nessa ocasião, foram incluídos três docentes do Departamento de Psicologia Geral e Análise do Comportamento (PGAC), 14 estudantes de graduação em Psicologia e dois estudantes de pós-graduação. Atualmente, participam os quatro docentes do PGAC, outros dois estudantes de pós-graduação, 21 estudantes de graduação de Psicologia, uma estudante de Direito e uma de Enfermagem. O nome “Clube da Caçamba – UEL” deriva do interesse em sensibilizar o público sobre o adequado tratamento e destinação de resíduos sólidos da construção civil. Hoje em dia, além da produção das postagens nas páginas do Instagram e do Facebook, são realizadas publicações em periódicos científicos e anais de eventos, e são realizadas dinâmicas didático-recreativas para a sensibilização ambiental do público que participa de eventos científicos e feiras realizadas no contexto da UEL.</p>
 
       <h1 class="center-align">Objetivos</h1>
       <ul class="collapsible popout">
         <li>
           <div class="collapsible-header">Divulgação científica<i class="material-icons">add_circle</i></div>
-          <div class="collapsible-body"><span>Realizar a divulgação científica de diferentes temas da área do desenvolvimento sustentável, com foco na destinação adequada de resíduos.</span></div>
+          <div class="collapsible-body"><span>Divulgar conhecimento científico nas páginas do Instagram e do Facebook sobre desenvolvimento sustentável, com ênfase em temáticas socioambientais e com embasamento no referencial teórico da Análise do Comportamento.</span></div>
         </li>
         <li>
           <div class="collapsible-header">Rede colaborativa<i class="material-icons">add_circle</i></div>
-          <div class="collapsible-body"><span>Estabelecer uma metacontingência para a promoção de contingências entrelaçadas entre professores, estudantes e seguidores do projeto que produzam um produto agregado e consequências culturais. Ou seja, criar relações que se mantenham e que sejam passadas entre gerações.</span></div>
+          <div class="collapsible-body"><span>Manutenção de uma metacontingência, estabelecendo contingências comportamentais entrelaçadas entre professores, estudantes e seguidores das redes sociais do projeto, com a produção de produtos agregados (reels, carrosséis e stories). As interações dos seguidores com os produtos disponibilizados nas redes sociais são as principais consequências culturais que mantêm o entrelaçamento das contingências.</span></div>
         </li>
         <li>
           <div class="collapsible-header">Modelo replicável<i class="material-icons">add_circle</i></div>

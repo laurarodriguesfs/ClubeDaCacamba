@@ -50,7 +50,7 @@ export default function home() {
     <div class="container row  sobre">
       <div class="col s12 m6">
         <h3 class="">Conheça mais sobre nós...</h3>
-        <p>Somos membros de um projeto vinculado à Universidade Estadual de Londrina (UEL) promovemos conhecimento científico sobre desenvolvimento sustentável.</p>
+        <p>Somos membros de um projeto de extensão da Universidade Estadual de Londrina (UEL), que divulga conhecimento científico sobre desenvolvimento sustentável com ênfase em questões ambientais. O projeto mantém uma página no Instagram e uma no Facebook, por meio das quais são divulgados semanalmente carrosséis, reels e stories apresentados em linguagem acessível aos nossos seguidores.</p>
         <a class="ver-mais col s12 center" href="#sobre">Ver mais</a>
       </div>
       <div class="col s12 m6 right-align">

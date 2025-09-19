@@ -18,8 +18,8 @@ function renderizarEstrutura() {
   main.innerHTML = `
     <div class="page-projetos container">
       <div class="section">
-        <h4>Projetos e eventos</h4>
-        <h6>Nossa participação em eventos científicos envolve tanto a apresentação de cartazes e pôsteres, a publicação de resumos e artigos científicos em Anais de Congressos e Revistas Científicas e a realização de atividades interativas com o público geral.</h6>
+        <h4>Eventos</h4>
+        <h6>Nossa participação em eventos científicos e feiras envolve a realização de palestras, a apresentação de pôsteres, e a publicação de resumos e artigos científicos em anais de congressos e revistas científicas. Além disso, são realizadas dinâmicas didático-recreativas com participantes de eventos promovidos pela PROEX no contexto da UEL.</h6>
         <div class="projetos-lista"></div>
         <div class="section-carregar-mais align-center">
           <button id="btn-carregar-mais">Carregar mais</button>
