@@ -1,4 +1,4 @@
-export default function contato() {
+function contato() {
   const main = document.querySelector("#main");
 
   main.innerHTML = `

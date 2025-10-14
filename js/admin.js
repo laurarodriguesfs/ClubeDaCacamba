@@ -1,40 +1,34 @@
 // js/admin.js
 
-export function initAdminPanel() {
-  
-  console.log("Módulo do Painel Administrativo Iniciado! (Modo Dinâmico)");
+function initAdminPanel() {
+  console.log("Iniciando painel administrativo com o código final e completo.");
 
-  const API_URL = 'http://localhost:3001';
+  // --- VARIÁVEIS PRINCIPAIS ---
+  const API_URL = 'http://127.0.0.1:8000/api';
   const $mainContainer = $('#main');
 
-  // --- FUNÇÕES DE RENDERIZAÇÃO ---
-  // Elas criam o HTML e anexam os eventos necessários.
+  // --- ROTEADOR INTERNO ---
+  // Decide qual página mostrar com base no status de login
+  function adminRouter() {
+    const token = localStorage.getItem('authToken');
+    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
-  function handleLogout() {
-    console.log("Usuário deslogado.");
-
-    // 1. Apaga o token de autenticação do localStorage
-    localStorage.removeItem('authToken');
-    
-    // 2. Apaga as informações do usuário do localStorage
-    localStorage.removeItem('user');
-    
-    // 3. Chama o roteador novamente. Como não há mais token,
-    // ele irá automaticamente renderizar a página de login.
-    adminRouter();
+    if (token && user && user.role === 'admin') {
+      renderDashboardPage();
+    } else {
+      renderLoginPage();
+    }
   }
 
-  /**
-   * Limpa o container principal, cria o HTML do login e o insere na página.
-   * Depois de inserir, anexa o evento de submit ao formulário.
-   */
-  function renderLoginPage() {
-    $mainContainer.empty(); // Limpa a área principal
+  // --- FUNÇÕES DE RENDERIZAÇÃO DE PÁGINA ---
 
+  // Desenha a página de LOGIN
+  function renderLoginPage() {
+    $mainContainer.empty();
     const loginHTML = `
-      <div class="container">
-        <div class="row" style="margin-top: 5vh;">
-          <div class="col s12 m6 offset-m3">
+      <div class="container" style="padding-top: 5vh;">
+        <div class="row">
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
             <div class="card">
               <div class="card-content">
                 <span class="card-title">Acesso Administrativo</span>
@@ -47,60 +41,91 @@ export function initAdminPanel() {
                     <input id="password" type="password" class="validate" required>
                     <label for="password">Senha</label>
                   </div>
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Entrar
-                    <i class="material-icons right">send</i>
-                  </button>
+                  <button class="btn waves-effect waves-light" type="submit">Entrar<i class="material-icons right">send</i></button>
                   <p id="error-message" class="red-text"></p>
                 </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    `;
-
+      </div>`;
     $mainContainer.html(loginHTML);
-
     $('#login-form').on('submit', handleLogin);
   }
 
-  /**
-   * Limpa o container, cria a estrutura do dashboard e a insere na página.
-   * Depois, anexa os eventos e chama a função para buscar os dados.
-   */
-  function renderDashboardPage() {
+  // Desenha a página de DASHBOARD
+  async function renderDashboardPage() {
     $mainContainer.empty();
-
     const dashboardHTML = `
-      <div class="container">
-        <button id="logout-btn" class="btn waves-effect waves-light red" ">
-        Sair <i class="material-icons right">exit_to_app</i>
-      </button>
-        <h1 class="header">Gerenciamento de Usuários</h1>
-        <table class="striped">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>Função (Role)</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody id="user-table-body">
-            <tr><td colspan="4">Carregando...</td></tr>
-          </tbody>
-        </table>
-      </div>
-    `;
-
+      <div class="container" style="padding-top: 5vh;">
+        <div class="row">
+          <div class="col s12">
+            <button id="logout-btn" class="btn waves-effect waves-light red right">Sair</button>
+            <h4 class="header">Dashboard</h4>
+            <p>Bem-vindo(a) ao painel administrativo!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card-panel teal">
+              <span class="white-text">
+                <h5>Total de Usuários</h5>
+                <h3 id="stats-users-count">...</h3>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <button id="manage-users-btn" class="btn waves-effect waves-light">
+              Gerenciar Usuários <i class="material-icons right">people</i>
+            </button>
+          </div>
+        </div>
+      </div>`;
     $mainContainer.html(dashboardHTML);
 
-    // Anexa o evento de logout e busca os usuários
     $('#logout-btn').on('click', handleLogout);
-    fetchUsers();
+    $('#manage-users-btn').on('click', renderUserListPage);
+
+    try {
+      const token = localStorage.getItem('authToken');
+      const response = await fetch(`${API_URL}/stats/total-users`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (!response.ok) throw new Error('Falha ao buscar estatísticas.');
+      const data = await response.json();
+      $('#stats-users-count').text(data.count);
+    } catch (error) {
+      console.error(error.message);
+      $('#stats-users-count').text('Erro!');
+    }
   }
 
-  // --- FUNÇÕES DE LÓGICA E MANIPULADORES DE EVENTOS ---
+  // Desenha a página de LISTA DE USUÁRIOS
+  function renderUserListPage() {
+    $mainContainer.empty();
+    const listHTML = `
+      <div class="container" style="padding-top: 5vh;">
+        <button id="back-to-dashboard-btn" class="btn-flat waves-effect">
+            <i class="material-icons left">arrow_back</i>Voltar ao Dashboard
+        </button>
+        <h4 class="header">Gerenciamento de Usuários</h4>
+        <table class="striped">
+          <thead>
+            <tr><th>Nome</th><th>Email</th><th>Função (Role)</th><th>Ações</th></tr>
+          </thead>
+          <tbody id="user-table-body">
+            <tr><td colspan="4" class="center-align">Carregando...</td></tr>
+          </tbody>
+        </table>
+      </div>`;
+    $mainContainer.html(listHTML);
+    $('#back-to-dashboard-btn').on('click', renderDashboardPage);
+    fetchUsers();
+  }
+  
+  // --- FUNÇÕES DE LÓGICA (manipuladores de eventos e chamadas de API) ---
 
   async function handleLogin(event) {
     event.preventDefault();
@@ -115,13 +140,14 @@ export function initAdminPanel() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Erro de autenticação.');
+      }
       const data = await response.json();
-      if (!response.ok) throw new Error(data.message);
-
       localStorage.setItem('authToken', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-      
-      adminRouter(); // Roda o roteador de novo para ir para o dashboard
+      adminRouter();
     } catch (error) {
       $errorMessage.text(error.message);
     }
@@ -130,46 +156,36 @@ export function initAdminPanel() {
   function handleLogout() {
     localStorage.removeItem('authToken');
     localStorage.removeItem('user');
-    adminRouter(); // Roda o roteador para voltar à página de login
+    adminRouter();
   }
 
   async function fetchUsers() {
     const $tableBody = $('#user-table-body');
     try {
-      const response = await fetch(`${API_URL}/users`);
+      const token = localStorage.getItem('authToken');
+      const response = await fetch(`${API_URL}/users`, {
+        headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
+      });
       if (!response.ok) throw new Error('Falha ao buscar usuários.');
       const users = await response.json();
       
       $tableBody.empty();
       users.forEach(user => {
-        const row = `
+        const rowHTML = `
           <tr>
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>${user.role}</td>
             <td><button class="btn-small waves-effect waves-light red">Deletar</button></td>
-          </tr>
-        `;
-        $tableBody.append(row);
+          </tr>`;
+        $tableBody.append(rowHTML);
       });
     } catch (error) {
-      console.error("Erro ao buscar usuários", error);
-      $tableBody.html(`<tr><td colspan="4">${error.message}</td></tr>`);
+      console.error("Erro ao buscar usuários:", error);
+      $tableBody.html(`<tr><td colspan="4" class="center-align red-text">${error.message}</td></tr>`);
     }
   }
 
-  // --- ROTEADOR INTERNO DO PAINEL ---
-  function adminRouter() {
-    const token = localStorage.getItem('authToken');
-    const user = JSON.parse(localStorage.getItem('user'));
-
-    if (token && user && user.role === 'admin') {
-      renderDashboardPage(); // Chama a função que renderiza o dashboard
-    } else {
-      renderLoginPage(); // Chama a função que renderiza o login
-    }
-  }
-  
-  // Ponto de partida para a lógica do painel
+  // --- PONTO DE PARTIDA ---
   adminRouter();
 }

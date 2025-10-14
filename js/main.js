@@ -1,20 +1,5 @@
 // js/main.js
 
-// --- 1. IMPORTAÇÕES ---
-// Importa a função de inicialização do painel admin.
-import { initAdminPanel } from './admin.js';
-
-// Importa os componentes do seu site público.
-import navbar from "./components/navbar.js";
-import home from "./components/pagehome.js";
-import sobre from "./components/pagesobre.js";
-import projetos from "./components/pageprojetos.js";
-import blog from "./components/pageblog.js";
-import parceiros from "./components/pageparceiros.js";
-import contato from "./components/pagecontato.js";
-import footer from "./components/footer.js";
-import adicionarEventoNosSlides from './adicionarEventoNosSlides.js';
-
 // --- 2. LÓGICA DO SITE PÚBLICO ---
 // Esta é a função de roteamento original para as páginas públicas.
 function handlePublicRoute() {
@@ -66,11 +51,12 @@ function handlePublicRoute() {
       renderPage(contato);
       break;
     case "#home":
-    default:
-      renderPage(() => {
-        home();
-        adicionarEventoNosSlides();
-      });
+  default:
+    renderPage(() => {
+      // Agora, passamos 'adicionarEventoNosSlides' como um argumento para 'home'.
+      // A função home() se encarregará de chamá-la no momento certo.
+      home(adicionarEventoNosSlides);
+    });
   }
 }
 
@@ -100,6 +86,7 @@ function initPublicSiteEventListeners() {
 
 // --- 3. ROTEADOR PRINCIPAL UNIFICADO ---
 $(document).ready(function() {
+  console.log("MENSAGEM 1: Documento pronto, main.js está executando."); // <-- ADICIONE AQUI
   // Carrega os componentes fixos do layout uma única vez.
   navbar();
   footer();
@@ -111,6 +98,7 @@ $(document).ready(function() {
     // Se a hash começar com #admin, entregamos o controle para o painel admin.
     // Usamos startsWith para permitir rotas como #admin/users no futuro.
     if (hash.startsWith('#admin')) {
+      console.log("MENSAGEM 2: Rota #admin detectada. Chamando initAdminPanel..."); // <-- ADICIONE AQUI
       initAdminPanel();
     } else {
       // Caso contrário, é uma rota do site público.

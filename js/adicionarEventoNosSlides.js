@@ -1,4 +1,4 @@
-export default function adicionarEventoNosSlides() {
+function adicionarEventoNosSlides() {
   const slides = document.querySelectorAll(".carousel-item");
   slides.forEach((slide) => {
     slide.addEventListener("click", () => {

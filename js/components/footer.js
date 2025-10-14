@@ -1,4 +1,4 @@
-export default function footer() {
+function footer() {
   const footer = document.querySelector("#footer");
 
   footer.innerHTML = ` 

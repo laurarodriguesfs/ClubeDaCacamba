@@ -1,4 +1,4 @@
-export default function navbar(){
+function navbar(){
     
 const navbar = document.querySelector("#navbar")
 

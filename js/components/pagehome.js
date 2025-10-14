@@ -1,13 +1,9 @@
-import {
-  reinicializarMaterialize
-} from "./materialize-init.js";
-import adicionarEventoNosSlides from "../adicionarEventoNosSlides.js";
-import eventoBlog from "../eventoNosBlogs.js";
+// js/components/pagehome.js
 
-export default function home() {
-  const main = document.querySelector("#main");
-
-  main.innerHTML = `
+// A função agora aceita um argumento opcional: onReadyCallback
+function home(onReadyCallback) {
+    const main = document.querySelector('#main');
+    main.innerHTML = `
     <div class=" container">
       <h3>Nossos projetos e eventos</h3>
 
@@ -170,7 +166,11 @@ export default function home() {
       </section>
   `;
 
-  reinicializarMaterialize();
-  adicionarEventoNosSlides();
-  eventoBlog();
+    const carouselElems = document.querySelectorAll('.carousel');
+    M.Carousel.init(carouselElems);
+
+    // No final, verifica se um callback foi passado e o executa.
+    if (onReadyCallback && typeof onReadyCallback === 'function') {
+        onReadyCallback();
+    }
 }

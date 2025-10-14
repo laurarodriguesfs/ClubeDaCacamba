@@ -5,8 +5,8 @@ async function carregarProjetos() {
   try {
     const res = await fetch('projetos.json');
     listaProjetos = await res.json();
-    renderizarEstrutura(); // estrutura estática
-    renderizarProjetos();  // itens dinâmicos
+    renderizarEstrutura();
+    renderizarProjetos();
   } catch (err) {
     console.error('Erro ao carregar JSON:', err);
   }
@@ -30,7 +30,7 @@ function renderizarEstrutura() {
 
   document.querySelector("#btn-carregar-mais").addEventListener("click", () => {
     projetosExibidos += 3;
-    if (projetosExibidos > listaProjetos.length) {
+    if (projetosExibidos >= listaProjetos.length) {
       projetosExibidos = listaProjetos.length;
       document.querySelector("#btn-carregar-mais").style.display = "none";
     }
@@ -40,7 +40,7 @@ function renderizarEstrutura() {
 
 function renderizarProjetos() {
   const listaEl = document.querySelector(".projetos-lista");
-  listaEl.innerHTML = ""; // limpa antes de adicionar novamente
+  listaEl.innerHTML = "";
 
   listaProjetos.slice(0, projetosExibidos).forEach(projeto => {
     const projetoHTML = `
@@ -50,28 +50,23 @@ function renderizarProjetos() {
             <img src="${projeto.imagem}" alt="${projeto.titulo}">
           </div>
         </div>
-        <div class="coluna-esquerda col s6">
+        <div class="coluna-direita col s6">
           <h5>${projeto.titulo}</h5>
           <p>${projeto.descricao}</p>
-          <button  href="#/projeto/${projeto.id}" class="btn-ver-projeto" data-id="${projeto.id}">Ver mais</button>
+          <a href="#/projeto/${projeto.id}" class="btn-ver-projeto">Ver mais</a>
         </div>
       </div>
     `;
     listaEl.insertAdjacentHTML("beforeend", projetoHTML);
   });
-
-  document.querySelectorAll(".btn-ver-projeto").forEach(botao => {
-    botao.addEventListener("click", (e) => {
-      const id = e.target.dataset.id;
-      window.location.hash = `#/projeto/${id}`;
-      verProjeto(id);
-    });
-  });
 }
 
-export function verProjeto(id) {
+function verProjeto(id) {
   const projeto = listaProjetos.find(p => p.id == id);
-  if (!projeto) return;
+  if (!projeto) {
+    console.error(`Projeto com ID ${id} não encontrado.`);
+    return;
+  }
 
   const main = document.querySelector("#main");
   main.innerHTML = `
@@ -82,28 +77,29 @@ export function verProjeto(id) {
           <img class="single-projeto card-image col s12 l6" src="${projeto.imagem}" alt="${projeto.titulo}">
           <p>${projeto.conteudo}</p>
         </div>
-        <button class="btn-voltar">Voltar para projetos</button>
+        <a href="#projetos" class="btn-voltar">Voltar para projetos</a>
       </div>
     </div>
   `;
-
   window.scrollTo(0, 0);
-
-  document.querySelector(".btn-voltar").addEventListener("click", () => {
-    window.location.hash = "#projetos";
-    renderizarEstrutura();
-    renderizarProjetos();
-  });
 }
 
-export default function projetos() {
+
+function projetos() {
   projetosExibidos = 3;
   carregarProjetos();
 }
 
-export async function carregarEVerProjeto(id) {
-  if (!listaProjetos.length) {
-    await carregarProjetos();
+// Esta exportação já está correta, pois é uma exportação nomeada.
+async function carregarEVerProjeto(id) {
+    if (listaProjetos.length === 0) {
+    try {
+      const res = await fetch('projetos.json');
+      listaProjetos = await res.json();
+    } catch (err) {
+      console.error('Erro ao carregar JSON:', err);
+      return;
+    }
   }
   verProjeto(id);
 }
