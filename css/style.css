@@ -139,6 +139,23 @@ button:hover {
   padding-top: 200px; 
 }
 
+#criandoProj{
+  padding-top: 200px;
+  padding-left: 80px;
+  display: flex;
+}
+.material-icons{
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+.voltar{
+  cursor: pointer;
+}
+.voltar:hover{
+  color: #0d2f02;
+}
+
+
 .social-icons {
   margin-left: 0;
   padding: 0;
