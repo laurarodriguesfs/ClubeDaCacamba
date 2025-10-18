@@ -11,18 +11,29 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
 	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 </head>
 
 <body>
 	<div id="navbar" class="navbar-fixed-top"></div>
-	<div id="criandoProj" >
+	<div id="criandoProj">
 		<p class="voltar">
-			<i class="material-icons">arrow_back</i> 
+			<i class="material-icons">arrow_back</i>
 			Voltar ao Gerenciador
 		</p>
-		
+
 		<h1>Criação de Novo Projeto</h1>
-		
+		<form>
+			<div class="projInput">
+				<label>Titulo do Projeto</label>
+				<input type="text" name="titulo" placeholder="Ex: Projeto A que constitue em ..." required>
+
+				<label>Descrição Curta</label>
+				<div id="editor"></div>
+
+			</div>
+		</form>
+
 	</div>
 	<a href="https://www.instagram.com/clubedacacamba.uel/" target="_blank" id="botao-mascote" class="botao-mascote-fixo">
 		<img src="images/Caçambinha.png" alt="Siga nosso Instagram!">
@@ -30,10 +41,16 @@
 	<div id="footer"></div>
 
 	<!--  Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
 	<script src="js/main.js" defer type="module"></script>
+	<script>
+		const quill = new Quill('#editor', {
+			theme: 'snow'
+		});
+	</script>
 
 </body>
 
