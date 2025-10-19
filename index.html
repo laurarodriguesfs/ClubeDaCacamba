@@ -17,22 +17,29 @@
 <body>
 	<div id="navbar" class="navbar-fixed-top"></div>
 	<div id="criandoProj">
-		<p class="voltar">
-			<i class="material-icons">arrow_back</i>
-			Voltar ao Gerenciador
-		</p>
+		<div class="proj">
+			<p class="voltar">
+				<i class="material-icons">arrow_back</i>
+				Voltar ao Gerenciador
+			</p>
+			<form>
+				<div class="top">
+					<h2>Criação de Novo Projeto</h2>
+					<input type="button" name="Publicar" value="Publicar">
+				</div>
+				<div class="projInput">
+					<p>Titulo do Projeto</p>
+					<input type="text" name="titulo" placeholder="Ex: Projeto A que constitue em ..." required>
 
-		<h1>Criação de Novo Projeto</h1>
-		<form>
-			<div class="projInput">
-				<label>Titulo do Projeto</label>
-				<input type="text" name="titulo" placeholder="Ex: Projeto A que constitue em ..." required>
+					<p>Descrição Curta</p>
+					<div id="desc"></div>
 
-				<label>Descrição Curta</label>
-				<div id="editor"></div>
+					<p>Conteúdo Completo do Projeto</p>
+					<div id="conteudo"></div>
 
-			</div>
-		</form>
+				</div>
+			</form>
+		</div>
 
 	</div>
 	<a href="https://www.instagram.com/clubedacacamba.uel/" target="_blank" id="botao-mascote" class="botao-mascote-fixo">
@@ -47,9 +54,18 @@
 	<script src="js/init.js"></script>
 	<script src="js/main.js" defer type="module"></script>
 	<script>
-		const quill = new Quill('#editor', {
-			theme: 'snow'
+		const toolbarDesc = ['bold', 'italic', 'underline', 'strike'];
+
+		const desc = new Quill('#desc', {
+			modules: {
+				toolbar: toolbarDesc
+			},
+			theme: 'snow',
 		});
+
+		const conteudo = new Quill('#conteudo', {
+			theme: "snow"
+		})
 	</script>
 
 </body>

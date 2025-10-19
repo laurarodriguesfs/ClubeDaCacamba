@@ -162,9 +162,14 @@ button:hover {
 
 #criandoProj {
 	padding-top: 200px;
-	padding-left: 80px;
+	margin-bottom: 30px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+}
+
+.proj {
+	width: 50%;
 }
 
 .material-icons {
@@ -174,14 +179,39 @@ button:hover {
 
 .voltar {
 	cursor: pointer;
+	margin: 0;
 }
 
 .voltar:hover {
 	color: #0d2f02;
 }
 
-.projInput {
-	width: 90rem;
+.top {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		margin: 0;
+	}
+
+	input {
+		background-color: #00571B;
+		color: #fff;
+		height: 40px;
+		width: 120px;
+		cursor: pointer;
+	}
+
+	input:hover {
+		background-color: #134703;
+	}
+}
+
+#desc,
+#conteudo {
+	border-radius: 0 0 10px 10px;
 }
 
 .social-icons {
