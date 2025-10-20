@@ -1,4 +1,4 @@
-export default function sobre (){
+function sobre (){
 const main = document.querySelector("#main")
 
 main.innerHTML=`

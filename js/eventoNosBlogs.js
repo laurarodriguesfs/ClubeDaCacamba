@@ -1,4 +1,4 @@
-export default function eventoBlog() {
+function eventoBlog() {
   const blog = document.querySelectorAll(".card");
   blog.forEach((post) => {
     post.addEventListener("click", () => {

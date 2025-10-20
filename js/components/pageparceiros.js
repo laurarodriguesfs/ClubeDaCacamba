@@ -1,4 +1,4 @@
-export default function parceiros (){
+function parceiros (){
  
 const main = document.querySelector("#main")
   

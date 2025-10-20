@@ -1,4 +1,4 @@
-export function reinicializarMaterialize() {
+function reinicializarMaterialize() {
   // Inicializa o parallax
   const parallax = document.querySelectorAll('.parallax');
   M.Parallax.init(parallax);

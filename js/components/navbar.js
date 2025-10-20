@@ -1,4 +1,4 @@
-export default function navbar(){
+function navbar(){
     
 const navbar = document.querySelector("#navbar")
 
@@ -23,6 +23,7 @@ navbar.innerHTML=`
               <a href="https://www.facebook.com/Clubedacacamba.uel/" target="_blank" rel="noopener noreferrer"class="icon facebook" aria-label="Facebook"></a>
               <a href="https://www.instagram.com/clubedacacamba.uel/" target="_blank" rel="noopener noreferrer"class="icon instagram" aria-label="Instagram"></a>
             </div>
+            <a href="#admin">Área Administrativa</a>
           </div>
         </div>
 

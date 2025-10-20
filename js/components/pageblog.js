@@ -116,12 +116,12 @@ function verBlog(id) {
   });
 }
 
-export default function blog() {
+function blog() {
   postsExibidos = 3; 
   carregarBlogs();
 }
 
-export async function carregarEVerBlog(id) {
+async function carregarEVerBlog(id) {
   if (!listaBlog.length) { 
     await carregarBlogs();
   }
