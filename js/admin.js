@@ -8,94 +8,109 @@ function initAdminPanel() {
   const $mainContainer = $('#main');
 
   // --- ROTEADOR INTERNO ---
-  // Decide qual página mostrar com base no status de login
   function adminRouter() {
     const token = localStorage.getItem('authToken');
     const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
-    if (token && user && user.role === 'admin') {
+    if (token && user) {
+      // Se o usuário está logado (seja admin ou não), mostra o dashboard
       renderDashboardPage();
     } else {
+      // Se não está logado, mostra a página de login
       renderLoginPage();
     }
   }
 
   // --- FUNÇÕES DE RENDERIZAÇÃO DE PÁGINA ---
 
-  // Desenha a página de LOGIN
   function renderLoginPage() {
     $mainContainer.empty();
     const loginHTML = `
       <div class="container" style="padding-top: 5vh;">
-        <div class="row">
-          <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card">
-              <div class="card-content">
+        <div class="row"><div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card"><div class="card-content">
                 <span class="card-title">Acesso Administrativo</span>
                 <form id="login-form">
-                  <div class="input-field">
-                    <input id="email" type="email" class="validate" required>
-                    <label for="email">Email</label>
-                  </div>
-                  <div class="input-field">
-                    <input id="password" type="password" class="validate" required>
-                    <label for="password">Senha</label>
-                  </div>
+                  <div class="input-field"><input id="email" type="email" class="validate" required><label for="email">Email</label></div>
+                  <div class="input-field"><input id="password" type="password" class="validate" required><label for="password">Senha</label></div>
                   <button class="btn waves-effect waves-light" type="submit">Entrar<i class="material-icons right">send</i></button>
                   <p id="error-message" class="red-text"></p>
                 </form>
-              </div>
-            </div>
-          </div>
-        </div>
+            </div></div>
+        </div></div>
       </div>`;
     $mainContainer.html(loginHTML);
     $('#login-form').on('submit', handleLogin);
   }
 
-// js/admin.js -> dentro de initAdminPanel()
-
-// Desenha a página de DASHBOARD
-function renderDashboardPage() {
+  function renderDashboardPage() {
   $mainContainer.empty();
+
+  // 1. Pega os dados do usuário do localStorage
+  const user = JSON.parse(localStorage.getItem('user'));
+  const userRole = user ? user.role : null; // Pega a role para facilitar a verificação
+  
+  // 2. Inicia uma string vazia para guardar o HTML dos botões
+  let managementButtonsHTML = '';
+
+  // 3. Adiciona o botão "Gerenciar Usuários" APENAS se a role for 'admin'
+  if (userRole === 'admin') {
+    managementButtonsHTML += `
+      <button id="manage-users-btn" class="btn-gerenciamento">
+        Gerenciar Usuários <i class="material-icons right">group</i>
+      </button>
+    `;
+  }
+
+  // 4. Adiciona os botões de "Posts" e "Projetos" se a role for 'admin' OU 'editor'
+  if (userRole === 'admin' || userRole === 'editor') {
+    managementButtonsHTML += `
+      <button id="manage-posts-btn" class="btn-gerenciamento">
+        Gerenciar Posts <i class="material-icons right">history_edu</i>
+      </button>
+      <button id="manage-projects-btn" class="btn-gerenciamento">
+        Gerenciar Projetos<i class="material-icons right">recycling</i>
+      </button>
+    `;
+  }
+
+  // 5. Monta o HTML final do dashboard
   const dashboardHTML = `
     <div class="container" style="padding-top: 5vh;">
       <div class="row">
         <div class="col s12">
           <button id="logout-btn" class="btn waves-effect waves-light red right">Sair</button>
-          
-          <h1 class="header">Dashboard</h1>
-          <p class="p-grande">Bem-vindo(a) ao painel administrativo!</p>
+          <h4 class="header">Dashboard</h4>
+          <p class="p-grande">Bem-vindo(a), ${user ? user.name : 'Usuário'}!</p>
         </div>
       </div>
       <div class="row">
         <div class="col s12">
-          <button id="manage-users-btn" class="btn-gerenciamento">
-            Gerenciar Usuários <i class="material-icons right">group</i>
-          </button>
-          <button id="manage-posts-btn" class="btn-gerenciamento">
-            Gerenciar Posts <i class="material-icons right">history_edu</i>
-          </button>
-          <button id="manage-projects-btn" class="btn-gerenciamento">
-            Gerenciar Projetos<i class="material-icons right">recycling</i>
-          </button>
+          ${managementButtonsHTML}
         </div>
       </div>
     </div>`;
+    
   $mainContainer.html(dashboardHTML);
 
-  // Anexa os eventos aos botões
-  $('#logout-btn').on('click', handleLogout);
-  $('#manage-users-btn').on('click', renderUserListPage);
-  
-  //$('#manage-posts-btn').on('click', adminPosts );
-  //$('#manage-projects-btn').on('click', carregaPagGerenciadorProjetos);
+  // 6. Anexa os eventos de clique APENAS para os botões que foram criados
 
-  // REMOVIDO: A chamada para buscar estatísticas foi removida
-  // pois o HTML não tem mais onde exibi-las.
+  // O botão de logout sempre existe para usuários logados
+  $('#logout-btn').on('click', handleLogout);
+  
+  // Anexa o evento do botão de gerenciar usuários só se o usuário for admin
+  if (userRole === 'admin') {
+    $('#manage-users-btn').on('click', gerenciarUsuarios);
+  }
+
+  // Anexa os eventos para os outros botões se o usuário for admin ou editor
+  if (userRole === 'admin' || userRole === 'editor') {
+    // AINDA NÃO IMPLEMENTADO: Adicionar eventos para os outros botões de admin aqui
+    // $('#manage-posts-btn').on('click', renderPostListPage); 
+    // $('#manage-projects-btn').on('click', renderProjectListPage);
+  }
 }
 
-  // Desenha a página de LISTA DE USUÁRIOS
   function renderUserListPage() {
     $mainContainer.empty();
     const listHTML = `
@@ -108,9 +123,7 @@ function renderDashboardPage() {
           <thead>
             <tr><th>Nome</th><th>Email</th><th>Função (Role)</th><th>Ações</th></tr>
           </thead>
-          <tbody id="user-table-body">
-            <tr><td colspan="4" class="center-align">Carregando...</td></tr>
-          </tbody>
+          <tbody id="user-table-body"><tr><td colspan="4">Carregando...</td></tr></tbody>
         </table>
       </div>`;
     $mainContainer.html(listHTML);
@@ -118,7 +131,7 @@ function renderDashboardPage() {
     fetchUsers();
   }
   
-  // --- FUNÇÕES DE LÓGICA (manipuladores de eventos e chamadas de API) ---
+  // --- FUNÇÕES DE LÓGICA ---
 
   async function handleLogin(event) {
     event.preventDefault();
@@ -126,7 +139,6 @@ function renderDashboardPage() {
     const password = $('#password').val();
     const $errorMessage = $('#error-message');
     $errorMessage.text('');
-
     try {
       const response = await fetch(`${API_URL}/login`, {
         method: 'POST',
