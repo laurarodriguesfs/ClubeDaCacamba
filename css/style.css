@@ -1328,3 +1328,16 @@ body {
 #main {
 	flex-grow: 1;
 }
+
+
+/* Dashboard */
+.btn-gerenciamento{
+	background-color: #0d2f02;
+	font-size: 24px;
+	padding: 20px;
+    height: fit-content;
+}
+
+.p-grande{
+	font-size: 26px;
+}
