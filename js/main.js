@@ -50,6 +50,8 @@ function handlePublicRoute() {
     case "#contato":
       renderPage(contato);
       break;
+		case "#newProject":
+			renderPage(newProject)
     case "#home":
   default:
     renderPage(() => {

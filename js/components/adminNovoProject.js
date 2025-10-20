@@ -7,7 +7,7 @@ function newProject(){
 			<div class="proj">
 				<p class="voltar">
 					<i class="material-icons">arrow_back</i>
-					<a href="#sobre">Voltar ao Gerenciador</a>
+					<a href="#adminProjeto">Voltar ao Gerenciador</a>
 				</p>
 				<form>
 					<div class="top">

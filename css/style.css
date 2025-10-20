@@ -160,6 +160,7 @@ button:hover {
 	padding-top: 200px;
 }
 
+/* stryle pagina Novo Projeto */
 .flex-container {
 	margin-bottom: 30px;
 	display: flex;
@@ -169,10 +170,10 @@ button:hover {
 
 .proj {
 	width: 50%;
+	min-height: 447px;
 }
 
 .material-icons {
-	vertical-align: middle;
 	font-size: 1em;
 }
 
@@ -180,10 +181,6 @@ button:hover {
 	font-size: 20px;
 	cursor: pointer;
 	margin: 0;
-
-	a {
-		vertical-align: calc(50% - 0.5cm);
-	}
 }
 
 .voltar:hover {
@@ -217,6 +214,103 @@ button:hover {
 #conteudo {
 	border-radius: 0 0 10px 10px;
 }
+
+/* Fim style Novo Projeto 
+ * Style Pagina Gerenciador de Projetos 
+ */
+
+#PageGenProjetos {
+	padding-top: 200px;
+}
+
+.project-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 70px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.project-table th,
+.project-table td {
+	padding: 12px 15px;
+	text-align: left;
+	border: none;
+}
+
+.project-table th {
+	background-color: white;
+	font-weight: bold;
+	border-bottom: 2px solid #ccc;
+}
+
+.project-table tr {
+	border-bottom: 1px solid #eee;
+}
+
+.project-table tr:last-child {
+	border-bottom: none;
+}
+
+.linha {
+	background-color: #e6f2e6;
+}
+
+.linha:hover {
+	background-color: #d9e9d9;
+}
+
+.actions-cell a {
+	color: #38761d;
+	text-decoration: none;
+	margin-right: 15px;
+	padding: 5px 8px;
+	border-radius: 3px;
+	font-size: 18px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.actions-cell a.edit-link {
+	color: #4a4a4a;
+}
+
+.actions-cell a.delete-link {
+	color: #900;
+}
+
+.actions-cell a.view-link {
+	color: white;
+	background-color: #134703;
+	padding: 6px 10px;
+}
+
+.actions-cell a:hover {
+	text-decoration: underline;
+}
+
+.actions-cell a.view-link:hover {
+	background-color: #274f13;
+	text-decoration: none;
+}
+
+/* Estilo do Status */
+.status-cell {
+	font-weight: bold;
+}
+
+.status-visible {
+	color: #38761d;
+}
+
+.status-hidden {
+	color: #900;
+}
+
+.status-review {
+	color: #8f7902;
+}
+
+/* Fim estyle gerenciador de Projetos */
 
 .social-icons {
 	margin-left: 0;
