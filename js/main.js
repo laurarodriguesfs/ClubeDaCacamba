@@ -7,7 +7,7 @@ import parceiros from "./components/pageparceiros.js";
 import contato from "./components/pagecontato.js";
 import footer from "./components/footer.js";
 import adicionarEventoNosSlides from './adicionarEventoNosSlides.js';
-
+import newProject from "./components/newProject.js";
 
 navbar();
 footer();
@@ -64,6 +64,9 @@ function handleRoute() {
     case "#contato":
       renderPage(contato);
       break;
+		case "#newProject":
+			renderPage(newProject);
+			break;
     default:
       renderPage(() => {
         home();

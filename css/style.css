@@ -162,6 +162,9 @@ button:hover {
 
 #criandoProj {
 	padding-top: 200px;
+}
+
+.flex-container {
 	margin-bottom: 30px;
 	display: flex;
 	flex-direction: column;
@@ -174,12 +177,17 @@ button:hover {
 
 .material-icons {
 	vertical-align: middle;
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 .voltar {
+	font-size: 20px;
 	cursor: pointer;
 	margin: 0;
+
+	a {
+		vertical-align: calc(50% - 0.5cm);
+	}
 }
 
 .voltar:hover {
