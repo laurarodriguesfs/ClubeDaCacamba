@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, a, .bright, button, .texto-bright {
   padding: 10px;
 }
 
-button {
+button, .btn-adicionar-usuario {
   background-color:#134703;
   color: #fff; 
   border: none; 
@@ -1084,4 +1084,65 @@ body {
 
 #main {
   flex-grow: 1;
+}
+
+.div-botoes
+{
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Gerenciar Usuários */
+.gerenciar-usuarios
+{
+
+	margin-bottom: 200px; /*temporário*/
+
+	.btn-adicionar-usuario{
+    font-family: "Alexandria Regular", sans-serif !important; 
+  }
+
+	td > a {
+		font-family: "Alexandria Regular", sans-serif !important;
+		text-decoration: underline;
+		margin-right: 5%;
+	}
+	
+
+	table.striped > tbody > tr:nth-child(2n+1)
+	{
+		/*As linhas ímpares ficam em verde*/
+		background-color: #c0e9c9;
+	}
+	table.striped > tbody > tr:nth-child(2n)
+	{
+		/*As linhas pares ficam em branco*/
+		background-color: #fff;
+	}
+}
+
+/* Adicionar Novo Usuário*/
+
+.novo-usuario
+{
+	margin-bottom: 200px; /*temporário*/
+	
+	button
+	{
+		width: 100px;
+	}
+
+  form
+  {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 600px)
+  {
+    button{
+      margin-top: 30px;
+    }
+  }
 }
