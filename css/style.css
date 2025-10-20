@@ -227,6 +227,7 @@ button:hover {
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 70px;
+	margin-bottom: 70px;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
