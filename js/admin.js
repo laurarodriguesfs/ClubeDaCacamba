@@ -53,54 +53,47 @@ function initAdminPanel() {
     $('#login-form').on('submit', handleLogin);
   }
 
-  // Desenha a página de DASHBOARD
-  async function renderDashboardPage() {
-    $mainContainer.empty();
-    const dashboardHTML = `
-      <div class="container" style="padding-top: 5vh;">
-        <div class="row">
-          <div class="col s12">
-            <button id="logout-btn" class="btn waves-effect waves-light red right">Sair</button>
-            <h4 class="header">Dashboard</h4>
-            <p>Bem-vindo(a) ao painel administrativo!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card-panel teal">
-              <span class="white-text">
-                <h5>Total de Usuários</h5>
-                <h3 id="stats-users-count">...</h3>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <button id="manage-users-btn" class="btn waves-effect waves-light">
-              Gerenciar Usuários <i class="material-icons right">people</i>
-            </button>
-          </div>
-        </div>
-      </div>`;
-    $mainContainer.html(dashboardHTML);
+// js/admin.js -> dentro de initAdminPanel()
 
-    $('#logout-btn').on('click', handleLogout);
-    $('#manage-users-btn').on('click', renderUserListPage);
+// Desenha a página de DASHBOARD
+function renderDashboardPage() {
+  $mainContainer.empty();
+  const dashboardHTML = `
+    <div class="container" style="padding-top: 5vh;">
+      <div class="row">
+        <div class="col s12">
+          <button id="logout-btn" class="btn waves-effect waves-light red right">Sair</button>
+          
+          <h1 class="header">Dashboard</h1>
+          <p class="p-grande">Bem-vindo(a) ao painel administrativo!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button id="manage-users-btn" class="btn-gerenciamento">
+            Gerenciar Usuários <i class="material-icons right">group</i>
+          </button>
+          <button id="manage-posts-btn" class="btn-gerenciamento">
+            Gerenciar Posts <i class="material-icons right">history_edu</i>
+          </button>
+          <button id="manage-projects-btn" class="btn-gerenciamento">
+            Gerenciar Projetos<i class="material-icons right">recycling</i>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  $mainContainer.html(dashboardHTML);
 
-    try {
-      const token = localStorage.getItem('authToken');
-      const response = await fetch(`${API_URL}/stats/total-users`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-      if (!response.ok) throw new Error('Falha ao buscar estatísticas.');
-      const data = await response.json();
-      $('#stats-users-count').text(data.count);
-    } catch (error) {
-      console.error(error.message);
-      $('#stats-users-count').text('Erro!');
-    }
-  }
+  // Anexa os eventos aos botões
+  $('#logout-btn').on('click', handleLogout);
+  $('#manage-users-btn').on('click', renderUserListPage);
+  
+  //$('#manage-posts-btn').on('click', adminPosts );
+  //$('#manage-projects-btn').on('click', carregaPagGerenciadorProjetos);
+
+  // REMOVIDO: A chamada para buscar estatísticas foi removida
+  // pois o HTML não tem mais onde exibi-las.
+}
 
   // Desenha a página de LISTA DE USUÁRIOS
   function renderUserListPage() {
