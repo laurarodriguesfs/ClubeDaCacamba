@@ -13,7 +13,7 @@ function novoUsuario()
 
                 <fieldset class="col s12 m6">
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="ex: João">
+                    <input type="text" name="nome" id="nome" placeholder="João">
                     
                     
                     <label for="email">Email</label>
