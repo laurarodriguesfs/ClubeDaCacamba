@@ -19,7 +19,7 @@ function handlePublicRoute() {
   // Lógica para rotas específicas de projeto e blog
   if (hash.startsWith("#/projeto/")) {
     const id = hash.split("/")[2];
-    import('./components/pageprojetos.js').then(module => {
+    import('../pageprojetos.js').then(module => {
       module.carregarEVerProjeto(id);
     });
     return;
@@ -27,7 +27,7 @@ function handlePublicRoute() {
 
   if (hash.startsWith("#/blog/")) {
     const id = hash.split("/")[2];
-    import('./components/pageblog.js').then(module => {
+    import('../pageblog.js').then(module => {
       module.carregarEVerBlog(id);
     });
     return;
@@ -96,6 +96,19 @@ function initPublicSiteEventListeners() {
 $(document).ready(function() {
   console.log("MENSAGEM 1: Documento pronto, main.js está executando."); // <-- ADICIONE AQUI
   // Carrega os componentes fixos do layout uma única vez.
+
+   // Verificar se jQuery está carregado
+  if (typeof $ === 'undefined') {
+    console.error("jQuery não está carregado!");
+    return;
+  }
+  
+  // Verificar se o elemento #main existe
+  if ($('#main').length === 0) {
+    console.error("Elemento #main não encontrado!");
+    return;
+  }
+  
   navbar();
   footer();
 
