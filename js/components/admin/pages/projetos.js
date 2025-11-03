@@ -5,10 +5,9 @@ function carregaPagGerenciadorProjetos(){
 		<div class="flex-container">
 			<div class="proj">
 				<p class="voltar">
-					<a href="#admin">
-						<i class="material-icons">arrow_back</i>
-						Voltar ao Gerenciador
-					</a>
+					<button id="back-to-dashboard-btn" class="btn-flat waves-effect">
+						<i class="material-icons left">arrow_back</i>Voltar ao Dashboard
+					</button>
 				</p>
 
 				<div class="top">
@@ -69,4 +68,5 @@ function carregaPagGerenciadorProjetos(){
 		</div>
 	`
 	$mainContainer.html(projetosHTML);
+	$('#back-to-dashboard-btn').on('click', renderDashboardPage);
 }
