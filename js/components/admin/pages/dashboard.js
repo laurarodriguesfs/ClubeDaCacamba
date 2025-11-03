@@ -53,6 +53,7 @@ function renderDashboardPage() {
     }
 
     if (userRole === 'admin' || userRole === 'editor') {
-        // Implementar posteriormente
+        $('#manage-posts-btn').on('click', carregaPagGerenciadorposts);
+        $('#manage-projects-btn').on('click', carregaPagGerenciadorProjetos);
     }
 }
