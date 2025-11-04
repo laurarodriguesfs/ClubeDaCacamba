@@ -1341,7 +1341,7 @@ body {
 
 	margin-bottom: 200px; /*temporário*/
 
-	.btn-adicionar-usuario{
+	#back-to-new-user-btn{
     font-family: "Alexandria Regular", sans-serif !important; 
   }
 
@@ -1372,11 +1372,6 @@ body {
 .novo-usuario{
 	margin-bottom: 200px; /*temporário*/
 	
-	button
-	{
-		width: 100px;
-	}
-
   form
   {
     display: flex;

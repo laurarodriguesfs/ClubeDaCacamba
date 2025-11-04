@@ -1,12 +1,13 @@
+// js/components/admin/pages/novoUsuario.js
+
 function novoUsuario()
 {
     const main = document.querySelector("#main");
     main.innerHTML = `
         <div class="novo-usuario container">
-            <a class="valign-wrapper" href="#gerenciarUsuarios">
-                <i class="material-icons">arrow_back</i>
-                Voltar ao Gerenciador de Usuário
-            </a>
+            <button id="back-to-users-btn" class="valign-wrapper btn-flat waves-effect">
+                <i class="material-icons left">arrow_back</i>Voltar ao Gerenciador
+            </button>
             <h3>Criação de novo usuário</h3>
 
             <form class="row" action="">
@@ -31,4 +32,5 @@ function novoUsuario()
             </form>
         </div>
     `
+    $('#back-to-users-btn').on('click', renderUserListPage)
 }
