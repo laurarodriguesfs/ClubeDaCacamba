@@ -12,7 +12,7 @@ function carregaPagGerenciadorposts(){
 
 				<div class="top">
 					<h2>Gerenciador de posts e Eventos</h2>
-					<button type="post">
+					<button id="new-post-btn">
 						<i class="material-icons">add</i>
 						Adicionar novo conteúdo
 					</button>
@@ -69,4 +69,5 @@ function carregaPagGerenciadorposts(){
 	`
 	$mainContainer.html(postsHTML);
 	$('#back-to-dashboard-btn').on('click', renderDashboardPage);
+	$('#new-post-btn').on('click', newPost);
 }
