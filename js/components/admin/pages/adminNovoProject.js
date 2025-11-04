@@ -6,8 +6,9 @@ function newProject(){
 		<div class="flex-container">
 			<div class="proj">
 				<p class="voltar">
-					<i class="material-icons">arrow_back</i>
-					<a href="#adminProjeto">Voltar ao Gerenciador</a>
+					<button id="back-to-project-btn" class="btn-flat waves-effect">
+						<i class="material-icons left">arrow_back</i>Voltar ao Gerenciador
+					</button>
 				</p>
 				<form>
 					<div class="top">
@@ -40,4 +41,6 @@ function newProject(){
 	const conteudo = new Quill('#conteudo', {
 		theme: "snow"
 	})
+
+	$('#back-to-project-btn').on('click', carregaPagGerenciadorProjetos)
 }
