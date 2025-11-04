@@ -12,7 +12,7 @@ function carregaPagGerenciadorProjetos(){
 
 				<div class="top">
 					<h2>Gerenciador de Projetos e Eventos</h2>
-					<button type="post">
+					<button id="new-project-btn">
 						<i class="material-icons">add</i>
 						Adicionar novo conteúdo
 					</button>
@@ -69,4 +69,5 @@ function carregaPagGerenciadorProjetos(){
 	`
 	$mainContainer.html(projetosHTML);
 	$('#back-to-dashboard-btn').on('click', renderDashboardPage);
+	$('#new-project-btn').on('click', newProject);
 }
