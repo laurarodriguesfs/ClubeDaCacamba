@@ -4,18 +4,19 @@ function carregaPagGerenciadorProjetos(){
 	const projetosHTML = `
 		<div class="flex-container">
 			<div class="proj">
-				<p class="voltar">
+				<div class="div-botoes">
 					<button id="back-to-dashboard-btn" class="btn-flat waves-effect">
 						<i class="material-icons left">arrow_back</i>Voltar ao Dashboard
 					</button>
-				</p>
-
-				<div class="top">
-					<h2>Gerenciador de Projetos e Eventos</h2>
 					<button id="new-project-btn">
 						<i class="material-icons">add</i>
 						Adicionar novo conteúdo
 					</button>
+				</div>
+
+				<div class="top">
+					<h2>Gerenciador de Projetos e Eventos</h2>
+					
 				</div>
 
 				<table class="project-table">
@@ -27,7 +28,7 @@ function carregaPagGerenciadorProjetos(){
 							<th>Ações</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="project-table-body">
 						<tr class="linha">
 							<td>Apresentação de pôster no III ...</td>
 							<td>01/01/2025</td>
@@ -70,4 +71,5 @@ function carregaPagGerenciadorProjetos(){
 	$mainContainer.html(projetosHTML);
 	$('#back-to-dashboard-btn').on('click', renderDashboardPage);
 	$('#new-project-btn').on('click', newProject);
+	listarProjetos();
 }

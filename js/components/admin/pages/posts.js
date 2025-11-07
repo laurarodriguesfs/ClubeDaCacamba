@@ -70,4 +70,5 @@ function carregaPagGerenciadorposts(){
 	$mainContainer.html(postsHTML);
 	$('#back-to-dashboard-btn').on('click', renderDashboardPage);
 	$('#new-post-btn').on('click', newPost);
+	listarPosts();
 }

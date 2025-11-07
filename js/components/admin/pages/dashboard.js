@@ -9,7 +9,7 @@ function renderDashboardPage() {
     
     let managementButtonsHTML = '';
 
-    if (userRole === 'admin') {
+    if (userRole === 'Administrador') {
         managementButtonsHTML += `
         <button id="manage-users-btn" class="btn-gerenciamento">
             Gerenciar Usuários <i class="material-icons right">group</i>
@@ -17,7 +17,7 @@ function renderDashboardPage() {
         `;
     }
 
-    if (userRole === 'admin' || userRole === 'editor') {
+    if (userRole === 'Administrador' || userRole === 'Editor') {
         managementButtonsHTML += `
         <button id="manage-posts-btn" class="btn-gerenciamento">
             Gerenciar Posts <i class="material-icons right">history_edu</i>
@@ -48,11 +48,11 @@ function renderDashboardPage() {
 
     $('#logout-btn').on('click', handleLogout);
     
-    if (userRole === 'admin') {
+    if (userRole === 'Administrador') {
         $('#manage-users-btn').on('click', renderUserListPage);
     }
 
-    if (userRole === 'admin' || userRole === 'editor') {
+    if (userRole === 'Administrador' || userRole === 'Editor') {
         $('#manage-posts-btn').on('click', carregaPagGerenciadorposts);
         $('#manage-projects-btn').on('click', carregaPagGerenciadorProjetos);
     }

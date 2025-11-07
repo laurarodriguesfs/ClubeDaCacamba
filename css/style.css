@@ -169,7 +169,6 @@ button:hover {
 }
 
 .proj {
-	width: 50%;
 	min-height: 447px;
 }
 
@@ -258,6 +257,10 @@ button:hover {
 
 .linha:hover {
 	background-color: #d9e9d9;
+	
+	.edit-link, .delete-link{
+		background-color: #d9e9d9;
+	}
 }
 
 .actions-cell a {
@@ -271,22 +274,52 @@ button:hover {
 	white-space: nowrap;
 }
 
-.actions-cell a.edit-link {
+.actions-cell button {
+	color: #38761d;
+	text-decoration: none;
+	margin-right: 5px;
+	padding: 5px 8px;
+	border-radius: 3px;
+	font-size: 18px;
+	font-weight: 500;
+	white-space: nowrap;
+	background-color: #e6f2e6;
+}
+
+
+.actions-cell button.edit-link
+{
 	color: #4a4a4a;
 }
 
-.actions-cell a.delete-link {
+.actions-cell button.delete-link
+{
 	color: #900;
 }
 
+.actions-cell button.view-link
+{
+	color: white;
+	background-color: #134703;
+}
 .actions-cell a.view-link {
 	color: white;
 	background-color: #134703;
-	padding: 6px 10px;
+	padding: 6px 8px;
 }
 
 .actions-cell a:hover {
 	text-decoration: underline;
+}
+
+.actions-cell button:hover
+{
+	text-decoration: underline;
+}
+
+.actions-cell button.view-link:hover {
+	background-color: #274f13;
+	text-decoration: none;
 }
 
 .actions-cell a.view-link:hover {

@@ -3,7 +3,7 @@ async function fetchUsers() {
   const $tableBody = $('#user-table-body');
   try {
     const token = localStorage.getItem('authToken');
-    const response = await fetch(`${API_URL}/users`, {
+    const response = await fetch(`${API_URL}/user`, {
       headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
     });
     if (!response.ok) throw new Error('Falha ao buscar usuários.');
