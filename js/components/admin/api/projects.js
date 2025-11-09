@@ -23,12 +23,18 @@ async function listarProjetos() {
             <td>temporário</td>
             <td class="status-cell">${project.status}</td>
             <td class="actions-cell">
-                <button class="edit-link">Editar</button>
+                <button class="edit-link" data-id="${project.id}">Editar</button>
                 <button class="delete-link" data-id="${project.id}">Excluir</button>
                 <button class="view-link" data-id="${project.id}">Ver Página</button>
             </td>
         </tr>`;
       $tableBody.append(rowHTML);
+    });
+
+    $(document).on('click', '.edit-link', function() 
+    {
+      const id = $(this).data('id');
+      editarProject(id);
     });
 
     $(document).on('click', '.delete-link', function() 
@@ -87,7 +93,7 @@ async function verProjetoUnico(id) {
     if (!response.ok) throw new Error('Falha ao carregar o projeto.');
 
     const projeto = await response.json();
-
+    const imagemProjeto = projeto.image;
     // Monta o HTML com os dados retornados
     const verProjetoHTML = `
       <div class="container gerenciar-usuarios" style="padding-top: 5vh;">
@@ -104,15 +110,14 @@ async function verProjetoUnico(id) {
           <div class="row">
             <div class="col s12 l6">
               <img class="single-projeto card-image responsive-img" 
-                   src="https://picsum.photos/500/300" 
-                   alt="${projeto.titulo}">
+                   src="${projeto.image}" 
+                   alt=" texto padrão">
             </div>
             <div class="col s12 l6">
               <p>${projeto.conteudo}</p>
               <p><strong>Status:</strong> ${projeto.status}</p>
             </div>
           </div>
-          <a href="#projetos" class="btn-voltar btn waves-effect">Voltar para projetos</a>
         </div>
       </div>
     `;

@@ -21,16 +21,27 @@ function newProject(){
 
 						<p>Descrição Curta</p>
 						<input type="text" id="descricao" name="descricao" placeholder="Ex: Projeto A que constitue em ..." required>
-						<div id="desc" required></div>
+
+						<p>Link da Imagem</p>
+						<input type="url" id="imagem" name="imagem" placeholder="https://picsum.photos/200" required>
 
 						<p>Conteúdo Completo do Projeto</p>
 						<div id="conteudo"></div>
+						
+						<p>Status:</p>
+						<input type="radio" id="visivel" name="status" value="Visível" checked />
+						<label for="visivel">Visível</label>
+						<input type="radio" id="oculto" name="status" value="Oculto" />
+						<label for="oculto">Oculto</label>
+						<input type="radio" id="revisao" name="status" value="Revisão" />
+						<label for="lorevisaouie">Revisão</label>
+						<input type="radio" id="arquivado" name="status" value="Arquivado" />
+						<label for="arquivado">Arquivado</label>
 					</div>
 				</form>
 			</div>
 		</div> 
 	`
-	const toolbarDesc = ['bold', 'italic', 'underline', 'strike'];
 
 	const conteudo = new Quill('#conteudo', {
 		theme: "snow"
@@ -45,15 +56,18 @@ function newProject(){
 		
 		const titulo = document.querySelector('#titulo').value.trim();
 		const descricao = document.querySelector('#descricao').value.trim();
+		const imagem = document.querySelector('#imagem').value.trim();
 		const conteudoCompleto = conteudo.root.innerHTML.trim();
-
+		const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
+		
 
 		const projetoData = 
 		{
 			titulo,
 			descricao,
 			conteudo: conteudoCompleto,
-			status: "ativo"
+			image: imagem,
+			status: statusSelecionado
 		};
 
 

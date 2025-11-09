@@ -1442,3 +1442,9 @@ body {
 .p-grande{
 	font-size: 26px;
 }
+
+input[type='radio'] {
+	position: initial !important;
+	opacity: 100% !important;
+	pointer-events: fill !important;
+}
