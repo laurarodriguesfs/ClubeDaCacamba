@@ -32,8 +32,7 @@ $(document).on('click', '.delete-btn', function() {
 	excluirUsario(id);
 });
 
-async function excluirUsario(id)
-{
+async function excluirUsario(id){
   try {
     const token = localStorage.getItem('authToken');
     const response = await fetch(`${API_URL}/users/${id}`, {
@@ -52,4 +51,38 @@ async function excluirUsario(id)
     console.error("Erro ao excluir usuário:", error);
     alert('Erro ao excluir usuário: ' + error.message);
   }
+}
+
+$(document).on('click', '.edit-btn', function(){
+	const id = $(this).data('id');
+	editarUsuario(id);
+});
+
+async function editarUsuario(id){
+	try {
+		const token = localStorage.getItem('authToken');
+		const response = await fetch(`${API_URL}/users/${id}`, {
+			method: 'PUT',
+			headers:{
+				'Authorization': `Bearer ${token}`,
+				'Accept': 'application/json'
+			}
+		});
+
+		if (!response.ok) throw new Error('Falha ao buscar dados do Usuário.');
+
+		const userData = response.json();
+		const showEditForm = `
+			
+		`
+
+		editUsers();
+	} catch (error) {
+		console.error("Erro ao iniciar edição do usuário", error);
+		alert('Erro ao iniciar edição do usuário: ' + error.message);
+	}
+}
+
+async function editUsers(){
+
 }
