@@ -1,8 +1,7 @@
 // js/components/admin/api/posts.js
 
-// js/admin/api/users.js
 async function listarPosts() {
-  const $tableBody = $('#project-table-body');
+  const $tableBody = $('#post-table-body');
   try {
     const token = localStorage.getItem('authToken');
     const response = await fetch(`${API_URL}/blog`, {
@@ -23,7 +22,7 @@ async function listarPosts() {
             <td>temporário</td>
             <td class="status-cell">${post.status}</td>
             <td class="actions-cell">
-                <button class="edit-link">Editar</button>
+                <button class="edit-link" data-id="${post.id}">Editar</button>
                 <button class="delete-link" data-id="${post.id}">Excluir</button>
                 <button class="view-link" data-id="${post.id}">Ver Página</button>
             </td>
@@ -31,16 +30,22 @@ async function listarPosts() {
       $tableBody.append(rowHTML);
     });
 
+    $(document).on('click', '.edit-link', function() 
+    {
+      const id = $(this).data('id');
+      editarPost(id);
+    });
+
     $(document).on('click', '.delete-link', function() 
     {
       const id = $(this).data('id');
-      excluirProjeto(id);
+      excluirPost(id);
     });
 
     $(document).on('click', '.view-link', function() 
     {
       const id = $(this).data('id');
-      verProjetoUnico(id);
+      verPostUnico(id);
     });
 
   } catch (error) {
@@ -64,7 +69,7 @@ async function excluirPost(id)
     if (!response.ok) throw new Error('Falha ao excluir post.');
     
     // Recarregar a lista após exclusão
-    listarProjetos();
+    listarPosts();
   } catch (error) {
     console.error("Erro ao excluir post:", error);
     alert('Erro ao excluir post: ' + error.message);
@@ -76,62 +81,62 @@ async function verPostUnico(id) {
   $mainContainer.empty();
 
   try {
-    // Faz a requisição do projeto específico
+    // Faz a requisição do post específico
     const token = localStorage.getItem('authToken');
-    const response = await fetch(`${API_URL}/project/${id}`, {
+    const response = await fetch(`${API_URL}/blog/${id}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json'
       }
     });
-    if (!response.ok) throw new Error('Falha ao carregar o projeto.');
+    if (!response.ok) throw new Error('Falha ao carregar o post.');
 
     const post = await response.json();
 
     // Monta o HTML com os dados retornados
-    const verProjetoHTML = `
+    const verPostHTML = `
       <div class="container gerenciar-usuarios" style="padding-top: 5vh;">
         <div class="div-botoes">
-          <button id="back-to-manage-project-btn" class="valign-wrapper btn-flat waves-effect">
-            <i class="material-icons left">arrow_back</i>Voltar ao Gerenciar Projetos
+          <button id="back-to-manage-post-btn" class="valign-wrapper btn-flat waves-effect">
+            <i class="material-icons left">arrow_back</i>Voltar ao Gerenciar Posts
           </button>
         </div>
 
-        <h1 class="header">Visualizar Projeto</h1>
+        <h1 class="header">Visualizar Post</h1>
 
         <div class="section">
           <h4>${post.titulo}</h4>
           <div class="row">
             <div class="col s12 l6">
               <img class="single-projeto card-image responsive-img" 
-                   src="https://picsum.photos/500/300" 
+                   src="${post.image}" 
                    alt="${post.titulo}">
             </div>
             <div class="col s12 l6">
+              <p>${post.descricao}</p>
               <p>${post.conteudo}</p>
               <p><strong>Status:</strong> ${post.status}</p>
             </div>
           </div>
-          <a href="#projetos" class="btn-voltar btn waves-effect">Voltar para projetos</a>
         </div>
       </div>
     `;
 
-    $mainContainer.html(verProjetoHTML);
+    $mainContainer.html(verPostHTML);
 
     // Voltar à tela de gerenciamento
-    $('#back-to-manage-project-btn').on('click', carregaPagGerenciadorProjetos);
+    $('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts);
 
   } catch (error) {
-    console.error("Erro ao carregar projeto:", error);
+    console.error("Erro ao carregar post:", error);
     $mainContainer.html(`
       <div class="container center-align" style="padding: 10vh;">
         <p class="red-text">${error.message}</p>
-        <button id="back-to-manage-project-btn" class="btn-flat waves-effect">
+        <button id="back-to-manage-post-btn" class="btn-flat waves-effect">
           <i class="material-icons left">arrow_back</i>Voltar
         </button>
       </div>
     `);
-    $('#back-to-manage-project-btn').on('click', carregaPagGerenciadorProjetos);
+    $('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts);
   }
 }

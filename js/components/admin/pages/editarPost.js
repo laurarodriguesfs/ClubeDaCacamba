@@ -1,62 +1,62 @@
-// js/components/admin/pages/editarProject.js
+// js/components/admin/pages/editarPost.js
 
 
-async function editarProject(id)
+async function editarPost(id)
 {
     const $mainContainer = getMainContainer();
     $mainContainer.empty();
 
     try {
-        // Faz a requisição do projeto específico
+        // Faz a requisição do post específico
         const token = localStorage.getItem('authToken');
-        const response = await fetch(`${API_URL}/project/${id}`, {
+        const response = await fetch(`${API_URL}/blog/${id}`, {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Accept': 'application/json'
         }
         });
-        if (!response.ok) throw new Error('Falha ao carregar o projeto.');
+        if (!response.ok) throw new Error('Falha ao carregar o post.');
 
-        const projeto = await response.json();
+        const post = await response.json();
 
         // Monta o HTML com os dados retornados
-        const editarProjetoHTML = `
+        const editarPostHTML = `
         <div class="container">
 			<div class="proj">
 				<p class="voltar">
-					<button id="back-to-manage-project-btn" class="btn-flat waves-effect">
+					<button id="back-to-manage-post-btn" class="btn-flat waves-effect">
 						<i class="material-icons left">arrow_back</i>Voltar ao Gerenciador
 					</button>
 				</p>
-				<form id="new-project-form" method="POST">
+				<form id="new-post-form" method="POST">
 					<div class="top">
-						<h2>Atualiação de Projeto</h2>
+						<h2>Atualização de Post</h2>
 						<input type="submit" value="Atualizar">
 					</div>
 					<div class="projInput">
-						<p>Titulo do Projeto</p>
-						<input type="text" id="titulo" name="titulo" placeholder="Ex: Projeto A que constitue em ..." value="${projeto.titulo}" required>
+						<p>Titulo do Post</p>
+						<input type="text" id="titulo" name="titulo" placeholder="Ex: Post A que constitue em ..." value="${post.titulo}" required>
 
 						<p>Descrição Curta</p>
-						<input type="text" id="descricao" name="descricao" placeholder="Ex: Projeto A que constitue em ..." value="${projeto.descricao}" required>
+						<input type="text" id="descricao" name="descricao" placeholder="Ex: Post A que constitue em ..." value="${post.descricao}" required>
 
 						<p>Link da Imagem</p>
-						<input type="text" id="imagem" name="imagem" placeholder="https://picsum.photos/200" value="${projeto.image}">
+						<input type="text" id="imagem" name="imagem" placeholder="https://picsum.photos/200" value="${post.image}">
 
-						<p>Conteúdo Completo do Projeto</p>
-						<div id="conteudo">${projeto.conteudo}</div>
+						<p>Conteúdo Completo do Post</p>
+						<div id="conteudo">${post.conteudo}</div>
 						
 						<p>Status:</p>
-						<input type="radio" id="visivel" name="status" value="Visível" ${projeto.status === 'Visível' ? 'checked' : ''} />
+						<input type="radio" id="visivel" name="status" value="Visível" ${post.status === 'Visível' ? 'checked' : ''} />
 						<label for="visivel" >Visível</label>
                         
-						<input type="radio" id="oculto" name="status" value="Oculto" ${projeto.status === 'Oculto' ? 'checked' : ''} />
+						<input type="radio" id="oculto" name="status" value="Oculto" ${post.status === 'Oculto' ? 'checked' : ''} />
 						<label for="oculto">Oculto</label>
 						
-                        <input type="radio" id="revisao" name="status" value="Revisão" ${projeto.status === 'Revisão' ? 'checked' : ''} />
+                        <input type="radio" id="revisao" name="status" value="Revisão" ${post.status === 'Revisão' ? 'checked' : ''} />
 						<label for="revisao">Revisão</label>
 						
-                        <input type="radio" id="arquivado" name="status" value="Arquivado" ${projeto.status === 'Arquivado' ? 'checked' : ''} />
+                        <input type="radio" id="arquivado" name="status" value="Arquivado" ${post.status === 'Arquivado' ? 'checked' : ''} />
 						<label for="arquivado">Arquivado</label>
 					</div>
 				</form>
@@ -64,7 +64,7 @@ async function editarProject(id)
 		</div>
         `;
 
-        $mainContainer.html(editarProjetoHTML);
+        $mainContainer.html(editarPostHTML);
 
         const conteudo = new Quill('#conteudo', {
             theme: "snow"
@@ -73,9 +73,9 @@ async function editarProject(id)
 
 
         // Voltar à tela de gerenciamento
-        $('#back-to-manage-project-btn').on('click', carregaPagGerenciadorProjetos);
+        $('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts);
 
-        document.querySelector('#new-project-form').addEventListener('submit', async (e) => 
+        document.querySelector('#new-post-form').addEventListener('submit', async (e) => 
         {
             e.preventDefault();
 
@@ -87,7 +87,7 @@ async function editarProject(id)
             const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
             
 
-            const projetoData = 
+            const postData = 
             {
                 titulo,
                 descricao,
@@ -100,41 +100,41 @@ async function editarProject(id)
             try
             {
                 const token = localStorage.getItem('authToken');
-                const response = await fetch(`${API_URL}/project/${id}`, {
+                const response = await fetch(`${API_URL}/blog/${id}`, {
                     method: "PUT",
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(projetoData)
+                    body: JSON.stringify(postData)
                 });
                 if (!response.ok) {
                     const errorText = await response.text();
-                    throw new Error(`Erro ao atualizar projeto: ${errorText}`);
+                    throw new Error(`Erro ao atualizar post: ${errorText}`);
                 }
 
                 const result = await response.json();
-                M.toast({ html: 'Projeto atualizado com sucesso!' }); // se estiver usando Materialize
-                console.log('Projeto atualizado:', result);
+                M.toast({ html: 'Post atualizado com sucesso!' }); // se estiver usando Materialize
+                console.log('Post atualizado:', result);
                 
-                carregaPagGerenciadorProjetos();
+                carregaPagGerenciadorPosts();
             } catch(error)
             {
                 console.error(error);
-                M.toast({ html: 'Erro ao atualizar o projeto!' });
+                M.toast({ html: 'Erro ao atualizar o post!' });
             }
         });
 
     } catch (error) {
-        console.error("Erro ao carregar projeto:", error);
+        console.error("Erro ao carregar post:", error);
         $mainContainer.html(`
         <div class="container center-align" style="padding: 10vh;">
             <p class="red-text">${error.message}</p>
-            <button id="back-to-manage-project-btn" class="btn-flat waves-effect">
+            <button id="back-to-manage-post-btn" class="btn-flat waves-effect">
             <i class="material-icons left">arrow_back</i>Voltar
             </button>
         </div>
         `);
-        $('#back-to-manage-project-btn').on('click', carregaPagGerenciadorProjetos);
+        $('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts);
     }
 }

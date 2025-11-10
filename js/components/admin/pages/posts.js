@@ -1,4 +1,4 @@
-function carregaPagGerenciadorposts(){
+function carregaPagGerenciadorPosts(){
 	const $mainContainer = getMainContainer();
 	
 	const postsHTML = `
@@ -27,7 +27,7 @@ function carregaPagGerenciadorposts(){
 							<th>Ações</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="post-table-body">
 						<tr class="linha">
 							<td>Apresentação de pôster no III ...</td>
 							<td>01/01/2025</td>

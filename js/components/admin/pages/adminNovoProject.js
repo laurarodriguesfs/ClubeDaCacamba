@@ -17,33 +17,36 @@ function newProject(){
 					</div>
 					<div class="projInput">
 						<p>Titulo do Projeto</p>
-						<input type="text" id="titulo" name="titulo" placeholder="Ex: Projeto A que constitue em ..." required>
+						<input type="text" id="titulo-proj" name="titulo-proj" placeholder="Ex: Projeto A que constitue em ..." required>
 
 						<p>Descrição Curta</p>
-						<input type="text" id="descricao" name="descricao" placeholder="Ex: Projeto A que constitue em ..." required>
+						<input type="text" id="descricao-proj" name="descricao-proj" placeholder="Ex: Projeto A que constitue em ..." required>
 
 						<p>Link da Imagem</p>
-						<input type="url" id="imagem" name="imagem" placeholder="https://picsum.photos/200" required>
+						<input type="url" id="imagem-proj" name="imagem-proj" placeholder="https://picsum.photos/200" required>
 
 						<p>Conteúdo Completo do Projeto</p>
-						<div id="conteudo"></div>
+						<div id="conteudo-proj"></div>
 						
 						<p>Status:</p>
-						<input type="radio" id="visivel" name="status" value="Visível" checked />
-						<label for="visivel">Visível</label>
-						<input type="radio" id="oculto" name="status" value="Oculto" />
-						<label for="oculto">Oculto</label>
-						<input type="radio" id="revisao" name="status" value="Revisão" />
-						<label for="lorevisaouie">Revisão</label>
-						<input type="radio" id="arquivado" name="status" value="Arquivado" />
-						<label for="arquivado">Arquivado</label>
+						<input type="radio" id="visivel-proj" name="status" value="Visível" checked />
+						<label for="visivel-proj">Visível</label>
+
+						<input type="radio" id="oculto-proj" name="status" value="Oculto" />
+						<label for="oculto-proj">Oculto</label>
+
+						<input type="radio" id="revisao-proj" name="status" value="Revisão" />
+						<label for="revisao-proj">Revisão</label>
+
+						<input type="radio" id="arquivado-proj" name="status" value="Arquivado" />
+						<label for="arquivado-proj">Arquivado</label>
 					</div>
 				</form>
 			</div>
 		</div> 
 	`
 
-	const conteudo = new Quill('#conteudo', {
+	const conteudo = new Quill('#conteudo-proj', {
 		theme: "snow"
 	})
 
@@ -54,9 +57,9 @@ function newProject(){
 		e.preventDefault();
 
 		
-		const titulo = document.querySelector('#titulo').value.trim();
-		const descricao = document.querySelector('#descricao').value.trim();
-		const imagem = document.querySelector('#imagem').value.trim();
+		const titulo = document.querySelector('#titulo-proj').value.trim();
+		const descricao = document.querySelector('#descricao-proj').value.trim();
+		const imagem = document.querySelector('#imagem-proj').value.trim();
 		const conteudoCompleto = conteudo.root.innerHTML.trim();
 		const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
 		
@@ -88,7 +91,7 @@ function newProject(){
 			}
 
 			const result = await response.json();
-			M.toast({ html: 'Projeto criado com sucesso!' }); // se estiver usando Materialize
+			M.toast({ html: 'Projeto criado com sucesso!' });
 			console.log('Projeto criado:', result);
 			
 			carregaPagGerenciadorProjetos();

@@ -3,44 +3,99 @@
 function newPost(){
 	const newPost = document.querySelector("#main");
 	newPost.innerHTML = `
-		<div class="flex-container">
+		<div class="container">
 			<div class="proj">
 				<p class="voltar">
-					<button id="back-to-post-btn" class="btn-flat waves-effect">
+					<button id="back-to-manage-post-btn" class="btn-flat waves-effect">
 						<i class="material-icons left">arrow_back</i>Voltar ao Gerenciador
 					</button>
 				</p>
-				<form>
+				<form id="new-post-form" method="POST">
 					<div class="top">
 						<h2>Criação de Novo Post</h2>
-						<input type="button" name="Publicar" value="Publicar">
+						<input type="submit" value="Publicar">
 					</div>
 					<div class="projInput">
 						<p>Titulo do Post</p>
-						<input type="text" name="titulo" placeholder="Ex: Projeto A que constitue em ..." required>
+						<input type="text" id="titulo" name="titulo" placeholder="Ex: Post A que constitue em ..." required>
 
 						<p>Descrição Curta</p>
-						<div id="desc"></div>
+						<input type="text" id="descricao" name="descricao" placeholder="Ex: Post A que constitue em ..." required>
+
+						<p>Link da Imagem</p>
+						<input type="url" id="imagem" name="imagem" placeholder="https://picsum.photos/200" required>
 
 						<p>Conteúdo Completo do Post</p>
 						<div id="conteudo"></div>
+						
+						<p>Status:</p>
+						<input type="radio" id="visivel" name="status" value="Visível" checked />
+						<label for="visivel">Visível</label>
+						<input type="radio" id="oculto" name="status" value="Oculto" />
+						<label for="oculto">Oculto</label>
+						<input type="radio" id="revisao" name="status" value="Revisão" />
+						<label for="revisao">Revisão</label>
+						<input type="radio" id="arquivado" name="status" value="Arquivado" />
+						<label for="arquivado">Arquivado</label>
 					</div>
 				</form>
 			</div>
 		</div> 
 	`
-	const toolbarDesc = ['bold', 'italic', 'underline', 'strike'];
-
-	const desc = new Quill('#desc', {
-		modules: {
-			toolbar: toolbarDesc
-		},
-		theme: 'snow',
-	});
 
 	const conteudo = new Quill('#conteudo', {
 		theme: "snow"
 	})
 
-	$('#back-to-post-btn').on('click', carregaPagGerenciadorposts)
+	$('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts)
+
+	document.querySelector('#new-post-form').addEventListener('submit', async (e) => 
+	{
+		e.preventDefault();
+
+		
+		const titulo = document.querySelector('#titulo').value.trim();
+		const descricao = document.querySelector('#descricao').value.trim();
+		const imagem = document.querySelector('#imagem').value.trim();
+		const conteudoCompleto = conteudo.root.innerHTML.trim();
+		const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
+		
+
+		const postData = 
+		{
+			titulo,
+			descricao,
+			conteudo: conteudoCompleto,
+			image: imagem,
+			status: statusSelecionado
+		};
+
+
+		try
+		{
+			const token = localStorage.getItem('authToken');
+			const response = await fetch(`${API_URL}/blog`, {
+				method: "POST",
+				headers: {
+					'Authorization': `Bearer ${token}`,
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(postData)
+			});
+			if (!response.ok) {
+				const errorText = await response.text();
+				throw new Error(`Erro ao criar post: ${errorText}`);
+			}
+
+			const result = await response.json();
+			M.toast({ html: 'Post criado com sucesso!' }); 
+			console.log('Post criado:', result);
+			
+			carregaPagGerenciadorPosts();
+		} catch(error)
+		{
+			console.error(error);
+			M.toast({ html: 'Erro ao criar o post!' });
+		}
+	});
 }

@@ -11,7 +11,7 @@ async function listarProjetos() {
         'Accept': 'application/json'
       }
     });
-    if (!response.ok) throw new Error('Falha ao buscar usuários.');
+    if (!response.ok) throw new Error('Falha ao buscar projetos.');
     const projects = await response.json();
     
     $tableBody.empty();
@@ -50,7 +50,7 @@ async function listarProjetos() {
     });
 
   } catch (error) {
-    console.error("Erro ao buscar usuários:", error);
+    console.error("Erro ao buscar projetos:", error);
     $tableBody.html(`<tr><td colspan="4" class="center-align red-text">${error.message}</td></tr>`);
   }
 }
@@ -111,7 +111,7 @@ async function verProjetoUnico(id) {
             <div class="col s12 l6">
               <img class="single-projeto card-image responsive-img" 
                    src="${projeto.image}" 
-                   alt=" texto padrão">
+                   alt="${projeto.titulo}">
             </div>
             <div class="col s12 l6">
               <p>${projeto.conteudo}</p>
