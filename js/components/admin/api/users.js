@@ -13,11 +13,11 @@ async function fetchUsers() {
     users.forEach(user => {
       const rowHTML = `
         <tr>
-          <td>${user.name}</td>
-          <td>${user.email}</td>
-          <td>${user.role}</td>
-          <td><button class="btn-small waves-effect waves-light blue edit-btn" data-id="${user.id}">Editar</button></td>
-					<td><button class="btn-small waves-effect waves-light red delete-btn" data-id="${user.id}">Deletar</button></td>
+			<td>${user.name}</td>
+			<td>${user.email}</td>
+			<td>${user.role}</td>
+			<td><button class="btn-small waves-effect waves-light blue edit-btn" data-id="${user.id}">Editar</button></td>
+			<td><button class="btn-small waves-effect waves-light red delete-btn" data-id="${user.id}">Deletar</button></td>
         </tr>`;
       $tableBody.append(rowHTML);
     });

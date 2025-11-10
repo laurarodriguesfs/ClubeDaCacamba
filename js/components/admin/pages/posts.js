@@ -18,11 +18,10 @@ function carregaPagGerenciadorPosts(){
 					</button>
 				</div>
 
-				<table class="project-table">
+				<table class="project-table centered">
 					<thead>
 						<tr>
 							<th>Título</th>
-							<th>Data de Conclusão</th>
 							<th>Status</th>
 							<th>Ações</th>
 						</tr>

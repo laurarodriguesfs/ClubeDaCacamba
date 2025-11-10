@@ -19,40 +19,41 @@ async function listarPosts() {
       const rowHTML = `
         <tr class="linha">
             <td>${post.titulo}</td>
-            <td>temporário</td>
             <td class="status-cell">${post.status}</td>
             <td class="actions-cell">
-                <button class="edit-link" data-id="${post.id}">Editar</button>
-                <button class="delete-link" data-id="${post.id}">Excluir</button>
-                <button class="view-link" data-id="${post.id}">Ver Página</button>
+                <button class="edit-link edit-link-post" data-id="${post.id}">Editar</button>
+                <button class="delete-link delete-link-post" data-id="${post.id}">Excluir</button>
+                <button class="view-link view-link-post" data-id="${post.id}">Ver Página</button>
             </td>
         </tr>`;
       $tableBody.append(rowHTML);
     });
 
-    $(document).on('click', '.edit-link', function() 
-    {
-      const id = $(this).data('id');
-      editarPost(id);
-    });
-
-    $(document).on('click', '.delete-link', function() 
-    {
-      const id = $(this).data('id');
-      excluirPost(id);
-    });
-
-    $(document).on('click', '.view-link', function() 
-    {
-      const id = $(this).data('id');
-      verPostUnico(id);
-    });
+    
 
   } catch (error) {
     console.error("Erro ao buscar Posts:", error);
     $tableBody.html(`<tr><td colspan="4" class="center-align red-text">${error.message}</td></tr>`);
   }
 }
+
+$(document).on('click', '.edit-link-post', function() 
+{
+  const id = $(this).data('id');
+  editarPost(id);
+});
+
+$(document).on('click', '.delete-link-post', function() 
+{
+  const id = $(this).data('id');
+  excluirPost(id);
+});
+
+$(document).on('click', '.view-link-post', function() 
+{
+  const id = $(this).data('id');
+  verPostUnico(id);
+});
 
 async function excluirPost(id)
 {

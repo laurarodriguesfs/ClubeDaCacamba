@@ -23,37 +23,39 @@ async function listarProjetos() {
             <td>temporário</td>
             <td class="status-cell">${project.status}</td>
             <td class="actions-cell">
-                <button class="edit-link" data-id="${project.id}">Editar</button>
-                <button class="delete-link" data-id="${project.id}">Excluir</button>
-                <button class="view-link" data-id="${project.id}">Ver Página</button>
+                <button class="edit-link edit-link-project" data-id="${project.id}">Editar</button>
+                <button class="delete-link delete-link-project" data-id="${project.id}">Excluir</button>
+                <button class="view-link view-link-project" data-id="${project.id}">Ver Página</button>
             </td>
         </tr>`;
       $tableBody.append(rowHTML);
     });
 
-    $(document).on('click', '.edit-link', function() 
-    {
-      const id = $(this).data('id');
-      editarProject(id);
-    });
-
-    $(document).on('click', '.delete-link', function() 
-    {
-      const id = $(this).data('id');
-      excluirProjeto(id);
-    });
-
-    $(document).on('click', '.view-link', function() 
-    {
-      const id = $(this).data('id');
-      verProjetoUnico(id);
-    });
+    
 
   } catch (error) {
     console.error("Erro ao buscar projetos:", error);
     $tableBody.html(`<tr><td colspan="4" class="center-align red-text">${error.message}</td></tr>`);
   }
 }
+
+$(document).on('click', '.edit-link-project', function() 
+{
+  const id = $(this).data('id');
+  editarProject(id);
+});
+
+$(document).on('click', '.delete-link-project', function() 
+{
+  const id = $(this).data('id');
+  excluirProjeto(id);
+});
+
+$(document).on('click', '.view-link-project', function() 
+{
+  const id = $(this).data('id');
+  verProjetoUnico(id);
+});
 
 async function excluirProjeto(id)
 {
