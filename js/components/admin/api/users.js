@@ -112,7 +112,7 @@ async function editarUsuario(id) {
 		if (M && M.FormSelect) M.FormSelect.init(document.querySelectorAll('select'));
 
 		// Botão voltar
-		$('#back-to-manage-users-btn').on('click', fetchUsers);
+		$('#back-to-manage-users-btn').on('click', renderUserListPage);
 
 		// Submissão do formulário
 		document.querySelector('#edit-user-form').addEventListener('submit', async (e) => {
