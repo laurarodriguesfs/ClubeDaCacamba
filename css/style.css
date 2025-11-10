@@ -1402,34 +1402,7 @@ body {
 }
 /* Adicionar Novo Usuário*/
 
-.novo-usuario{
-	margin-bottom: 200px; /*temporário*/
-	
-  form
-  {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-	
-  }
 
-  fieldset{
-	border: none;
-  }
-
-  input{
-	border: solid black 2px !important;
-	border-radius: 20px !important;
-	padding-left: 5px !important;
-	margin-left: -10px !important;
-  }
-  @media (max-width: 600px)
-  {
-    button{
-      margin-top: 30px;
-    }
-  }
-}
 
 /* Dashboard */
 .btn-gerenciamento{
@@ -1448,3 +1421,25 @@ input[type='radio'] {
 	opacity: 100% !important;
 	pointer-events: fill !important;
 }
+
+input[type='checkbox'] {
+	position: initial !important;
+	opacity: 100% !important;
+	pointer-events: fill !important
+}
+
+.password-wrapper {
+    position: relative;
+    margin-bottom: 20px; /* Mantém o espaçamento consistente */
+}
+
+.suffix-icon {
+    position: absolute;
+    right: 10px;
+    top: 65%; /* Ajustado para ficar alinhado com o input */
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    color: #26a69a; /* Cor do Materialize */
+}
+
