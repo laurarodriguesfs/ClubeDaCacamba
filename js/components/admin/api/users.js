@@ -98,8 +98,8 @@ async function editarUsuario(id) {
 
 					<p>Função (role)</p>
 					<select id="role" name="role" required>
-						<option value="admin" ${user.role === 'admin' ? 'selected' : ''}>Administrador</option>
-						<option value="editor" ${user.role === 'editor' ? 'selected' : ''}>Editor</option>
+						<option value="Administrador" ${user.role === 'Administrador' ? 'selected' : ''}>Administrador</option>
+						<option value="Editor" ${user.role === 'Editor' ? 'selected' : ''}>Editor</option>
 					</select>
 				</div>
 			</form>
