@@ -2,7 +2,7 @@ function carregaPagGerenciadorProjetos(){
 	const $mainContainer = getMainContainer();
 	
 	const projetosHTML = `
-		<div class="flex-container">
+		<div class="flex-container xl-1">
 			<div class="proj">
 				<div class="div-botoes">
 					<button id="back-to-dashboard-btn" class="btn-flat waves-effect">
@@ -19,7 +19,7 @@ function carregaPagGerenciadorProjetos(){
 					
 				</div>
 
-				<table class="project-table">
+				<table class="project-table striped">
 					<thead>
 						<tr>
 							<th>Título</th>
@@ -29,6 +29,7 @@ function carregaPagGerenciadorProjetos(){
 						</tr>
 					</thead>
 					<tbody id="project-table-body">
+						<tr><td colspan="4">Carregando...</td></tr>
 					</tbody>
 				</table>
 

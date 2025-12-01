@@ -86,7 +86,7 @@ function novoUsuario()
             M.toast({ html: 'Usuário criado com sucesso!' });
             console.log('Usuário criado:', result);
 
-            fetchUsers(); // volta pra listagem
+            renderUserListPage()
         } catch (error) {
             console.error(error);
             M.toast({ html: 'Erro ao criar o usuário!' });

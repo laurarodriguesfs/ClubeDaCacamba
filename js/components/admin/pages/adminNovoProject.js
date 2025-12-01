@@ -29,17 +29,13 @@ function newProject(){
 						<div id="conteudo-proj"></div>
 						
 						<p>Status:</p>
-						<input type="radio" id="visivel-proj" name="status" value="Visível" checked />
-						<label for="visivel-proj">Visível</label>
-
-						<input type="radio" id="oculto-proj" name="status" value="Oculto" />
-						<label for="oculto-proj">Oculto</label>
-
-						<input type="radio" id="revisao-proj" name="status" value="Revisão" />
-						<label for="revisao-proj">Revisão</label>
-
-						<input type="radio" id="arquivado-proj" name="status" value="Arquivado" />
-						<label for="arquivado-proj">Arquivado</label>
+						<select id="status" name="status" required>
+							<option value="Visível">Visível</option>
+							<option value="Oculto">Oculto</option>
+							<option value="Revisão">Revisão</option>
+							<option value="Arquivado">Arquivado</option>
+						</select>
+						
 					</div>
 				</form>
 			</div>
@@ -49,6 +45,9 @@ function newProject(){
 	const conteudo = new Quill('#conteudo-proj', {
 		theme: "snow"
 	})
+
+	// Inicializa o select do Materialize (se estiver usando)
+	if (M && M.FormSelect) M.FormSelect.init(document.querySelectorAll('#status'));
 
 	$('#back-to-project-btn').on('click', carregaPagGerenciadorProjetos)
 
@@ -61,7 +60,7 @@ function newProject(){
 		const descricao = document.querySelector('#descricao-proj').value.trim();
 		const imagem = document.querySelector('#imagem-proj').value.trim();
 		const conteudoCompleto = conteudo.root.innerHTML.trim();
-		const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
+		const statusSelecionado = document.querySelector('#status').value;
 		
 
 		const projetoData = 

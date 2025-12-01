@@ -16,8 +16,10 @@ async function fetchUsers() {
 			<td>${user.name}</td>
 			<td>${user.email}</td>
 			<td>${user.role}</td>
-			<td><button class="btn-small waves-effect waves-light blue edit-btn" data-id="${user.id}">Editar</button></td>
-			<td><button class="btn-small waves-effect waves-light red delete-btn" data-id="${user.id}">Deletar</button></td>
+			<td class="actions-cell">
+				<button class="edit-link edit-btn" data-id="${user.id}">Editar</button>
+				<button class="delete-link delete-btn" data-id="${user.id}">Deletar</button>
+			</td>
         </tr>`;
       $tableBody.append(rowHTML);
     });
@@ -145,13 +147,13 @@ async function editarUsuario(id) {
 				M.toast({ html: 'Usuário atualizado com sucesso!' });
 				console.log('Usuário atualizado:', result);
 
-				fetchUsers(); // volta pra listagem
+				renderUserListPage(); // volta pra listagem
 			} catch (error) {
 				console.error(error);
 				M.toast({ html: 'Erro ao atualizar o usuário!' });
 			}
 		});
-
+		
 	} catch (error) {
 		console.error("Erro ao carregar usuário:", error);
 		$mainContainer.html(`

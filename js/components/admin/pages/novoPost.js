@@ -29,14 +29,13 @@ function newPost(){
 						<div id="conteudo"></div>
 						
 						<p>Status:</p>
-						<input type="radio" id="visivel" name="status" value="Visível" checked />
-						<label for="visivel">Visível</label>
-						<input type="radio" id="oculto" name="status" value="Oculto" />
-						<label for="oculto">Oculto</label>
-						<input type="radio" id="revisao" name="status" value="Revisão" />
-						<label for="revisao">Revisão</label>
-						<input type="radio" id="arquivado" name="status" value="Arquivado" />
-						<label for="arquivado">Arquivado</label>
+
+						<select id="status" name="status" required>
+							<option value="Visível">Visível</option>
+							<option value="Oculto">Oculto</option>
+							<option value="Revisão">Revisão</option>
+							<option value="Arquivado">Arquivado</option>
+						</select>
 					</div>
 				</form>
 			</div>
@@ -46,6 +45,9 @@ function newPost(){
 	const conteudo = new Quill('#conteudo', {
 		theme: "snow"
 	})
+
+	// Inicializa o select do Materialize (se estiver usando)
+	if (M && M.FormSelect) M.FormSelect.init(document.querySelectorAll('#status'));
 
 	$('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts)
 
@@ -58,7 +60,8 @@ function newPost(){
 		const descricao = document.querySelector('#descricao').value.trim();
 		const imagem = document.querySelector('#imagem').value.trim();
 		const conteudoCompleto = conteudo.root.innerHTML.trim();
-		const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
+		const statusSelecionado = document.querySelector('#status').value;
+
 		
 
 		const postData = 

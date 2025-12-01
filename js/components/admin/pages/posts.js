@@ -4,21 +4,21 @@ function carregaPagGerenciadorPosts(){
 	const postsHTML = `
 		<div class="flex-container">
 			<div class="proj">
-				<p class="voltar">
+				<div class="div-botoes">
 					<button id="back-to-dashboard-btn" class="btn-flat waves-effect">
 						<i class="material-icons left">arrow_back</i>Voltar ao Dashboard
 					</button>
-				</p>
-
-				<div class="top">
-					<h2>Gerenciador de posts e Eventos</h2>
 					<button id="new-post-btn">
 						<i class="material-icons">add</i>
 						Adicionar novo conteúdo
 					</button>
 				</div>
 
-				<table class="project-table centered">
+				<div class="top">
+					<h2>Gerenciador de posts e Eventos</h2>
+				</div>
+
+				<table class="project-table striped">
 					<thead>
 						<tr>
 							<th>Título</th>
@@ -27,38 +27,7 @@ function carregaPagGerenciadorPosts(){
 						</tr>
 					</thead>
 					<tbody id="post-table-body">
-						<tr class="linha">
-							<td>Apresentação de pôster no III ...</td>
-							<td>01/01/2025</td>
-							<td class="status-cell status-visible">Visível</td>
-							<td class="actions-cell">
-								<a href="#" class="edit-link">Editar</a>
-								<a href="#" class="delete-link">Excluir</a>
-								<a href="#" class="view-link">Ver Página</a>
-							</td>
-						</tr>
-
-						<tr class="linha">
-							<td>Apresentação de pôster no III ...</td>
-							<td>01/01/2025</td>
-							<td class="status-cell status-hidden">Oculto</td>
-							<td class="actions-cell">
-								<a href="#" class="edit-link">Editar</a>
-								<a href="#" class="delete-link">Excluir</a>
-								<a href="#" class="view-link">Ver Página</a>
-							</td>
-						</tr>
-
-						<tr class="linha">
-							<td>Apresentação de pôster no III ...</td>
-							<td>01/01/2025</td>
-							<td class="status-cell status-review">Revisão</td>
-							<td class="actions-cell">
-								<a href="#" class="edit-link">Editar</a>
-								<a href="#" class="delete-link">Excluir</a>
-								<a href="#" class="view-link">Ver Página</a>
-							</td>
-						</tr>
+						<tr><td colspan="4">Carregando...</td></tr>
 					</tbody>
 				</table>
 

@@ -222,6 +222,15 @@ button:hover {
 	padding-top: 200px;
 }
 
+@media (min-width: 600px)
+{
+	.project-table
+	{
+		min-width: 800px !important;
+		max-width: 1000px !important;
+	}
+}
+
 .project-table {
 	width: 100%;
 	border-collapse: collapse;
@@ -294,17 +303,17 @@ button:hover {
 
 .actions-cell button.delete-link
 {
-	color: #900;
+	color: #900 !important;
 }
 
 .actions-cell button.view-link
 {
 	color: white;
-	background-color: #134703;
+	background-color: #134703 !important;
 }
 .actions-cell a.view-link {
 	color: white;
-	background-color: #134703;
+	background-color: #134703 !important;
 	padding: 6px 8px;
 }
 
@@ -342,6 +351,11 @@ button:hover {
 
 .status-review {
 	color: #8f7902;
+}
+
+.status-archived
+{
+	color: #4a4a4a;
 }
 
 /* Fim estyle gerenciador de Projetos */
@@ -1385,17 +1399,29 @@ body {
 	}
 	
 
-	table.striped > tbody > tr:nth-child(2n+1)
-	{
-		/*As linhas ímpares ficam em verde*/
+	
+}
+
+table.striped > tbody > tr:nth-child(2n+1)
+{
+	/*As linhas ímpares ficam em verde*/
+	background-color: #c0e9c9;
+
+	.actions-cell button {
 		background-color: #c0e9c9;
 	}
-	table.striped > tbody > tr:nth-child(2n)
-	{
-		/*As linhas pares ficam em branco*/
+}
+
+table.striped > tbody > tr:nth-child(2n)
+{
+	/*As linhas pares ficam em branco*/
+	background-color: #fff;
+
+	.actions-cell button {
 		background-color: #fff;
 	}
 }
+
 
 .btn{
 	background-color: #0d2f02;

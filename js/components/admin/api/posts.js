@@ -16,10 +16,28 @@ async function listarPosts() {
     $tableBody.empty();
     posts.forEach(post => 
     {
+      let statusClass = "";
+      switch (post.status)
+      {
+        case "Visível":
+          statusClass = "status-visible";
+          break;
+        case "Oculto":
+          statusClass = "status-hidden";
+          break;
+        case "Revisão":
+          statusClass = "status-review";
+          break;
+        case "Arquivado":
+          statusClass = "status-archived";
+          break;
+      }
+
+
       const rowHTML = `
-        <tr class="linha">
+        <tr>
             <td>${post.titulo}</td>
-            <td class="status-cell">${post.status}</td>
+            <td class="status-cell ${statusClass}">${post.status}</td>
             <td class="actions-cell">
                 <button class="edit-link edit-link-post" data-id="${post.id}">Editar</button>
                 <button class="delete-link delete-link-post" data-id="${post.id}">Excluir</button>

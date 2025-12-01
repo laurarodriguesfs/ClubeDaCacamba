@@ -17,11 +17,28 @@ async function listarProjetos() {
     $tableBody.empty();
     projects.forEach(project => 
     {
+      let statusClass = "";
+      switch (project.status)
+      {
+        case "Visível":
+          statusClass = "status-visible";
+          break;
+        case "Oculto":
+          statusClass = "status-hidden";
+          break;
+        case "Revisão":
+          statusClass = "status-review";
+          break;
+        case "Arquivado":
+          statusClass = "status-archived";
+          break;
+      }
+
       const rowHTML = `
         <tr class="linha">
             <td>${project.titulo}</td>
             <td>temporário</td>
-            <td class="status-cell">${project.status}</td>
+            <td class="status-cell ${statusClass}">${project.status}</td>
             <td class="actions-cell">
                 <button class="edit-link edit-link-project" data-id="${project.id}">Editar</button>
                 <button class="delete-link delete-link-project" data-id="${project.id}">Excluir</button>

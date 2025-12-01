@@ -47,17 +47,13 @@ async function editarProject(id)
 						<div id="conteudo">${projeto.conteudo}</div>
 						
 						<p>Status:</p>
-						<input type="radio" id="visivel" name="status" value="Visível" ${projeto.status === 'Visível' ? 'checked' : ''} />
-						<label for="visivel" >Visível</label>
-                        
-						<input type="radio" id="oculto" name="status" value="Oculto" ${projeto.status === 'Oculto' ? 'checked' : ''} />
-						<label for="oculto">Oculto</label>
-						
-                        <input type="radio" id="revisao" name="status" value="Revisão" ${projeto.status === 'Revisão' ? 'checked' : ''} />
-						<label for="revisao">Revisão</label>
-						
-                        <input type="radio" id="arquivado" name="status" value="Arquivado" ${projeto.status === 'Arquivado' ? 'checked' : ''} />
-						<label for="arquivado">Arquivado</label>
+                        <select id="status" name="status" required>
+							<option value="Visível" ${projeto.status === 'Visível' ? 'selected' : ''}>Visível</option>
+							<option value="Oculto" ${projeto.status === 'Oculto' ? 'selected' : ''}>Oculto</option>
+							<option value="Revisão" ${projeto.status === 'Revisão' ? 'selected' : ''}>Revisão</option>
+							<option value="Arquivado" ${projeto.status === 'Arquivado' ? 'selected' : ''}>Arquivado</option>
+						</select>
+
 					</div>
 				</form>
 			</div>
@@ -70,6 +66,8 @@ async function editarProject(id)
             theme: "snow"
         });
 
+        // Inicializa o select do Materialize (se estiver usando)
+	    if (M && M.FormSelect) M.FormSelect.init(document.querySelectorAll('#status'));
 
 
         // Voltar à tela de gerenciamento
@@ -84,7 +82,7 @@ async function editarProject(id)
             const descricao = document.querySelector('#descricao').value.trim();
             const imagem = document.querySelector('#imagem').value.trim();
             const conteudoCompleto = conteudo.root.innerHTML.trim();
-            const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
+            const statusSelecionado = document.querySelector('#status').value;
             
 
             const projetoData = 

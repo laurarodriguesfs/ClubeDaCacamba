@@ -47,17 +47,13 @@ async function editarPost(id)
 						<div id="conteudo">${post.conteudo}</div>
 						
 						<p>Status:</p>
-						<input type="radio" id="visivel" name="status" value="Visível" ${post.status === 'Visível' ? 'checked' : ''} />
-						<label for="visivel" >Visível</label>
-                        
-						<input type="radio" id="oculto" name="status" value="Oculto" ${post.status === 'Oculto' ? 'checked' : ''} />
-						<label for="oculto">Oculto</label>
+                        <select id="status" name="status" required>
+							<option value="Visível" ${post.status === 'Visível' ? 'selected' : ''}>Visível</option>
+							<option value="Oculto" ${post.status === 'Oculto' ? 'selected' : ''}>Oculto</option>
+							<option value="Revisão" ${post.status === 'Revisão' ? 'selected' : ''}>Revisão</option>
+							<option value="Arquivado" ${post.status === 'Arquivado' ? 'selected' : ''}>Arquivado</option>
+						</select>
 						
-                        <input type="radio" id="revisao" name="status" value="Revisão" ${post.status === 'Revisão' ? 'checked' : ''} />
-						<label for="revisao">Revisão</label>
-						
-                        <input type="radio" id="arquivado" name="status" value="Arquivado" ${post.status === 'Arquivado' ? 'checked' : ''} />
-						<label for="arquivado">Arquivado</label>
 					</div>
 				</form>
 			</div>
@@ -70,7 +66,8 @@ async function editarPost(id)
             theme: "snow"
         });
 
-
+        // Inicializa o select do Materialize (se estiver usando)
+	    if (M && M.FormSelect) M.FormSelect.init(document.querySelectorAll('#status'));
 
         // Voltar à tela de gerenciamento
         $('#back-to-manage-post-btn').on('click', carregaPagGerenciadorPosts);
@@ -84,7 +81,7 @@ async function editarPost(id)
             const descricao = document.querySelector('#descricao').value.trim();
             const imagem = document.querySelector('#imagem').value.trim();
             const conteudoCompleto = conteudo.root.innerHTML.trim();
-            const statusSelecionado = document.querySelector('input[name="status"]:checked').value;
+            const statusSelecionado = document.querySelector('#status').value;
             
 
             const postData = 
